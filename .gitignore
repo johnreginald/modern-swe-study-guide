@@ -1,0 +1,9 @@
+.DS_Store
+work/tmp/
+.scratch/**/tmp/
+web/node_modules/
+web/.next/
+web/.vercel/
+web/next-env.d.ts
+web/public/sw.js
+web/*.tsbuildinfo
