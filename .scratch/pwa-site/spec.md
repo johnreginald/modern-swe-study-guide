@@ -33,7 +33,7 @@ Out:
 3. **Project name**: `modern-software-dev-guide` → `https://agentic-engineer-study-guide.vercel.app`.
 4. Tracker: none (Raenil skipped for this project).
 
-Status: **Done** (2026-09-04). Live at https://agentic-engineer-study-guide.vercel.app · repo https://github.com/johnreginald/modern-software-dev-guide (private) · Vercel project `modern-software-dev-guide` in team htet-wai-yan-soes-projects.
+Status: **Done** (2026-09-04). Live at https://agentic-engineer-study-guide.vercel.app · repo https://github.com/johnreginald/agentic-engineer-study-guide (private) · Vercel project `modern-software-dev-guide` in team htet-wai-yan-soes-projects.
 
 ## Done when
 
