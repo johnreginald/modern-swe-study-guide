@@ -2,7 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { isActive } from "@/components/TopBar";
+
+function isActive(href: string, pathname: string): boolean {
+  if (href === "/") return pathname === "/";
+  if (href === "/weeks") return pathname.startsWith("/weeks") || pathname.startsWith("/week/");
+  if (href === "/more") return ["/more", "/bookshelf", "/half-time"].some((p) => pathname.startsWith(p));
+  return pathname.startsWith(href);
+}
 
 const items = [
   { href: "/", label: "Home", icon: "⌂" },

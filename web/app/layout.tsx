@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import TopBar from "@/components/TopBar";
 import BottomNav from "@/components/BottomNav";
 import SwRegister from "@/components/SwRegister";
 
@@ -47,7 +46,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en">
       <body>
         <div className="app-shell">
-          <TopBar />
           <main className="content">{children}</main>
           <BottomNav />
         </div>
