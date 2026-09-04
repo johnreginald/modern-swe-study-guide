@@ -33,7 +33,7 @@ Out:
 3. **Project name**: `modern-software-dev-guide` → `https://modern-software-dev-guide.vercel.app`.
 4. Tracker: none (Raenil skipped for this project).
 
-Status: Ready → In Progress.
+Status: **Done** (2026-09-04). Live at https://modern-software-dev-guide.vercel.app · repo https://github.com/johnreginald/modern-software-dev-guide (private) · Vercel project `modern-software-dev-guide` in team htet-wai-yan-soes-projects.
 
 ## Done when
 
@@ -42,5 +42,5 @@ Status: Ready → In Progress.
 - Airplane mode after first load: every page still opens.
 - Ticking a Done-when box survives reload; Home progress bar reflects it.
 - All 199 links present and open in a new tab.
-- Deployed to `https://<project>.vercel.app` from the CLI; URL recorded here.
+- Deployed to `https://modern-software-dev-guide.vercel.app` from the CLI (done).
 - Repo initialised with an initial commit containing generator, source markdown, PDF, and site output (or ignored, per choice 2).
