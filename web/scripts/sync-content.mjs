@@ -11,6 +11,7 @@ const outputs = resolve(root, "..", "outputs");
 const pairs = [
   [resolve(outputs, "agentic-engineer-study-guide-2026.md"), resolve(root, "content", "guide.md")],
   [resolve(outputs, "agentic-engineer-study-guide-2026.pdf"), resolve(root, "public", "agentic-engineer-study-guide-2026.pdf")],
+  [resolve(outputs, "agentic-engineer-study-guide-2026.my.md"), resolve(root, "content", "guide.my.md")],
 ];
 
 let copied = 0;

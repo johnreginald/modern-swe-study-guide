@@ -236,3 +236,27 @@ h3.block-title { font-size: 17px; color: var(--teal-strong); }
 .nav-icon { font-size: 20px; line-height: 1; }
 
 .reset-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 14px; }
+
+/* ---------- Burmese edition ---------- */
+.lang-my,
+.lang-my .prose,
+.lang-my .btn,
+.lang-my .tag,
+.lang-my .pill,
+.lang-my .kind,
+.lang-my .focus-label,
+.lang-my input,
+.lang-my button {
+  font-family: var(--font-my), "Myanmar Sangam MN", "Padauk", "Noto Sans Myanmar", "Pyidaungsu", -apple-system, sans-serif;
+}
+.lang-my { line-height: 1.85; }
+.lang-my .prose { font-size: 15.5px; line-height: 1.85; }
+.lang-my .prose .res-desc { line-height: 1.8; }
+.lang-my .hero h1 { font-size: 30px; line-height: 1.25; }
+.lang-my .page-head h1 { font-size: 25px; line-height: 1.35; }
+.lang-my .block-title { line-height: 1.4; }
+.lang-my .eyebrow, .lang-my .focus-label, .lang-my .week-card .week-num { letter-spacing: 0; text-transform: none; }
+.bottom-nav.lang-my a { font-family: var(--font-my), "Myanmar Sangam MN", "Padauk", sans-serif; font-size: 12px; }
+.translation-note { margin: -6px 0 14px; }
+.lang-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; color: var(--ink); font-weight: 700; }
+.lang-row::after { content: "›"; color: var(--muted); font-size: 22px; }

@@ -1,6 +1,6 @@
 # Burmese (Myanmar) translation of the Agentic Engineer Study Guide 2026
 
-Status: Aligning (draft written 2026-09-04, not yet confirmed).
+Status: **In Progress** (confirmed 2026-09-05). Decisions: Antigravity CLI (`agy --print`, model "Gemini 3.1 Pro (High)", covered by the Google AI Pro plan, $0 extra) — the Gemini CLI personal free tier was retired ("migrate to Antigravity"); keep English tool/product/protocol names and acronyms, translate concepts; Unicode only with a Zawgyi check; translate the whole guide in one pass (no pilot); glossary generated first and editable at `.scratch/burmese-translation/glossary.md`.
 
 ## Objective
 
@@ -19,8 +19,8 @@ Publish a Burmese edition of the guide, translated with Gemini, that is as trust
 
 ## Tooling
 
-- `web/scripts/translate.mjs` (Node, `@google/genai`), model `gemini-2.5-pro` (or newer Pro), temperature 0.2, JSON-mode off, one request per chunk, cached to `.scratch/burmese-translation/chunks/*.md` so re-runs only redo failures.
-- Env: `GEMINI_API_KEY` in `web/.env.local` (never committed).
+- `web/scripts/translate-my.mjs` (Node) shells out to `agy --print --model "Gemini 3.1 Pro (High)"`, one call per `##` section, cached to `.scratch/burmese-translation/chunks/*.my.md`; rejected attempts kept alongside for inspection; `log.jsonl` records timing.
+- No API key: Antigravity is already logged in with the user's Google account.
 - Estimated cost: ~40k input + ~60k output tokens per full pass, well under a dollar at 2026 Pro pricing; three passes with review still trivial.
 
 ## Open choices

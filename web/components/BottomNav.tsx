@@ -3,37 +3,40 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-function isActive(href: string, pathname: string): boolean {
-  if (href === "/") return pathname === "/";
-  if (href === "/weeks") return pathname.startsWith("/weeks") || pathname.startsWith("/week/");
-  if (href === "/more") return ["/more", "/bookshelf", "/half-time"].some((p) => pathname.startsWith(p));
-  return pathname.startsWith(href);
-}
+type Labels = { home: string; weeks: string; capstone: string; more: string };
+type Props = { labels: { en: Labels; my: Labels } };
 
-const items = [
-  { href: "/", label: "Home", icon: "⌂" },
-  { href: "/weeks", label: "Weeks", icon: "▦" },
-  { href: "/capstone", label: "Capstone", icon: "◆" },
-  { href: "/more", label: "More", icon: "…" },
+const routes = [
+  { path: "/", key: "home", icon: "⌂" },
+  { path: "/weeks", key: "weeks", icon: "▦" },
+  { path: "/capstone", key: "capstone", icon: "◆" },
+  { path: "/more", key: "more", icon: "…" },
 ] as const;
 
-export default function BottomNav() {
+function isActive(path: string, rel: string): boolean {
+  if (path === "/") return rel === "/";
+  if (path === "/weeks") return rel.startsWith("/weeks") || rel.startsWith("/week/");
+  if (path === "/more") return ["/more", "/bookshelf", "/half-time"].some((p) => rel.startsWith(p));
+  return rel.startsWith(path);
+}
+
+export default function BottomNav({ labels }: Props) {
   const pathname = usePathname();
+  const isMy = pathname === "/my" || pathname.startsWith("/my/");
+  const rel = isMy ? pathname.slice(3) || "/" : pathname;
+  const dict = isMy ? labels.my : labels.en;
+  const prefix = isMy ? "/my" : "";
   return (
-    <nav className="bottom-nav" aria-label="Primary">
-      {items.map((item) => {
-        const active = isActive(item.href, pathname);
+    <nav className={`bottom-nav${isMy ? " lang-my" : ""}`} aria-label="Primary">
+      {routes.map((r) => {
+        const active = isActive(r.path, rel);
+        const href = r.path === "/" ? prefix || "/" : `${prefix}${r.path}`;
         return (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={active ? "active" : undefined}
-            aria-current={active ? "page" : undefined}
-          >
+          <Link key={r.path} href={href} className={active ? "active" : undefined} aria-current={active ? "page" : undefined}>
             <span className="nav-icon" aria-hidden="true">
-              {item.icon}
+              {r.icon}
             </span>
-            <span>{item.label}</span>
+            <span>{dict[r.key]}</span>
           </Link>
         );
       })}

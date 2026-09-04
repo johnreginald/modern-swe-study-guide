@@ -1,17 +1,8 @@
 import type { Metadata } from "next";
-import { getGuide } from "@/lib/guide";
-import { Blocks } from "@/components/Blocks";
+import SectionPage from "@/components/pages/SectionPage";
 
 export const metadata: Metadata = { title: "The short bookshelf" };
 
-export default function BookshelfPage() {
-  const { bookshelf } = getGuide();
-  return (
-    <>
-      <header className="page-head">
-        <h1>{bookshelf.title}</h1>
-      </header>
-      <Blocks blocks={bookshelf.blocks} />
-    </>
-  );
+export default function Page() {
+  return <SectionPage lang="en" which="bookshelf" />;
 }

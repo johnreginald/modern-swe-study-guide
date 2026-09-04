@@ -9,8 +9,10 @@ type BeforeInstallPromptEvent = Event & {
   userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
 };
 
+type Labels = { title: string; ios: string; other: string; button: string; dismiss: string };
+
 /** Inline (non-fixed) install card. Shown on the Home page only, dismissable, never overlaps navigation. */
-export default function InstallHint() {
+export default function InstallHint({ labels }: { labels: Labels }) {
   const [visible, setVisible] = useState(false);
   const [deferred, setDeferred] = useState<BeforeInstallPromptEvent | null>(null);
   const [isIos, setIsIos] = useState(false);
@@ -60,19 +62,17 @@ export default function InstallHint() {
   return (
     <div className="install-card" role="status">
       <div>
-        <strong>Install as an app</strong>
-        <div className="muted small">
-          {isIos ? "Tap Share, then “Add to Home Screen”. Works offline afterwards." : "Add it to your home screen. Works offline afterwards."}
-        </div>
+        <strong>{labels.title}</strong>
+        <div className="muted small">{isIos ? labels.ios : labels.other}</div>
       </div>
       <div className="install-actions">
         {deferred ? (
           <button type="button" className="btn btn-primary" onClick={install}>
-            Install
+            {labels.button}
           </button>
         ) : null}
         <button type="button" className="btn btn-ghost" onClick={dismiss}>
-          Dismiss
+          {labels.dismiss}
         </button>
       </div>
     </div>

@@ -1,6 +1,7 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import MarkdownIt from "markdown-it";
+import type { Lang } from "./i18n";
 
 export type Block = { id: string; title: string; time: string | null; html: string };
 
@@ -20,6 +21,7 @@ export type Week = {
 export type Section = { title: string; blocks: Block[] };
 
 export type Guide = {
+  lang: Lang;
   title: string;
   updated: string;
   intro: Block[];
@@ -89,11 +91,11 @@ function kindFor(label: string): Kind {
 }
 
 const LINK_RE = /\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/;
-const DURATION_RE = /^\s*\(((?:≈\s*)?[^)]*?(?:\d+\s*(?:h|min)|h\b)[^)]*)\)/;
+const DURATION_RE = /^\s*\(((?:≈\s*)?[^)]*?\d[^)]*)\)/;
 
 /** Render one list item as a resource card when it has a link; plain otherwise. */
-function renderItem(text: string, index: number | null): string {
-  const labelMatch = /^\*\*([^*]+?):\*\*\s*([\s\S]*)$/.exec(text);
+function renderItem(text: string, index: number | null, kindHint?: Kind): string {
+  const labelMatch = /^\*\*([^*]+?)(?:\s*\([^)]*\))?:\*\*\s*([\s\S]*)$/.exec(text);
   const label = labelMatch ? labelMatch[1].trim() : null;
   const rest = labelMatch ? labelMatch[2] : text;
   const link = LINK_RE.exec(rest);
@@ -114,8 +116,8 @@ function renderItem(text: string, index: number | null): string {
   }
   after = after.replace(/^[\s,]*[—–-]\s*/, "").trim();
   if (/^[a-z]/.test(after)) after = after[0].toUpperCase() + after.slice(1);
-  const kind: Kind = label ? kindFor(label) : isVideo(href) ? "video" : "article";
   const video = isVideo(href);
+  const kind: Kind = kindHint ?? (label ? kindFor(label) : video ? "video" : "article");
   const kindLabel = label ?? (video ? "Video" : "Link");
 
   return [
@@ -130,20 +132,27 @@ function renderItem(text: string, index: number | null): string {
   ].join("");
 }
 
+type BlockTemplate = { ids: string[]; kinds: (Kind | undefined)[][] } | null;
+
 /**
  * Turn the lines of one section into blocks: each `###` heading opens a block; lists become
  * resource cards; paragraphs, tables, and code lines render through markdown-it.
+ * `template` (from the English guide) supplies stable ids and card kinds for translations,
+ * whose headings and labels are not English.
  */
-function renderBlocks(lines: string[], fallbackTitle: string): Block[] {
+function renderBlocks(lines: string[], fallbackTitle: string, template: BlockTemplate = null): Block[] {
   const blocks: Block[] = [];
-  let current: Block & { parts: string[]; list: { ordered: boolean; items: string[] } | null } = {
-    id: slugify(fallbackTitle),
-    title: "", // untitled lead block: the page heading already names it
-    time: null,
+  type Cur = Block & { parts: string[]; list: { ordered: boolean; items: string[] } | null; itemNo: number };
+  const newBlock = (title: string, time: string | null): Cur => ({
+    id: template?.ids[blocks.length] ?? (slugify(title) || slugify(fallbackTitle) || `b${blocks.length}`),
+    title,
+    time,
     html: "",
     parts: [],
     list: null,
-  };
+    itemNo: 0,
+  });
+  let current = newBlock("", null); // untitled lead block: the page heading already names it
   let para: string[] = [];
   let table: string[] = [];
 
@@ -163,9 +172,12 @@ function renderBlocks(lines: string[], fallbackTitle: string): Block[] {
     if (current.list) {
       const { ordered, items } = current.list;
       const tag = ordered ? "ol" : "ul";
+      const kinds = template?.kinds[blocks.length];
+      const base = current.itemNo;
       current.parts.push(
-        `<${tag} class="resources">${items.map((t, i) => renderItem(t, ordered ? i + 1 : null)).join("")}</${tag}>`,
+        `<${tag} class="resources">${items.map((t, i) => renderItem(t, ordered ? i + 1 : null, kinds?.[base + i])).join("")}</${tag}>`,
       );
+      current.itemNo += items.length;
       current.list = null;
     }
   };
@@ -194,9 +206,9 @@ function renderBlocks(lines: string[], fallbackTitle: string): Block[] {
     if (trimmed.startsWith("### ")) {
       closeBlock();
       const heading = trimmed.slice(4).trim();
-      const time = /\((≈?\s*[^)]+)\)\s*$/.exec(heading)?.[1]?.replace(/^≈\s*/, "≈ ") ?? null;
-      const title = heading.replace(/\s*\(.*\)\s*$/, "");
-      current = { id: slugify(title), title, time, html: "", parts: [], list: null };
+      const time = /\(([^)]*\d[^)]*)\)\s*$/.exec(heading)?.[1]?.replace(/^≈\s*/, "≈ ") ?? null;
+      const title = time ? heading.replace(/\s*\([^)]*\)\s*$/, "") : heading;
+      current = newBlock(title, time);
       continue;
     }
     if (!trimmed || trimmed === "---") {
@@ -227,6 +239,33 @@ function renderBlocks(lines: string[], fallbackTitle: string): Block[] {
   return blocks;
 }
 
+/** Card kinds per block per list item, derived from the English labels; reused for translations. */
+function kindTemplate(lines: string[]): (Kind | undefined)[][] {
+  const out: (Kind | undefined)[][] = [];
+  let cur: (Kind | undefined)[] = [];
+  let sawHeading = false;
+  let leadHasContent = false;
+  for (const raw of lines) {
+    const t = raw.trim();
+    if (t.startsWith("### ")) {
+      if (sawHeading || leadHasContent) out.push(cur);
+      cur = [];
+      sawHeading = true;
+      continue;
+    }
+    if (!t || t === "---") continue;
+    if (!sawHeading) leadHasContent = true;
+    const li = /^(?:-\s+|\d+\.\s+)(.*)$/.exec(t);
+    if (li) {
+      const label = /^\*\*([^*]+?):\*\*/.exec(li[1])?.[1];
+      const link = LINK_RE.exec(li[1]);
+      cur.push(label ? kindFor(label) : link ? (isVideo(link[2]) ? "video" : "article") : undefined);
+    }
+  }
+  out.push(cur);
+  return out;
+}
+
 /* ---------- section splitting ---------- */
 
 type RawSection = { heading: string; lines: string[] };
@@ -247,15 +286,45 @@ function splitSections(lines: string[]): { preamble: string[]; sections: RawSect
   return { preamble, sections };
 }
 
-function takeLine(lines: string[], prefix: string): string {
-  const idx = lines.findIndex((l) => l.startsWith(prefix));
-  if (idx === -1) return "";
-  const [line] = lines.splice(idx, 1);
-  return inline(line.slice(prefix.length).trim());
+/** First bold-label paragraph line before the first `###` (the Focus line), removed from `lines`. */
+function takeFocus(lines: string[]): string {
+  for (let i = 0; i < lines.length; i += 1) {
+    if (lines[i].startsWith("#")) break;
+    const m = /^\*\*[^*]+:\*\*\s*(.*)$/.exec(lines[i]);
+    if (m) {
+      lines.splice(i, 1);
+      return inline(m[1].trim());
+    }
+  }
+  return "";
 }
 
-function extractDoneWhen(lines: string[]): string[] {
-  const start = lines.findIndex((l) => l.trim() === "### Done when");
+/** Index (among `###` headings) of the "Done when" block, or -1. */
+function doneWhenIndex(lines: string[]): number {
+  let i = -1;
+  for (const l of lines) {
+    if (l.startsWith("### ")) {
+      i += 1;
+      if (/^### Done when\s*$/.test(l)) return i;
+    }
+  }
+  return -1;
+}
+
+/** Remove the `h3Index`-th `###` block from `lines` and return its bullet items. */
+function extractDoneWhenAt(lines: string[], h3Index: number): string[] {
+  if (h3Index < 0) return [];
+  let seen = -1;
+  let start = -1;
+  for (let i = 0; i < lines.length; i += 1) {
+    if (lines[i].startsWith("### ")) {
+      seen += 1;
+      if (seen === h3Index) {
+        start = i;
+        break;
+      }
+    }
+  }
   if (start === -1) return [];
   let end = lines.length;
   for (let i = start + 1; i < lines.length; i += 1) {
@@ -268,26 +337,24 @@ function extractDoneWhen(lines: string[]): string[] {
   return block.filter((l) => l.startsWith("- ")).map((l) => inline(l.slice(2).trim()));
 }
 
-function parseWeek(section: RawSection, glance: Map<number, string>): Week {
-  const match = /^Week (\d+) — (.+)$/.exec(section.heading);
-  if (!match) throw new Error(`Not a week heading: ${section.heading}`);
-  const n = Number(match[1]);
+type WeekTemplate = { n: number; doneWhenIdx: number; blocks: BlockTemplate } | null;
+
+function parseWeek(section: RawSection, glance: Map<number, string>, tpl: WeekTemplate): { week: Week; doneWhenIdx: number; bodyLines: string[] } {
   const lines = [...section.lines];
-  const focus = takeLine(lines, "**Focus:**");
-  const doneWhen = extractDoneWhen(lines);
+  const n = tpl?.n ?? Number(/^Week (\d+)/.exec(section.heading)?.[1]);
+  if (!Number.isFinite(n)) throw new Error(`Not a week heading: ${section.heading}`);
+  const title = section.heading.includes("—") ? section.heading.split("—").slice(1).join("—").trim() : section.heading;
+  const focus = takeFocus(lines);
+  const dwIdx = tpl ? tpl.doneWhenIdx : doneWhenIndex(lines);
+  const doneWhen = extractDoneWhenAt(lines, dwIdx);
   const body = lines.join("\n");
   const videoCount = (body.match(/https?:\/\/(www\.)?(youtube\.com|youtu\.be)\//g) ?? []).length;
-  const blocks = renderBlocks(lines, section.heading);
-  const core = blocks.find((b) => b.title.startsWith("Core material"));
+  const blocks = renderBlocks(lines, section.heading, tpl?.blocks ?? null);
+  const core = blocks.find((b, i) => (tpl ? tpl.blocks?.ids[i] === "core-material" : b.title.startsWith("Core material")));
   return {
-    n,
-    title: match[2].trim(),
-    focus,
-    coreTime: core?.time ?? null,
-    blocks,
-    doneWhen,
-    videoCount,
-    build: glance.get(n) ?? "",
+    week: { n, title, focus, coreTime: core?.time ?? null, blocks, doneWhen, videoCount, build: glance.get(n) ?? "" },
+    doneWhenIdx: dwIdx,
+    bodyLines: lines,
   };
 }
 
@@ -300,15 +367,51 @@ function parseGlance(lines: string[]): Map<number, string> {
   return map;
 }
 
-function parseGuide(source: string): Guide {
+type Role = { kind: "home" | "week" | "capstone" | "bookshelf" | "halfTime" | "glance"; n?: number; id?: string };
+
+/** Per-section structure of the English guide, used to interpret a translated copy. */
+type Template = {
+  roles: Role[];
+  weekDoneWhen: Map<number, number>;
+  blockTemplates: Map<number, BlockTemplate>; // by section index
+  introBlocks: BlockTemplate;
+};
+
+function blockTemplateOf(lines: string[], blocks: Block[]): BlockTemplate {
+  return { ids: blocks.map((b) => b.id), kinds: kindTemplate(lines) };
+}
+
+function roleFor(heading: string): Role {
+  if (/^Week \d+ — /.test(heading)) return { kind: "week", n: Number(/^Week (\d+)/.exec(heading)![1]) };
+  if (heading === "Suggested capstone") return { kind: "capstone" };
+  if (heading === "The short bookshelf") return { kind: "bookshelf" };
+  if (heading === "If you only have half the time") return { kind: "halfTime" };
+  if (heading === "The ten weeks at a glance") return { kind: "glance", id: "at-a-glance" };
+  return { kind: "home", id: SECTION_IDS[heading] ?? slugify(heading) };
+}
+
+function parseGuide(source: string, lang: Lang, template: Template | null): { guide: Guide; template: Template } {
   const lines = source.split(/\r?\n/);
   const title = (lines.find((l) => l.startsWith("# ")) ?? "# Guide").slice(2).trim();
-  const updated = (lines.find((l) => l.startsWith("Updated ")) ?? "").replace(/^Updated\s+/, "").trim();
   const { preamble, sections } = splitSections(lines);
-  const introLines = preamble.filter((l) => !l.startsWith("# ") && !l.startsWith("Updated "));
+  // The "Updated …" line is the first short non-heading line of the preamble (any language).
+  const updatedIdx = preamble.findIndex((l) => l.trim() && !l.startsWith("#"));
+  const updatedRaw = updatedIdx >= 0 ? preamble[updatedIdx].trim() : "";
+  const updated = updatedRaw.replace(/^Updated\s+/i, "");
+  const introLines = preamble.filter((l, i) => !l.startsWith("# ") && i !== updatedIdx);
 
-  const glanceSection = sections.find((s) => s.heading === "The ten weeks at a glance");
-  const glance = glanceSection ? parseGlance(glanceSection.lines) : new Map<number, string>();
+  if (template && template.roles.length !== sections.length) {
+    throw new Error(`Translated guide has ${sections.length} sections, English has ${template.roles.length}`);
+  }
+
+  const roles: Role[] = [];
+  const weekDoneWhen = new Map<number, number>();
+  const blockTemplates = new Map<number, BlockTemplate>();
+
+  const glanceIdx = template
+    ? template.roles.findIndex((r) => r.kind === "glance")
+    : sections.findIndex((s) => s.heading === "The ten weeks at a glance");
+  const glance = glanceIdx >= 0 ? parseGlance(sections[glanceIdx].lines) : new Map<number, string>();
 
   const home: HomeSection[] = [];
   const weeks: Week[] = [];
@@ -316,44 +419,79 @@ function parseGuide(source: string): Guide {
   let bookshelf: Section | null = null;
   let halfTime: Section | null = null;
 
-  for (const section of sections) {
-    if (/^Week \d+ — /.test(section.heading)) {
-      weeks.push(parseWeek(section, glance));
-      continue;
+  sections.forEach((section, si) => {
+    const role: Role = template ? template.roles[si] : roleFor(section.heading);
+    roles.push(role);
+
+    if (role.kind === "week") {
+      const tpl: WeekTemplate = template
+        ? { n: role.n!, doneWhenIdx: template.weekDoneWhen.get(role.n!) ?? -1, blocks: template.blockTemplates.get(si) ?? null }
+        : null;
+      const { week, doneWhenIdx, bodyLines } = parseWeek(section, glance, tpl);
+      weeks.push(week);
+      weekDoneWhen.set(week.n, doneWhenIdx);
+      if (!template) blockTemplates.set(si, blockTemplateOf(bodyLines, week.blocks));
+      return;
     }
-    const blocks = renderBlocks(section.lines, section.heading);
+    const blocks = renderBlocks(section.lines, section.heading, template ? (template.blockTemplates.get(si) ?? null) : null);
+    if (!template) blockTemplates.set(si, blockTemplateOf(section.lines, blocks));
     const entry = { title: section.heading, blocks };
-    if (section.heading === "Suggested capstone") capstone = entry;
-    else if (section.heading === "The short bookshelf") bookshelf = entry;
-    else if (section.heading === "If you only have half the time") halfTime = entry;
-    else home.push({ id: SECTION_IDS[section.heading] ?? slugify(section.heading), ...entry });
-  }
+    if (role.kind === "capstone") capstone = entry;
+    else if (role.kind === "bookshelf") bookshelf = entry;
+    else if (role.kind === "halfTime") halfTime = entry;
+    else home.push({ id: role.id ?? `s${si}`, ...entry });
+  });
 
   if (!capstone || !bookshelf || !halfTime) throw new Error("Guide is missing a closing section");
   weeks.sort((a, b) => a.n - b.n);
 
+  const intro = renderBlocks(introLines, "Introduction", template ? template.introBlocks : null);
+  const tpl: Template = template ?? { roles, weekDoneWhen, blockTemplates, introBlocks: blockTemplateOf(introLines, intro) };
+
   return {
-    title,
-    updated,
-    intro: renderBlocks(introLines, "Introduction"),
-    home,
-    weeks,
-    capstone,
-    bookshelf,
-    halfTime,
-    linkCount: new Set(source.match(/\]\((https?:\/\/[^)]+)\)/g) ?? []).size,
+    guide: {
+      lang,
+      title,
+      updated,
+      intro,
+      home,
+      weeks,
+      capstone,
+      bookshelf,
+      halfTime,
+      linkCount: new Set(source.match(/\]\((https?:\/\/[^)]+)\)/g) ?? []).size,
+    },
+    template: tpl,
   };
 }
 
-let cached: Guide | null = null;
+/* ---------- public API ---------- */
 
-export function getGuide(): Guide {
-  if (cached) return cached;
-  const source = readFileSync(resolve(process.cwd(), "content", "guide.md"), "utf8");
-  cached = parseGuide(source);
-  return cached;
+const cache = new Map<Lang, Guide>();
+let englishTemplate: Template | null = null;
+
+function contentPath(lang: Lang): string {
+  return resolve(process.cwd(), "content", lang === "my" ? "guide.my.md" : "guide.md");
 }
 
-export function getWeek(n: number): Week | undefined {
-  return getGuide().weeks.find((w) => w.n === n);
+export function hasGuide(lang: Lang): boolean {
+  return existsSync(contentPath(lang));
+}
+
+export function getGuide(lang: Lang = "en"): Guide {
+  const hit = cache.get(lang);
+  if (hit) return hit;
+  if (!englishTemplate) {
+    const en = parseGuide(readFileSync(contentPath("en"), "utf8"), "en", null);
+    cache.set("en", en.guide);
+    englishTemplate = en.template;
+    if (lang === "en") return en.guide;
+  }
+  const parsed = parseGuide(readFileSync(contentPath(lang), "utf8"), lang, englishTemplate);
+  cache.set(lang, parsed.guide);
+  return parsed.guide;
+}
+
+export function getWeek(n: number, lang: Lang = "en"): Week | undefined {
+  return getGuide(lang).weeks.find((w) => w.n === n);
 }

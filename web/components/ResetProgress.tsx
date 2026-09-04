@@ -3,18 +3,20 @@
 import { useState } from "react";
 import { resetAll } from "@/lib/progress";
 
-export default function ResetProgress({ weeks }: { weeks: number[] }) {
+type Labels = { reset: string; confirm: string; yes: string; cancel: string };
+
+export default function ResetProgress({ weeks, labels }: { weeks: number[]; labels: Labels }) {
   const [armed, setArmed] = useState(false);
   if (!armed) {
     return (
       <button type="button" className="btn btn-ghost" onClick={() => setArmed(true)}>
-        Reset progress
+        {labels.reset}
       </button>
     );
   }
   return (
     <div className="reset-row">
-      <span>Clear every ticked criterion on this device?</span>
+      <span>{labels.confirm}</span>
       <button
         type="button"
         className="btn btn-danger"
@@ -23,10 +25,10 @@ export default function ResetProgress({ weeks }: { weeks: number[] }) {
           setArmed(false);
         }}
       >
-        Yes, reset
+        {labels.yes}
       </button>
       <button type="button" className="btn btn-ghost" onClick={() => setArmed(false)}>
-        Cancel
+        {labels.cancel}
       </button>
     </div>
   );
