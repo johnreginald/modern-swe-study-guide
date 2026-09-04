@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Agent Engineer Study Guide 2026",
-    short_name: "Agent Guide",
+    name: "Agentic Engineer Study Guide 2026",
+    short_name: "Agentic Guide",
     description:
       "A ten-week, project-based guide to building software with coding agents: internals, context engineering, MCP, skills, readiness, review, security, background agents, teams, and the software factory.",
     id: "/",

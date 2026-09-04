@@ -1,4 +1,4 @@
-# Burmese (Myanmar) translation of the Agent Engineer Study Guide 2026
+# Burmese (Myanmar) translation of the Agentic Engineer Study Guide 2026
 
 Status: Aligning (draft written 2026-09-04, not yet confirmed).
 
@@ -8,7 +8,7 @@ Publish a Burmese edition of the guide, translated with Gemini, that is as trust
 
 ## Approach
 
-1. **Translate the markdown source, not the site.** Input `outputs/agent-engineer-study-guide-2026.md`, output `outputs/agent-engineer-study-guide-2026.my.md`. PDF and site both build from it.
+1. **Translate the markdown source, not the site.** Input `outputs/agentic-engineer-study-guide-2026.md`, output `outputs/agentic-engineer-study-guide-2026.my.md`. PDF and site both build from it.
 2. **Chunk by `##` section** (14 chunks, ~1–6k tokens each). One Gemini call per chunk with the full glossary in the system prompt. Small chunks keep structure intact and make retries cheap.
 3. **Glossary first.** Ask Gemini to propose Burmese renderings for ~60 core terms (agent, context window, tool call, hook, skill, subagent, spec, MCP server, prompt injection, sandbox, gateway, eval, trace, pull request, code review, …). A native reader approves the glossary once; every chunk then uses it verbatim. Keep product names, repo paths, code, URLs, and acronyms in English; on first use write "Burmese (English)".
 4. **Hard structural rules in the prompt:** keep every heading level, list marker, table pipe, bold marker, backtick span, and link `[text](url)` — translate link text, never the URL; keep durations "(59 min)" and the "Done when" heading text as a fixed Burmese string.

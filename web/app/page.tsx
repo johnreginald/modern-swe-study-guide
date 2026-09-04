@@ -12,7 +12,7 @@ export default function HomePage() {
     <>
       <header className="hero">
         <div className="eyebrow">Ten weeks · project-based</div>
-        <h1>Agent Engineer</h1>
+        <h1>Agentic Engineer</h1>
         <p className="hero-sub">Study Guide 2026</p>
         <p className="muted small">
           Updated {guide.updated} · {guide.linkCount} checked links

@@ -1,4 +1,4 @@
-# Agent Engineer Study Guide 2026
+# Agentic Engineer Study Guide 2026
 
 Updated September 4, 2026
 

@@ -3,22 +3,22 @@ import "./globals.css";
 import BottomNav from "@/components/BottomNav";
 import SwRegister from "@/components/SwRegister";
 
-const SITE_NAME = "Agent Engineer Study Guide 2026";
+const SITE_NAME = "Agentic Engineer Study Guide 2026";
 const DESCRIPTION =
   "A ten-week, project-based guide to building software with coding agents: internals, context engineering, MCP, skills, readiness, review, security, background agents, teams, and the software factory.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://modern-software-dev-guide.vercel.app"),
+  metadataBase: new URL("https://agentic-engineer-study-guide.vercel.app"),
   title: {
     default: SITE_NAME,
-    template: "%s · Agent Engineer Guide",
+    template: "%s · Agentic Engineer Guide",
   },
   description: DESCRIPTION,
   applicationName: SITE_NAME,
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
-    title: "Agent Guide",
+    title: "Agentic Guide",
     statusBarStyle: "black-translucent",
   },
   formatDetection: { telephone: false },

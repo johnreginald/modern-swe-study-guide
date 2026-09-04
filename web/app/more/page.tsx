@@ -33,7 +33,7 @@ export default function MorePage() {
           </Link>
         </li>
         <li>
-          <a href="/agent-engineer-study-guide-2026.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="/agentic-engineer-study-guide-2026.pdf" target="_blank" rel="noopener noreferrer">
             <strong>Download the PDF</strong>
             <span className="muted small">Same content, print layout</span>
           </a>
@@ -49,7 +49,7 @@ export default function MorePage() {
       <section className="home-section">
         <h2>About</h2>
         <p className="muted small">
-          Agent Engineer Study Guide 2026 is an independent guide. Its ten-week structure follows the Fall 2026 syllabus of
+          Agentic Engineer Study Guide 2026 is an independent guide. Its ten-week structure follows the Fall 2026 syllabus of
           Stanford’s CS146S, <em>The Modern Software Developer</em> (
           <a href="https://themodernsoftware.dev/" target="_blank" rel="noopener noreferrer">
             themodernsoftware.dev

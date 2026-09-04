@@ -113,7 +113,7 @@ def cover_page(canvas, doc):
 
     canvas.setFillColor(WHITE)
     canvas.setFont("GuideSans-Bold", 28)
-    canvas.drawString(24 * mm, height - 84 * mm, "Agent Engineer")
+    canvas.drawString(24 * mm, height - 84 * mm, "Agentic Engineer")
     canvas.setFont("GuideSans-Bold", 21)
     canvas.drawString(24 * mm, height - 101 * mm, "Study Guide 2026")
 
@@ -159,7 +159,7 @@ def body_page(canvas, doc):
     canvas.rect(0, height - 8 * mm, width, 8 * mm, fill=1, stroke=0)
     canvas.setFont("GuideSans-Bold", 7.5)
     canvas.setFillColor(MUTED)
-    canvas.drawString(19 * mm, height - 15 * mm, "AGENT ENGINEER STUDY GUIDE 2026")
+    canvas.drawString(19 * mm, height - 15 * mm, "AGENTIC ENGINEER STUDY GUIDE 2026")
     canvas.setStrokeColor(LINE)
     canvas.setLineWidth(0.6)
     canvas.line(19 * mm, 15 * mm, width - 19 * mm, 15 * mm)
@@ -452,8 +452,8 @@ def build(source: Path, destination: Path) -> None:
         rightMargin=19 * mm,
         topMargin=21 * mm,
         bottomMargin=20 * mm,
-        title="Agent Engineer Study Guide 2026",
-        author="Agent Engineer Study Guide",
+        title="Agentic Engineer Study Guide 2026",
+        author="Agentic Engineer Study Guide",
         subject="Ten-week project-based guide to building software with coding agents",
     )
 
