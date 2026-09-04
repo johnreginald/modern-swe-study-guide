@@ -1,6 +1,6 @@
 # Burmese (Myanmar) translation of the Agentic Engineer Study Guide 2026
 
-Status: **In Progress** (confirmed 2026-09-05). Decisions: Antigravity CLI (`agy --print`, model "Gemini 3.1 Pro (High)", covered by the Google AI Pro plan, $0 extra) — the Gemini CLI personal free tier was retired ("migrate to Antigravity"); keep English tool/product/protocol names and acronyms, translate concepts; Unicode only with a Zawgyi check; translate the whole guide in one pass (no pilot); glossary generated first and editable at `.scratch/burmese-translation/glossary.md`.
+Status: **Done, pending native review** (2026-09-05). Live at https://agentic-engineer-study-guide.vercel.app/my. Decisions: Antigravity CLI (`agy --print`, model "Gemini 3.1 Pro (High)", covered by the Google AI Pro plan, $0 extra) — the Gemini CLI personal free tier was retired ("migrate to Antigravity"); keep English tool/product/protocol names and acronyms, translate concepts; Unicode only with a Zawgyi check; translate the whole guide in one pass (no pilot); glossary generated first and editable at `.scratch/burmese-translation/glossary.md`.
 
 ## Objective
 
@@ -35,3 +35,11 @@ Publish a Burmese edition of the guide, translated with Gemini, that is as trust
 - Every chunk passes the structural validator; URL set identical to English.
 - `/my` routes render with correct fonts on iOS Safari and Android Chrome; language switch persists.
 - Native reader signs off on Week 1 and the Home page.
+
+
+## Outcome (2026-09-05)
+
+- Model that actually worked: **Gemini 3.6 Flash (Low)** via `agy --print` (6–45 s per piece). Gemini 3.1 Pro (High/Low) and Flash (High) stalled for minutes on most real sections (network stalls against the endpoint, then "network issue" errors); Pro (Low) kept as fallback for validation failures.
+- 16 sections, 31 pieces, all validated (198 links identical, 226 list items, 57 sub-headings aligned). Headings normalised by a post-pass; map at `headings.json`.
+- Site: `/my/*` routes, Noto Sans Myanmar, Burmese UI strings (64), language switch, remembered language, shared progress. PDF stays English.
+- Not yet done: native-reader review (Home + Week 1 first), glossary sign-off. Re-run after edits: `node scripts/translate-my.mjs --step translate --force --only <n>` then `--step assemble` and `--step validate`, `npm run sync`, redeploy.
