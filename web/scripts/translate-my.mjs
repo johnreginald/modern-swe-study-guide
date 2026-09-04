@@ -16,7 +16,7 @@
  * with the validation errors fed back, up to three times. Nothing leaves the machine except the text sent to
  * the CLI; the CLI is the only network client.
  */
-import { spawnSync } from "node:child_process";
+import { spawn } from "node:child_process";
 import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -42,8 +42,15 @@ const opt = (name, fallback) => {
 const STEP = opt("step", "all");
 const FORCE = argv.includes("--force");
 const ONLY = (opt("only", "") || "").split(",").filter(Boolean).map(Number);
-const MODEL = opt("model", process.env.AGY_MODEL || "Gemini 3.1 Pro (High)");
-const TIMEOUT = opt("timeout", "10m");
+const MODEL = opt("model", process.env.AGY_MODEL || "Gemini 3.1 Pro (Low)");
+const FALLBACK_MODEL = opt("fallback", process.env.AGY_FALLBACK || "Gemini 3.6 Flash (Low)");
+const TIMEOUT = opt("timeout", "4m");
+const HARD_TIMEOUT_MS = 4.5 * 60 * 1000;
+const PRIMARY_TIMEOUT_MS = 100 * 1000; // Pro stalls often; give it one short try, then Flash
+const MAX_ATTEMPTS = 5;
+const PIECE_CHARS = 3200; // split long sections at ### boundaries into pieces of about this size
+// agy runs in a throwaway directory so any stray tool call (auto-approved) cannot touch the repo.
+const SCRATCH = resolve(WORK, "agy-cwd");
 
 mkdirSync(CHUNKS, { recursive: true });
 
@@ -59,20 +66,43 @@ function stripFences(text) {
   return t.trim();
 }
 
-function ask(prompt, label) {
+const NO_TOOLS = "Do not use any tools. Do not read, create, or write files. Do not run commands. Answer directly in your message with the translated text only.\n\n";
+
+/** Run agy in its own process group so a timeout kills the whole tree (orphans hog the per-user slot). */
+function ask(prompt, label, model = MODEL, timeoutMs = HARD_TIMEOUT_MS) {
+  mkdirSync(SCRATCH, { recursive: true });
   const started = Date.now();
-  const res = spawnSync("agy", ["--print", prompt, "--model", MODEL, "--print-timeout", TIMEOUT], {
-    encoding: "utf8",
-    maxBuffer: 64 * 1024 * 1024,
+  return new Promise((resolvePromise, reject) => {
+    const child = spawn(
+      "agy",
+      ["--print", NO_TOOLS + prompt, "--model", model, "--print-timeout", TIMEOUT, "--dangerously-skip-permissions"],
+      { cwd: SCRATCH, detached: true, stdio: ["ignore", "pipe", "pipe"] },
+    );
+    let stdout = "";
+    let stderr = "";
+    child.stdout.on("data", (d) => (stdout += d));
+    child.stderr.on("data", (d) => (stderr += d));
+    const timer = setTimeout(() => {
+      try {
+        process.kill(-child.pid, "SIGKILL");
+      } catch {
+        // already gone
+      }
+    }, timeoutMs);
+    child.on("close", (code, signal) => {
+      clearTimeout(timer);
+      const ms = Date.now() - started;
+      if (code !== 0) {
+        const why = signal === "SIGKILL" ? `timeout after ${Math.round(ms / 1000)}s` : (stderr || stdout).slice(0, 300);
+        log({ label, model, ms, ok: false, stderr: why });
+        reject(new Error(`agy failed for ${label} (${model}): ${why}`));
+        return;
+      }
+      const out = stripFences(stdout);
+      log({ label, model, ms, ok: true, promptChars: prompt.length, outChars: out.length });
+      resolvePromise(out);
+    });
   });
-  const ms = Date.now() - started;
-  if (res.status !== 0) {
-    log({ label, model: MODEL, ms, ok: false, stderr: (res.stderr || "").slice(0, 500) });
-    throw new Error(`agy failed for ${label}: ${res.stderr || res.stdout}`);
-  }
-  const out = stripFences(res.stdout || "");
-  log({ label, model: MODEL, ms, ok: true, promptChars: prompt.length, outChars: out.length });
-  return out;
 }
 
 /* ---------------------------------------------------------------- placeholders */
@@ -128,6 +158,10 @@ function validate(src, out) {
   if (extra.length) errors.push(`unexpected placeholders: ${extra.join(" ")}`);
   if (dupes.length) errors.push(`duplicated placeholders: ${[...new Set(dupes)].join(" ")}`);
   if (/```/.test(out)) errors.push("contains a code fence");
+  const brackets = (t) => [(t.match(/\[/g) ?? []).length, (t.match(/\]/g) ?? []).length];
+  const [ao, ac] = brackets(src);
+  const [bo, bc] = brackets(out);
+  if (ao !== bo || ac !== bc) errors.push(`square brackets: expected [${ao} ]${ac}, got [${bo} ]${bc}`);
   if (/[၀-၉]/.test(out)) errors.push("Burmese numerals used; keep all digits as ASCII 0-9");
 
   // Unicode vs Zawgyi: Unicode Burmese uses U+103A (asat) heavily and never the U+1060–U+109F medial forms.
@@ -190,7 +224,7 @@ ${glossary}
 
 /* ---------------------------------------------------------------- steps */
 
-function stepGlossary() {
+async function stepGlossary() {
   if (existsSync(GLOSSARY) && !FORCE) {
     console.log(`glossary: using existing ${GLOSSARY}`);
     return readFileSync(GLOSSARY, "utf8");
@@ -203,7 +237,7 @@ Return ONLY a Markdown table with exactly three columns: | English | Burmese | N
 
 Terms:
 ${TERMS.map((t) => `- ${t}`).join("\n")}`;
-  const out = ask(prompt, "glossary");
+  const out = await ask(prompt, "glossary");
   const rows = out.split("\n").filter((l) => /^\|/.test(l));
   if (rows.length < TERMS.length) throw new Error(`glossary: expected ≥${TERMS.length} rows, got ${rows.length}`);
   writeFileSync(GLOSSARY, out + "\n");
@@ -211,7 +245,7 @@ ${TERMS.map((t) => `- ${t}`).join("\n")}`;
   return out;
 }
 
-function stepUi(glossary) {
+async function stepUi(glossary) {
   if (existsSync(UI_MY) && !FORCE) {
     console.log(`ui: using existing ${UI_MY}`);
     return;
@@ -221,7 +255,7 @@ function stepUi(glossary) {
 Task: translate the VALUES of this JSON object from English into Burmese. Keep every KEY exactly as is. Keep placeholders in curly braces such as {date}, {count}, {n}, {total} unchanged. Keep the values of "lang.switchToBurmese" and "lang.switchToEnglish" exactly as given. "site.name", "site.short" and "hero.title" / "hero.subtitle" may stay English or be rendered as a Burmese subtitle; keep them short. Return ONLY valid JSON with the same keys, no code fences.
 
 ${JSON.stringify(en, null, 2)}`;
-  const out = ask(prompt, "ui");
+  const out = await ask(prompt, "ui");
   let my;
   try {
     my = JSON.parse(out);
@@ -262,7 +296,55 @@ function chunkPath(i) {
   return resolve(CHUNKS, `${String(i).padStart(2, "0")}.my.md`);
 }
 
-function stepTranslate(glossary) {
+/** Split a section into pieces at `###` boundaries so each call stays small (network stalls scale with size). */
+function splitPieces(section) {
+  if (section.length <= PIECE_CHARS) return [section];
+  const lines = section.split("\n");
+  const pieces = [];
+  let cur = [];
+  let curLen = 0;
+  for (const line of lines) {
+    if (line.startsWith("### ") && curLen > 0 && curLen + 200 > PIECE_CHARS * 0.6) {
+      pieces.push(cur.join("\n"));
+      cur = [];
+      curLen = 0;
+    }
+    cur.push(line);
+    curLen += line.length + 1;
+  }
+  if (cur.length) pieces.push(cur.join("\n"));
+  return pieces;
+}
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+async function translatePiece(rules, text, label, feedbackSeed = "") {
+  let feedback = feedbackSeed;
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt += 1) {
+    const model = attempt >= 2 ? FALLBACK_MODEL : MODEL;
+    const prompt = `${rules}\n${feedback}Translate the following Markdown. Output only the translated Markdown.\n\n<<<SECTION>>>\n${text}\n<<<END>>>`;
+    let out;
+    try {
+      out = await ask(prompt, `${label}-attempt-${attempt}`, model, attempt === 1 ? PRIMARY_TIMEOUT_MS : HARD_TIMEOUT_MS);
+    } catch (e) {
+      console.log(`${label}: call failed on attempt ${attempt} (${model}): ${String(e.message).slice(0, 120)}`);
+      await sleep(5000 * attempt);
+      continue;
+    }
+    out = out.replace(/^<<<SECTION>>>\s*/, "").replace(/\s*<<<END>>>$/, "").trim();
+    const errs = validate(text, out);
+    if (!errs.length) {
+      console.log(`${label}: ✓ attempt ${attempt} (${model}), ${out.length} chars`);
+      return out;
+    }
+    console.log(`${label}: ✗ attempt ${attempt}: ${errs.join("; ")}`);
+    writeFileSync(resolve(CHUNKS, `${label}.attempt${attempt}.rejected.md`), out + "\n");
+    feedback = `Your previous attempt failed these structural checks: ${errs.join("; ")}. Translate the whole text again and fix every one of them.\n`;
+  }
+  return null;
+}
+
+async function stepTranslate(glossary) {
   const { chunks } = loadChunks();
   const rules = rulesBlock(glossary);
   let done = 0;
@@ -270,7 +352,7 @@ function stepTranslate(glossary) {
     if (ONLY.length && !ONLY.includes(i)) continue;
     const path = chunkPath(i);
     const src = chunks[i];
-    const title = (src.split("\n")[0] || "").slice(0, 60);
+    const title = (src.split("\n")[0] || "").slice(0, 50);
     if (existsSync(path) && !FORCE) {
       const cached = readFileSync(path, "utf8");
       const errs = validate(src, cached);
@@ -281,36 +363,143 @@ function stepTranslate(glossary) {
       }
       console.log(`chunk ${i} (${title}): cached copy fails validation, retranslating: ${errs[0]}`);
     }
-    let feedback = "";
-    let ok = false;
-    for (let attempt = 1; attempt <= 3 && !ok; attempt += 1) {
-      const prompt = `${rules}
-${feedback}
-Translate the following Markdown section. Output only the translated Markdown.
-
-<<<SECTION>>>
-${src}
-<<<END>>>`;
-      let out = ask(prompt, `chunk-${i}-attempt-${attempt}`);
-      out = out.replace(/^<<<SECTION>>>\s*/, "").replace(/\s*<<<END>>>$/, "").trim();
-      const errs = validate(src, out);
-      if (!errs.length) {
-        writeFileSync(path, out + "\n");
-        console.log(`chunk ${i} (${title}): ✓ attempt ${attempt}, ${out.length} chars`);
-        ok = true;
+    const pieces = splitPieces(src);
+    const outs = [];
+    for (let p = 0; p < pieces.length; p += 1) {
+      const pid = `${String(i).padStart(2, "0")}-${p}`;
+      const ppath = resolve(CHUNKS, `${pid}.piece.my.md`);
+      if (existsSync(ppath) && !FORCE && !validate(pieces[p], readFileSync(ppath, "utf8")).length) {
+        outs.push(readFileSync(ppath, "utf8").trim());
+        console.log(`chunk ${i} piece ${p}: cached ✓`);
+        continue;
+      }
+      const out = await translatePiece(rules, pieces[p], `chunk-${pid}`);
+      if (out === null) {
+        console.log(`chunk ${i} piece ${p}: FAILED after ${MAX_ATTEMPTS} attempts`);
+        outs.length = 0;
+        break;
+      }
+      writeFileSync(ppath, out + "\n");
+      outs.push(out);
+    }
+    if (outs.length === pieces.length) {
+      const joined = outs.join("\n\n");
+      const errs = validate(src, joined);
+      if (errs.length) console.log(`chunk ${i} (${title}): joined pieces fail validation: ${errs.join("; ")}`);
+      else {
+        writeFileSync(path, joined + "\n");
+        console.log(`chunk ${i} (${title}): ✓ (${pieces.length} piece${pieces.length > 1 ? "s" : ""})`);
         done += 1;
-      } else {
-        console.log(`chunk ${i} (${title}): ✗ attempt ${attempt}: ${errs.join("; ")}`);
-        writeFileSync(resolve(CHUNKS, `${String(i).padStart(2, "0")}.attempt${attempt}.rejected.md`), out + "\n");
-        feedback = `Your previous attempt failed these structural checks: ${errs.join("; ")}. Translate the whole section again and fix every one of them.\n`;
       }
     }
-    if (!ok) console.log(`chunk ${i}: FAILED after 3 attempts (see rejected files)`);
   }
   console.log(`translate: ${done}/${ONLY.length || chunks.length} chunks ready`);
 }
 
-function stepAssemble() {
+const HEADINGS = resolve(WORK, "headings.json");
+
+/**
+ * Make headings consistent: every `##`/`###` heading in the translation gets the majority Burmese
+ * rendering of its English counterpart (aligned by position); week headings become
+ * "<week word> N — <title>"; headings with no rendering anywhere are translated in one JSON call.
+ */
+async function fixHeadings(enText, myText) {
+  const MY = /[က-႟]/;
+  const enLines = enText.split("\n");
+  const myLines = myText.split("\n");
+  const pick = (lines) => lines.map((l, i) => [i, l]).filter(([, l]) => /^#{2,3} /.test(l));
+  const enH = pick(enLines);
+  const myH = pick(myLines);
+  if (enH.length !== myH.length) throw new Error(`heading count differs: en ${enH.length}, my ${myH.length}`);
+  const strip = (h) => h.replace(/^#+\s*/, "").trim();
+  const timeOf = (h) => /\s*\(([^)]*\d[^)]*)\)\s*$/.exec(h)?.[1] ?? null;
+  const base = (h) => strip(h).replace(/\s*\([^)]*\d[^)]*\)\s*$/, "").trim();
+  const weekWord = (() => {
+    try {
+      const ui = JSON.parse(readFileSync(UI_MY, "utf8"));
+      return String(ui["week.label"] || "ရက်သတ္တပတ် {n}").replace("{n}", "").trim();
+    } catch {
+      return "ရက်သတ္တပတ်";
+    }
+  })();
+  const cache = existsSync(HEADINGS) ? JSON.parse(readFileSync(HEADINGS, "utf8")) : {};
+
+  // 1. renderings observed in the translation, keyed by the English base heading
+  const seen = new Map();
+  enH.forEach(([, el], k) => {
+    const eb = base(el);
+    let mb = base(myH[k][1]);
+    const w = /^Week (\d+) — (.+)$/.exec(eb);
+    if (w) {
+      const t = mb.includes("—") ? mb.split("—").slice(1).join("—").trim() : "";
+      if (MY.test(t)) (seen.get(w[2]) ?? seen.set(w[2], []).get(w[2])).push(t);
+      return;
+    }
+    if (MY.test(mb)) (seen.get(eb) ?? seen.set(eb, []).get(eb)).push(mb);
+  });
+  const majority = (arr) => {
+    const c = new Map();
+    for (const a of arr) c.set(a, (c.get(a) ?? 0) + 1);
+    return [...c.entries()].sort((x, y) => y[1] - x[1])[0][0];
+  };
+  const map = { ...cache };
+  for (const [k, v] of seen) if (!map[k]) map[k] = majority(v);
+
+  // 2. anything still without a rendering → one small JSON call
+  const needs = [];
+  enH.forEach(([, el]) => {
+    const eb = base(el);
+    const key = /^Week (\d+) — (.+)$/.exec(eb)?.[2] ?? eb;
+    if (!map[key] && !needs.includes(key)) needs.push(key);
+  });
+  if (needs.length) {
+    const glossaryHint = existsSync(GLOSSARY) ? `Use these glossary renderings where they apply:\n${readFileSync(GLOSSARY, "utf8")}\n` : "";
+    const attempts = [
+      [MODEL, ""],
+      [FALLBACK_MODEL, "Every value MUST be written in Burmese script; these are concept headings, not product names, so translate them (e.g. \"code review\" → ကုဒ်ရီဗျူး, \"agentic\" → ကိုယ်စားလှယ်အခြေပြု). "],
+    ];
+    for (const [model, extra] of attempts) {
+      const pending = needs.filter((k) => !map[k]);
+      if (!pending.length) break;
+      const prompt = `${extra}Translate these Markdown section headings from English into Burmese (Unicode only, ASCII digits, no tools). Return ONLY a JSON object mapping each English heading to its Burmese heading, same keys, no code fences.\n${glossaryHint}\n${JSON.stringify(pending, null, 2)}`;
+      let got = {};
+      try {
+        got = JSON.parse(await ask(prompt, "headings", model));
+      } catch (e) {
+        console.log(`headings: call/parse failed on ${model}: ${String(e.message).slice(0, 120)}`);
+        continue;
+      }
+      for (const k of pending) if (typeof got[k] === "string" && MY.test(got[k])) map[k] = got[k].trim();
+    }
+    for (const k of needs) {
+      if (!map[k]) {
+        console.log(`headings: WARNING no Burmese rendering for "${k}", keeping English`);
+        map[k] = k;
+      }
+    }
+  }
+  writeFileSync(HEADINGS, JSON.stringify(map, null, 2) + "\n");
+
+  // 3. rewrite the translated headings
+  let changed = 0;
+  enH.forEach(([, el], k) => {
+    const [mi, ml] = myH[k];
+    const level = /^#+/.exec(el)[0];
+    const eb = base(el);
+    const time = timeOf(ml) ?? timeOf(el);
+    const w = /^Week (\d+) — (.+)$/.exec(eb);
+    const text = w ? `${weekWord} ${w[1]} — ${map[w[2]]}` : map[eb];
+    const next = `${level} ${text}${time ? ` (${time})` : ""}`;
+    if (next !== ml) {
+      myLines[mi] = next;
+      changed += 1;
+    }
+  });
+  console.log(`headings: ${changed} rewritten, ${needs.length} newly translated, map has ${Object.keys(map).length} entries`);
+  return myLines.join("\n");
+}
+
+async function stepAssemble() {
   const { chunks, map } = loadChunks();
   const parts = [];
   const missing = [];
@@ -324,7 +513,9 @@ function stepAssemble() {
   }
   if (missing.length) throw new Error(`assemble: missing chunks ${missing.join(", ")}`);
   const joined = parts.join("\n\n") + "\n";
-  const restored = restore(joined, map);
+  const enProtected = protect(readFileSync(SRC, "utf8")).text;
+  const consistent = await fixHeadings(enProtected, joined);
+  const restored = restore(consistent, map);
   const left = restored.match(/⟦[UC]\d+⟧/g);
   if (left) throw new Error(`assemble: unrestored placeholders ${left.slice(0, 5).join(" ")}`);
   writeFileSync(OUT, restored);
@@ -350,8 +541,8 @@ function stepValidate() {
 
 /* ---------------------------------------------------------------- main */
 
-const glossary = ["glossary", "ui", "translate", "all"].includes(STEP) ? stepGlossary() : existsSync(GLOSSARY) ? readFileSync(GLOSSARY, "utf8") : "";
-if (STEP === "ui" || STEP === "all") stepUi(glossary);
-if (STEP === "translate" || STEP === "all") stepTranslate(glossary);
-if (STEP === "assemble" || STEP === "all") stepAssemble();
+const glossary = ["glossary", "ui", "translate", "all"].includes(STEP) ? await stepGlossary() : existsSync(GLOSSARY) ? readFileSync(GLOSSARY, "utf8") : "";
+if (STEP === "ui" || STEP === "all") await stepUi(glossary);
+if (STEP === "translate" || STEP === "all") await stepTranslate(glossary);
+if (STEP === "assemble" || STEP === "all") await stepAssemble();
 if (STEP === "validate" || STEP === "all") stepValidate();

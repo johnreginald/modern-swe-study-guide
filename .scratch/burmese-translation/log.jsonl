@@ -1,3 +1,48 @@
 {"at":"2026-09-04T17:41:43.107Z","label":"glossary","model":"Gemini 3.1 Pro (High)","ms":93312,"ok":true,"promptChars":1899,"outChars":4585}
 {"at":"2026-09-04T17:42:32.440Z","label":"ui","model":"Gemini 3.1 Pro (High)","ms":49331,"ok":true,"promptChars":10620,"outChars":4335}
 {"at":"2026-09-04T17:43:34.047Z","label":"chunk-0-attempt-1","model":"Gemini 3.1 Pro (High)","ms":61603,"ok":true,"promptChars":7785,"outChars":1459}
+{"at":"2026-09-04T19:45:26.406Z","label":"chunk-1-attempt-1","model":"Gemini 3.1 Pro (High)","ms":540018,"ok":false,"stderr":"spawnSync agy ETIMEDOUT"}
+{"at":"2026-09-04T20:01:03.445Z","label":"chunk-1-attempt-1","model":"Gemini 3.6 Flash (High)","ms":540016,"ok":false,"stderr":"spawnSync agy ETIMEDOUT"}
+{"at":"2026-09-04T20:02:57.713Z","label":"chunk-2-attempt-1","model":"Gemini 3.1 Pro (Low)","ms":49732,"ok":true,"promptChars":8078,"outChars":2249}
+{"at":"2026-09-04T20:12:11.783Z","label":"chunk-1-attempt-1","model":"Gemini 3.1 Pro (Low)","ms":539998,"ok":false,"stderr":"spawnSync agy ETIMEDOUT"}
+{"at":"2026-09-04T20:24:26.456Z","label":"chunk-01-0-attempt-1","model":"Gemini 3.1 Pro (Low)","ms":270026,"ok":false,"stderr":"spawnSync agy ETIMEDOUT"}
+{"at":"2026-09-04T20:29:01.475Z","label":"chunk-01-0-attempt-2","model":"Gemini 3.1 Pro (Low)","ms":270016,"ok":false,"stderr":"spawnSync agy ETIMEDOUT"}
+{"at":"2026-09-04T20:33:41.489Z","label":"chunk-01-0-attempt-3","model":"Gemini 3.1 Pro (Low)","ms":270013,"ok":false,"stderr":"spawnSync agy ETIMEDOUT"}
+{"at":"2026-09-04T20:34:03.989Z","label":"chunk-01-0-attempt-4","model":"Gemini 3.6 Flash (Low)","ms":7498,"ok":true,"promptChars":9168,"outChars":3577}
+{"at":"2026-09-04T20:38:34.005Z","label":"chunk-03-0-attempt-1","model":"Gemini 3.1 Pro (Low)","ms":270014,"ok":false,"stderr":"spawnSync agy ETIMEDOUT"}
+{"at":"2026-09-04T20:43:09.037Z","label":"chunk-03-0-attempt-2","model":"Gemini 3.1 Pro (Low)","ms":270031,"ok":false,"stderr":"spawnSync agy ETIMEDOUT"}
+{"at":"2026-09-04T20:47:49.055Z","label":"chunk-03-0-attempt-3","model":"Gemini 3.1 Pro (Low)","ms":270014,"ok":false,"stderr":"spawnSync agy ETIMEDOUT"}
+{"at":"2026-09-04T20:48:10.557Z","label":"chunk-03-0-attempt-4","model":"Gemini 3.6 Flash (Low)","ms":6500,"ok":true,"promptChars":8931,"outChars":2977}
+{"at":"2026-09-04T20:48:54.122Z","label":"chunk-03-1-attempt-1","model":"Gemini 3.1 Pro (Low)","ms":43564,"ok":true,"promptChars":8766,"outChars":2743}
+{"at":"2026-09-04T20:49:13.289Z","label":"chunk-03-2-attempt-1","model":"Gemini 3.1 Pro (Low)","ms":19165,"ok":true,"promptChars":7286,"outChars":672}
+{"at":"2026-09-04T20:53:43.306Z","label":"chunk-04-0-attempt-1","model":"Gemini 3.1 Pro (Low)","ms":270016,"ok":false,"stderr":"spawnSync agy ETIMEDOUT"}
+{"at":"2026-09-04T20:55:02.701Z","label":"chunk-04-0-attempt-1","model":"Gemini 3.6 Flash (Low)","ms":6570,"ok":true,"promptChars":9228,"outChars":3467}
+{"at":"2026-09-04T20:55:08.606Z","label":"chunk-04-1-attempt-1","model":"Gemini 3.6 Flash (Low)","ms":5903,"ok":true,"promptChars":8905,"outChars":2654}
+{"at":"2026-09-04T20:56:21.127Z","label":"chunk-04-1-attempt-2","model":"Gemini 3.1 Pro (Low)","ms":72518,"ok":true,"promptChars":9070,"outChars":2960}
+{"at":"2026-09-04T20:56:25.691Z","label":"chunk-04-2-attempt-1","model":"Gemini 3.6 Flash (Low)","ms":4564,"ok":true,"promptChars":7277,"outChars":725}
+{"at":"2026-09-04T20:56:31.145Z","label":"chunk-05-0-attempt-1","model":"Gemini 3.6 Flash (Low)","ms":5452,"ok":true,"promptChars":9225,"outChars":3212}
+{"at":"2026-09-04T20:56:36.534Z","label":"chunk-05-1-attempt-1","model":"Gemini 3.6 Flash (Low)","ms":5388,"ok":true,"promptChars":7950,"outChars":1796}
+{"at":"2026-09-04T20:56:41.947Z","label":"chunk-06-0-attempt-1","model":"Gemini 3.6 Flash (Low)","ms":5412,"ok":true,"promptChars":8618,"outChars":2301}
+{"at":"2026-09-04T20:57:24.015Z","label":"chunk-06-0-attempt-2","model":"Gemini 3.1 Pro (Low)","ms":42066,"ok":true,"promptChars":8783,"outChars":2250}
+{"at":"2026-09-04T20:57:29.653Z","label":"chunk-06-1-attempt-1","model":"Gemini 3.6 Flash (Low)","ms":5638,"ok":true,"promptChars":8723,"outChars":2612}
+{"at":"2026-09-04T20:57:34.125Z","label":"chunk-06-2-attempt-1","model":"Gemini 3.6 Flash (Low)","ms":4471,"ok":true,"promptChars":7335,"outChars":789}
+{"at":"2026-09-04T20:59:14.140Z","label":"chunk-07-0-attempt-1","model":"Gemini 3.6 Flash (Low)","ms":100014,"ok":false,"stderr":"timeout after 100s"}
+{"at":"2026-09-04T21:00:07.835Z","label":"chunk-07-0-attempt-2","model":"Gemini 3.1 Pro (Low)","ms":48693,"ok":true,"promptChars":9997,"outChars":4540}
+{"at":"2026-09-04T21:00:13.827Z","label":"chunk-08-0-attempt-1","model":"Gemini 3.6 Flash (Low)","ms":5991,"ok":true,"promptChars":9983,"outChars":4265}
+{"at":"2026-09-04T21:00:19.218Z","label":"chunk-09-0-attempt-1","model":"Gemini 3.6 Flash (Low)","ms":5390,"ok":true,"promptChars":9021,"outChars":2884}
+{"at":"2026-09-04T21:00:24.708Z","label":"chunk-09-1-attempt-1","model":"Gemini 3.6 Flash (Low)","ms":5489,"ok":true,"promptChars":8446,"outChars":2561}
+{"at":"2026-09-04T21:00:30.328Z","label":"chunk-10-0-attempt-1","model":"Gemini 3.6 Flash (Low)","ms":5619,"ok":true,"promptChars":8698,"outChars":2590}
+{"at":"2026-09-04T21:00:36.412Z","label":"chunk-10-1-attempt-1","model":"Gemini 3.6 Flash (Low)","ms":6084,"ok":true,"promptChars":8470,"outChars":2658}
+{"at":"2026-09-04T21:00:41.812Z","label":"chunk-11-0-attempt-1","model":"Gemini 3.6 Flash (Low)","ms":5398,"ok":true,"promptChars":8804,"outChars":2410}
+{"at":"2026-09-04T21:01:36.462Z","label":"chunk-11-0-attempt-2","model":"Gemini 3.1 Pro (Low)","ms":54649,"ok":true,"promptChars":8979,"outChars":2567}
+{"at":"2026-09-04T21:01:41.925Z","label":"chunk-11-1-attempt-1","model":"Gemini 3.6 Flash (Low)","ms":5463,"ok":true,"promptChars":8304,"outChars":2573}
+{"at":"2026-09-04T21:01:47.436Z","label":"chunk-12-0-attempt-1","model":"Gemini 3.6 Flash (Low)","ms":5510,"ok":true,"promptChars":8626,"outChars":2320}
+{"at":"2026-09-04T21:01:53.257Z","label":"chunk-12-1-attempt-1","model":"Gemini 3.6 Flash (Low)","ms":5820,"ok":true,"promptChars":8759,"outChars":3145}
+{"at":"2026-09-04T21:02:00.145Z","label":"chunk-13-0-attempt-1","model":"Gemini 3.6 Flash (Low)","ms":6887,"ok":true,"promptChars":8222,"outChars":2747}
+{"at":"2026-09-04T21:03:00.434Z","label":"chunk-13-0-attempt-2","model":"Gemini 3.1 Pro (Low)","ms":60288,"ok":true,"promptChars":8387,"outChars":2593}
+{"at":"2026-09-04T21:03:04.887Z","label":"chunk-14-0-attempt-1","model":"Gemini 3.6 Flash (Low)","ms":4452,"ok":true,"promptChars":7741,"outChars":1104}
+{"at":"2026-09-04T21:03:32.682Z","label":"chunk-14-0-attempt-2","model":"Gemini 3.1 Pro (Low)","ms":27794,"ok":true,"promptChars":7906,"outChars":1108}
+{"at":"2026-09-04T21:03:37.545Z","label":"chunk-15-0-attempt-1","model":"Gemini 3.6 Flash (Low)","ms":4862,"ok":true,"promptChars":7771,"outChars":1142}
+{"at":"2026-09-04T21:05:34.299Z","label":"headings","model":"Gemini 3.6 Flash (Low)","ms":4479,"ok":true,"promptChars":354,"outChars":217}
+{"at":"2026-09-04T21:05:50.511Z","label":"headings","model":"Gemini 3.6 Flash (Low)","ms":3901,"ok":true,"promptChars":354,"outChars":217}
+{"at":"2026-09-04T21:06:19.005Z","label":"headings","model":"Gemini 3.6 Flash (Low)","ms":4117,"ok":true,"promptChars":4958,"outChars":243}

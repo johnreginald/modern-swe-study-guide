@@ -1,3 +1,48 @@
-glossary: wrote 86 terms → /Users/htetwaiyansoe/Documents/Codex/2026-09-04/cs146s-the-modern-software-developer-2026/.scratch/burmese-translation/glossary.md
-ui: wrote 64 strings → /Users/htetwaiyansoe/Documents/Codex/2026-09-04/cs146s-the-modern-software-developer-2026/web/content/ui.my.json
-chunk 0 (# Agentic Engineer Study Guide 2026): ✓ attempt 1, 1459 chars
+glossary: using existing /Users/htetwaiyansoe/Documents/Codex/2026-09-04/cs146s-the-modern-software-developer-2026/.scratch/burmese-translation/glossary.md
+ui: using existing /Users/htetwaiyansoe/Documents/Codex/2026-09-04/cs146s-the-modern-software-developer-2026/web/content/ui.my.json
+chunk 0 (# Agentic Engineer Study Guide 2026): cached ✓
+chunk 1 (## How to use this guide): cached ✓
+chunk 2 (## The ten weeks at a glance): cached ✓
+chunk 3 (## Week 1 — The Internals of Coding Agents): cached ✓
+chunk-04-0: ✓ attempt 1 (Gemini 3.6 Flash (Low)), 3467 chars
+chunk-04-1: ✗ attempt 1: Burmese numerals used; keep all digits as ASCII 0-9
+chunk-04-1: ✓ attempt 2 (Gemini 3.1 Pro (Low)), 2960 chars
+chunk-04-2: ✓ attempt 1 (Gemini 3.6 Flash (Low)), 725 chars
+chunk 4 (## Week 2 — Advanced Context Engineering): ✓ (3 pieces)
+chunk-05-0: ✓ attempt 1 (Gemini 3.6 Flash (Low)), 3212 chars
+chunk-05-1: ✓ attempt 1 (Gemini 3.6 Flash (Low)), 1796 chars
+chunk 5 (## Week 3 — Agent Skills and CLI): ✓ (2 pieces)
+chunk-06-0: ✗ attempt 1: Burmese numerals used; keep all digits as ASCII 0-9
+chunk-06-0: ✓ attempt 2 (Gemini 3.1 Pro (Low)), 2250 chars
+chunk-06-1: ✓ attempt 1 (Gemini 3.6 Flash (Low)), 2612 chars
+chunk-06-2: ✓ attempt 1 (Gemini 3.6 Flash (Low)), 789 chars
+chunk 6 (## Week 4 — Customizing Your Agent and Repository): ✓ (3 pieces)
+chunk-07-0: call failed on attempt 1 (Gemini 3.6 Flash (Low)): agy failed for chunk-07-0-attempt-1 (Gemini 3.6 Flash (Low)): timeout after 100s
+chunk-07-0: ✓ attempt 2 (Gemini 3.1 Pro (Low)), 4540 chars
+chunk 7 (## Week 5 — Agent-Ready Codebases): ✓ (1 piece)
+chunk-08-0: ✓ attempt 1 (Gemini 3.6 Flash (Low)), 4265 chars
+chunk 8 (## Week 6 — Agentic Code Review): ✓ (1 piece)
+chunk-09-0: ✓ attempt 1 (Gemini 3.6 Flash (Low)), 2884 chars
+chunk-09-1: ✓ attempt 1 (Gemini 3.6 Flash (Low)), 2561 chars
+chunk 9 (## Week 7 — Security): ✓ (2 pieces)
+chunk-10-0: ✓ attempt 1 (Gemini 3.6 Flash (Low)), 2590 chars
+chunk-10-1: ✓ attempt 1 (Gemini 3.6 Flash (Low)), 2658 chars
+chunk 10 (## Week 8 — Background Agents): ✓ (2 pieces)
+chunk-11-0: ✗ attempt 1: missing placeholders: ⟦U171⟧; duplicated placeholders: ⟦U170⟧
+chunk-11-0: ✓ attempt 2 (Gemini 3.1 Pro (Low)), 2567 chars
+chunk-11-1: ✓ attempt 1 (Gemini 3.6 Flash (Low)), 2573 chars
+chunk 11 (## Week 9 — Building an AI-Native Team): ✓ (2 pieces)
+chunk-12-0: ✓ attempt 1 (Gemini 3.6 Flash (Low)), 2320 chars
+chunk-12-1: ✓ attempt 1 (Gemini 3.6 Flash (Low)), 3145 chars
+chunk 12 (## Week 10 — The Software Factory + The Future): ✓ (2 pieces)
+chunk-13-0: ✗ attempt 1: Burmese numerals used; keep all digits as ASCII 0-9
+chunk-13-0: ✓ attempt 2 (Gemini 3.1 Pro (Low)), 2593 chars
+chunk 13 (## Suggested capstone): ✓ (1 piece)
+chunk-14-0: ✗ attempt 1: Burmese numerals used; keep all digits as ASCII 0-9
+chunk-14-0: ✓ attempt 2 (Gemini 3.1 Pro (Low)), 1108 chars
+chunk 14 (## The short bookshelf): ✓ (1 piece)
+chunk-15-0: ✓ attempt 1 (Gemini 3.6 Flash (Low)), 1142 chars
+chunk 15 (## If you only have half the time): ✓ (1 piece)
+translate: 16/16 chunks ready
+assemble: wrote /Users/htetwaiyansoe/Documents/Codex/2026-09-04/cs146s-the-modern-software-developer-2026/outputs/agentic-engineer-study-guide-2026.my.md (77540 chars)
+validate: ✓ structure matches (198 links, 226 list items, 15 sections)
