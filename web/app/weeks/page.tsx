@@ -12,7 +12,7 @@ export default function WeeksPage() {
     <>
       <header className="page-head">
         <h1>Ten weeks</h1>
-        <p className="muted">Core ≈ 3.5 h each, then the build. Tick the “Done when” list to track progress.</p>
+        <p className="muted">Core material ≈ 3.5 h each, then the build. Tick each week’s “Done when” list to track progress.</p>
       </header>
       <OverallProgress weeks={meta} />
       <ol className="week-cards">
@@ -24,10 +24,15 @@ export default function WeeksPage() {
                 <WeekBadge week={{ n: w.n, total: w.doneWhen.length }} />
               </div>
               <h2>{w.title}</h2>
-              <p className="muted small" dangerouslySetInnerHTML={{ __html: w.focus }} />
+              {w.build ? (
+                <p className="small">
+                  <span className="muted">You build:</span> {w.build}
+                </p>
+              ) : null}
               <div className="meta-row">
                 {w.coreTime ? <span className="tag">Core {w.coreTime}</span> : null}
                 <span className="tag">{w.videoCount} videos</span>
+                <span className="tag">{w.doneWhen.length} criteria</span>
               </div>
             </Link>
           </li>

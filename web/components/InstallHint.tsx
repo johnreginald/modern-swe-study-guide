@@ -2,13 +2,14 @@
 
 import { useEffect, useState } from "react";
 
-const KEY = "cs146s.installHintDismissed";
+const KEY = "aeguide.installHintDismissed";
 
 type BeforeInstallPromptEvent = Event & {
   prompt: () => Promise<void>;
   userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
 };
 
+/** Inline (non-fixed) install card. Shown on the Home page only, dismissable, never overlaps navigation. */
 export default function InstallHint() {
   const [visible, setVisible] = useState(false);
   const [deferred, setDeferred] = useState<BeforeInstallPromptEvent | null>(null);
@@ -57,21 +58,21 @@ export default function InstallHint() {
   }
 
   return (
-    <div className="install-hint" role="status">
+    <div className="install-card" role="status">
       <div>
-        <strong>Install this guide</strong>
-        <div className="muted">
-          {isIos ? "Tap Share, then “Add to Home Screen”. Works offline." : "Add it to your home screen. Works offline."}
+        <strong>Install as an app</strong>
+        <div className="muted small">
+          {isIos ? "Tap Share, then “Add to Home Screen”. Works offline afterwards." : "Add it to your home screen. Works offline afterwards."}
         </div>
       </div>
       <div className="install-actions">
         {deferred ? (
-          <button type="button" className="btn" onClick={install}>
+          <button type="button" className="btn btn-primary" onClick={install}>
             Install
           </button>
         ) : null}
-        <button type="button" className="btn btn-ghost" onClick={dismiss} aria-label="Dismiss">
-          ✕
+        <button type="button" className="btn btn-ghost" onClick={dismiss}>
+          Dismiss
         </button>
       </div>
     </div>

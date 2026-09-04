@@ -1,8 +1,8 @@
-# CS146S 2026 Self-Study Guide — web app
+# Agent Engineer Study Guide 2026 — web app
 
 Mobile-first, installable, offline-capable companion to the guide. Next.js App Router, no framework CSS.
 
-Source of truth is `../outputs/cs146s-2026-self-study-guide.md`. This app keeps a committed copy in `content/guide.md` (and the PDF in `public/`) so it builds on Vercel without the rest of the repo.
+Source of truth is `../outputs/agent-engineer-study-guide-2026.md`. This app keeps a committed copy in `content/guide.md` (and the PDF in `public/`) so it builds on Vercel without the rest of the repo.
 
 ```bash
 npm run sync      # copy the latest markdown + PDF from ../outputs

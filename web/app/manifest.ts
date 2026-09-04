@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "CS146S 2026 Self-Study Guide",
-    short_name: "CS146S",
+    name: "Agent Engineer Study Guide 2026",
+    short_name: "Agent Guide",
     description:
-      "A project-based self-study companion to Stanford CS146S: The Modern Software Developer (Fall 2026). Videos, courses, articles, weekly builds, and a capstone.",
+      "A ten-week, project-based guide to building software with coding agents: internals, context engineering, MCP, skills, readiness, review, security, background agents, teams, and the software factory.",
     id: "/",
     start_url: "/",
     scope: "/",

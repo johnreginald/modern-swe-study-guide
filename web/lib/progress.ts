@@ -1,10 +1,10 @@
 // Client-side progress storage. One localStorage key per week: an array of booleans
 // aligned with that week's "Done when" list. Emits a window event so bars update live.
 
-export const PROGRESS_EVENT = "cs146s-progress";
+export const PROGRESS_EVENT = "aeguide-progress";
 
 function key(week: number): string {
-  return `cs146s.done.week${week}`;
+  return `aeguide.done.week${week}`;
 }
 
 export function readWeek(week: number, size: number): boolean[] {

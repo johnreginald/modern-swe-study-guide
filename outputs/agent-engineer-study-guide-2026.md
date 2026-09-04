@@ -1,14 +1,14 @@
-# CS146S: The Modern Software Developer — 2026 Self-Study Guide
+# Agent Engineer Study Guide 2026
 
 Updated September 4, 2026
 
-This guide follows the **Fall 2026** syllabus at [themodernsoftware.dev](https://themodernsoftware.dev/), not the 2025 edition. The official 2026 page publishes ten weeks of topics, session titles, dates, and guests, but no readings or assignments. The resources and exercises below are independent substitutes chosen to cover that outline, plus the parts of the public 2025 course material that still map cleanly onto the 2026 topics.
+A ten-week, project-based guide to building software with coding agents: how agents work inside, context engineering and MCP, reusable skills, repository readiness, AI code review, security, background agents, team adoption, and the software factory. Each week pairs a capped set of core material with a build and a checkable “done when” list, so you finish with a working system rather than a reading log.
 
-Some of the best resources were published before 2026. That does **not** mean they come from the 2025 course; every selection here is mapped to a topic in the 2026 syllabus. Every link was checked on September 4, 2026, and every video carries its running time so you can budget honestly.
+**Credit.** The ten-week structure and the weekly topics follow the Fall 2026 syllabus of Stanford's CS146S, *The Modern Software Developer* ([themodernsoftware.dev](https://themodernsoftware.dev/)). This guide is independent and not affiliated with the course; every reading, video, build, and checklist is its own selection. All links were checked on September 4, 2026, and every video carries its running time so you can budget honestly.
 
 ## How to use this guide
 
-The course FAQ says to expect **10–12 hours per week** including lectures, assignments, and project work. Split it like this:
+Plan on **10–12 hours per week**. Split it like this:
 
 - 3–4 hours: the **Core material** for the week. Each week's core list is capped near four hours; the running times are printed next to each item.
 - 5–6 hours: the weekly **Build**.
@@ -16,102 +16,58 @@ The course FAQ says to expect **10–12 hours per week** including lectures, ass
 
 Everything under **Deeper material**, **Additional video track**, and **Tools and references** is optional. Pick by interest; do not try to clear it.
 
-Use one medium-sized repository throughout the course. A small SaaS app, developer tool, or API with a UI, tests, and CI works better than ten disconnected toy projects. Each week should improve the same system.
+Use one medium-sized repository throughout the ten weeks. A small SaaS app, developer tool, or API with a UI, tests, and CI works better than ten disconnected toy projects. Each week should improve the same system.
 
-The strongest free backbone is Hugging Face's [Context Course](https://huggingface.co/learn/context-course/en/unit0/introduction) (units: Agent Skills, MCP, Plugins, Sub-agents, Hooks, and a bonus Nano Harness). It overlaps unusually well with the first half of CS146S 2026. Use the materials below to deepen and extend it.
+The strongest free backbone is Hugging Face's [Context Course](https://huggingface.co/learn/context-course/en/unit0/introduction) (units: Agent Skills, MCP, Plugins, Sub-agents, Hooks, and a bonus Nano Harness). It overlaps unusually well with the first half of this guide. Use the materials below to deepen and extend it.
 
-The course is language-agnostic; official examples use Python and JavaScript. Prerequisites are CS111/CS161-level programming; CS221/CS229 are recommended but not required. If transformers are new to you, the Week 1 optional foundation covers the gap.
+The guide is language-agnostic; most examples use Python or JavaScript. You need solid programming experience (two or three university-level courses or the equivalent). A machine-learning background helps but is not required; if transformers are new to you, the Week 1 optional foundation covers the gap.
 
 ### Tooling and budget
 
-The FAQ warns that some cloud services may require subscriptions. Decide this before Week 1:
+Some tools need a subscription or an API key. Decide this before Week 1:
 
 - **Pick one primary coding agent** and stay with it for at least five weeks so the customization work in Weeks 3–4 compounds. Reasonable choices: [Claude Code](https://code.claude.com/docs/en/common-workflows) (subscription or API key), [OpenAI Codex CLI](https://github.com/openai/codex) (open source, subscription or API key), [Cursor](https://cursor.com/docs/cloud-agent), [Gemini CLI](https://github.com/google-gemini/gemini-cli) (open source, has a free tier), or [opencode](https://github.com/sst/opencode) (open source, bring your own key).
-- **Set a hard monthly spend cap** before you start and log spend per week alongside your build notes. Cost is a first-class metric in this course, not an afterthought.
+- **Set a hard monthly spend cap** before you start and log spend per week alongside your build notes. Cost is a first-class metric in this guide, not an afterthought.
 - **Learn [prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching)** and use a cheaper model for subagents and review passes. Most runaway bills come from long contexts re-sent on every turn.
-- **Free path:** the Hugging Face courses, the open-source agents above with their free tiers, the public 2025 assignments, and every article in this guide cost nothing. Only the API usage for your builds costs money.
+- **Free path:** the Hugging Face courses, the open-source agents above with their free tiers, and every article in this guide cost nothing. Only the API usage for your builds costs money.
 
-## Coverage audit
+## The ten weeks at a glance
 
-The guide covers every topic named in the public Fall 2026 syllabus: agent-loop internals, production prompts and tools, context engineering, RePPIT/spec-driven development, MCP, skills, web capabilities, CLI work, repository customization, readiness, AI review, security, background agents, organization-scale gateways, and software factories.
-
-Of the eight announced 2026 guests, five have directly relevant public talks that are included below (Lee Robinson, Boris Cherny, Eno Reyes, Isaac Evans, Rajesh Bhatia). Silas Alberti of Cognition has no public talk on the week's topic, so Cognition's own writing stands in. Elad Gil is an investor with no engineering material to substitute; treat that session as perspective only.
-
-Four things cannot be reproduced before the course runs: Stanford's unreleased 2026 lecture recordings, the guests' new classroom material, the 2026 assignments, and any private readiness/review rubrics. RePPIT is the course's own framing; the independent material below teaches the same research-to-verification progression, but cannot promise the instructors' exact presentation.
-
-The 2025 edition's assignments and readings are public. Where a 2025 assignment fits a 2026 week, it is listed under **Build** as the closest thing to an official exercise.
-
-## Official 2026 schedule and guest lineup
-
-Sessions run Tuesday and Thursday. Use the dates to pace yourself alongside the live course.
-
-| Week | Tuesday | Thursday |
+| Week | Topic | You build |
 |---|---|---|
-| 1 | 9/22 Course intro + build Claude Code in 200 lines | 9/24 Deep dive into the system prompts that define production agents |
-| 2 | 9/29 Advanced prompting + agentic dev frameworks (RePPIT, SDD) | 10/1 Full introduction to MCP and tool calling |
-| 3 | 10/6 All about agent skills (including web skills) | 10/8 Guest: Lee Robinson, VP Developer Relations, Cursor |
-| 4 | 10/13 Customizing your agentic setup (CLAUDE.md, AGENTS.md, hooks) | 10/15 Guest: Boris Cherny, creator of Claude Code, Anthropic |
-| 5 | 10/20 Agent readiness in your repos | 10/22 Guest: Eno Reyes, CTO, Factory |
-| 6 | 10/27 Agentic code review: practices and architectures | 10/29 Guest: Silas Alberti, SVP Research, Cognition |
-| 7 | 11/3 Security in AI codebases | 11/5 Guest: Isaac Evans, CEO, Semgrep |
-| 8 | 11/10 Background agents: launching tasks asynchronously | 11/12 Guest: Rajesh Bhatia, Senior Director, Cloudflare |
-| 9 | 11/17 Guest: Elad Gil, Gil Capital | 11/19 Guest: Amjad Masad, CEO, Replit |
-| 10 | 12/1 Coding agents in big teams (MCP portals, LLM gateways, routing, cost) | 12/3 The Software Factory: self-running, self-improving systems |
-
-Closest public substitute for each guest session:
-
-| Guest | Substitute in this guide |
-|---|---|
-| Lee Robinson (Cursor) | Week 3: his Cursor beginner's guide; Lex Fridman's Cursor team interview |
-| Boris Cherny (Anthropic) | Week 4: Y Combinator interview, AI Engineer talk, Every's engineers interview |
-| Eno Reyes (Factory) | Week 5: two AI Engineer talks; Week 10: AI:AM software-factory segment |
-| Silas Alberti (Cognition) | Week 6: Cognition's Don't Build Multi-Agents, DeepWiki talk, SWE-bench report |
-| Isaac Evans (Semgrep) | Week 7: Lightspeed interview; Semgrep's vulnerability-hunting write-up |
-| Rajesh Bhatia (Cloudflare) | Week 8: his Cloudflare AI engineering stack talk; Cloudflare Agents and Sandbox SDKs |
-| Elad Gil | No engineering substitute; use the Week 9 adoption evidence instead |
-| Amjad Masad (Replit) | Week 9: Y Combinator interview |
-
-## Reusing the public 2025 course material
-
-The 2025 assignments live at [mihail911/modern-software-dev-assignments](https://github.com/mihail911/modern-software-dev-assignments). They are the instructor's own exercises and the best available proxy for the unpublished 2026 set.
-
-| 2025 assignment | Use it in |
-|---|---|
-| week1 LLM Prompting Playground | Week 2 (advanced prompting) |
-| week2 First Steps in the AI IDE | Week 1 |
-| week3 Build a Custom MCP Server | Week 2 |
-| week4 Coding with Claude Code | Week 4 |
-| week5 Agentic Development with Warp | Week 3 (CLI) |
-| week6 Writing Secure AI Code | Week 7 |
-| week7 Code Review Reps | Week 6 |
-| week8 Multi-stack Web App Builds | Capstone warm-up |
-
-The 2025 readings that still fit are folded into the weeks below and marked **(2025 course reading)**.
+| 1 | The internals of coding agents | A 300–500 line terminal agent with four tools and full logging |
+| 2 | Advanced context engineering | A one-page spec, one feature shipped through RePPIT, and an MCP server with 2–4 tools |
+| 3 | Agent skills and the CLI | A packaged skill with a helper script, plus a browser-driven web skill |
+| 4 | Customizing your agent and repository | Repository instructions, two hooks, and a planner / implementer / reviewer split |
+| 5 | Agent-ready codebases | A scored readiness audit and the fixes that make a fresh agent productive |
+| 6 | Agentic code review | A severity-ordered review rubric wired to pull requests, measured on five PRs |
+| 7 | Security | A threat model, SAST / SCA / secret scans in CI, and a prompt-injection test |
+| 8 | Background agents | An issue-to-PR flow with isolation, budgets, checkpoints, and retries |
+| 9 | Building an AI-native team | A model gateway, an MCP portal, and a one-page adoption policy |
+| 10 | The software factory and the future | A traced end-to-end factory with an eval set and a controlled improvement loop |
 
 ---
 
 ## Week 1 — The Internals of Coding Agents
 
-**Official focus:** what an LLM actually is and what the agent loop looks like under the hood; the core tool set (read, write, edit, bash) and how tasks flow through it; how production coding agents structure their system prompts and tool definitions.
-
-**Official sessions:** Tue 9/22 course intro + build Claude Code in 200 lines. Thu 9/24 deep dive into the system prompts that define state-of-the-art coding agents.
+**Focus:** what an LLM actually is and what the agent loop looks like under the hood; the core tool set (read, write, edit, bash) and how tasks flow through it; how production coding agents structure their system prompts and tool definitions.
 
 ### Core material (≈ 3 h 20 min)
 
-1. **Video:** Andrej Karpathy, [Intro to Large Language Models](https://www.youtube.com/watch?v=zjkBMFhNj_g) (59 min) — the best compact conceptual foundation. If you have the time, watch his longer [Deep Dive into LLMs like ChatGPT](https://www.youtube.com/watch?v=7xTGNNLPyMI) (3 h 31 min) instead; it was the 2025 course's own Week 1 pick **(2025 course reading)**.
-2. **Article + code:** Thorsten Ball, [How to Build an Agent](https://ampcode.com/notes/how-to-build-an-agent) (≈ 60 min with the code) — a small, legible coding agent with the essential tool loop. This is the closest independent substitute for “build Claude Code in 200 lines.”
+1. **Video:** Andrej Karpathy, [Intro to Large Language Models](https://www.youtube.com/watch?v=zjkBMFhNj_g) (59 min) — the best compact conceptual foundation. If you have the time, watch his longer [Deep Dive into LLMs like ChatGPT](https://www.youtube.com/watch?v=7xTGNNLPyMI) (3 h 31 min) instead for a fuller foundation.
+2. **Article + code:** Thorsten Ball, [How to Build an Agent](https://ampcode.com/notes/how-to-build-an-agent) (≈ 60 min with the code) — a small, legible coding agent with the essential tool loop. Use it as the model for this week's build.
 3. **Article:** Anthropic, [Building Effective AI Agents](https://www.anthropic.com/engineering/building-effective-agents) (25 min) — the canonical text on workflows versus agents and the augmented-LLM loop. Barry Zhang's talk below is the video form.
 4. **Engineering article:** OpenAI, [Unrolling the Codex agent loop](https://openai.com/index/unrolling-the-codex-agent-loop/) (20 min) — a production-oriented explanation of the loop and its design tradeoffs.
 5. **Talk:** Barry Zhang of Anthropic, [How We Build Effective Agents](https://ai.engineer/talks/effective-ai-agents) (15 min) — the minimal loop, tool use, risk, verification, and debugging from inside an agent's limited context.
 
 ### Production prompts and tool definitions
 
-The Thursday session studies real system prompts. These are the public, readable equivalents:
+Read real system prompts, not summaries of them. These are public and readable:
 
 - OpenAI Codex CLI is open source. Read the model prompts in [codex-rs/core](https://github.com/openai/codex/tree/main/codex-rs/core) (files named `gpt_5_2_prompt.md`, `gpt_5_codex_prompt.md`, and similar) and the compaction prompt under `codex-rs/prompts/templates/compact/`.
 - Google's [Gemini CLI](https://github.com/google-gemini/gemini-cli) keeps its system prompt in `packages/core/src/core/prompts.ts` and its MCP prompts in `packages/core/src/prompts/`.
 - [opencode](https://github.com/sst/opencode) is a third open-source coding agent whose prompts and tool schemas you can diff against the two above.
-- **Video:** [How Claude Code Works](https://ai.engineer/talks/how-claude-code-works) (1 h 06 min) — an independent workshop on prompt-driven architecture, tool calls, subagents, permissions, and evaluations. The closest public video substitute for the syllabus's production-system-prompt deep dive.
+- **Video:** [How Claude Code Works](https://ai.engineer/talks/how-claude-code-works) (1 h 06 min) — an independent workshop on prompt-driven architecture, tool calls, subagents, permissions, and evaluations. The best public walkthrough of a production agent's prompt and tool design.
 
 ### Optional foundation
 
@@ -138,8 +94,6 @@ Build a terminal coding agent in roughly 300–500 lines. Give it four tools: li
 
 Then read one production system prompt (Codex or Gemini CLI) end to end and annotate it: which lines set persona, which set safety boundaries, which shape tool selection, which handle stopping. Compare it with your own prompt.
 
-**2025 assignment to reuse:** week2, First Steps in the AI IDE.
-
 ### Done when
 
 - Your agent completes at least one of the three tasks end to end with all four tools exercised.
@@ -151,16 +105,14 @@ Then read one production system prompt (Codex or Gemini CLI) end to end and anno
 
 ## Week 2 — Advanced Context Engineering
 
-**Official focus:** advanced prompting techniques and when each applies; RePPIT (Research, Propose, Plan, Implement, Test) and spec-driven development; MCP fundamentals (servers, clients, tools, transport); designing tools for agent ergonomics.
-
-**Official sessions:** Tue 9/29 advanced prompting + agentic dev frameworks (RePPIT, spec-driven development). Thu 10/1 full introduction to MCP and tool calling: theory, setup, and advanced tool design.
+**Focus:** advanced prompting techniques and when each applies; RePPIT (Research, Propose, Plan, Implement, Test) and spec-driven development; MCP fundamentals (servers, clients, tools, transport); designing tools for agent ergonomics.
 
 ### Core material (≈ 3 h 50 min)
 
 1. **Video/podcast:** The Pragmatic Engineer with Dex Horthy, [Context Engineering](https://youtu.be/Usufn8IQJgw) (1 h 33 min) — context, harnesses, loops, research/plan/implement workflows, compaction, and software factories. The [article and transcript](https://newsletter.pragmaticengineer.com/p/context-engineering-with-dex-horthy) are useful for notes.
 2. **Article:** Anthropic, [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) (25 min) — the canonical framing of context as a finite resource: system prompts, tools, examples, retrieval, and compaction.
 3. **Video:** Anthropic, [Prompting for Agents](https://www.youtube.com/watch?v=XSZP9GhhuAc) (29 min) — how prompting changes when the model runs in a loop with tools.
-4. **Article:** Anthropic, [Writing effective tools for agents](https://www.anthropic.com/engineering/writing-tools-for-agents) (25 min) — tool names, descriptions, boundaries, results, and evaluation. **(2025 course reading)**
+4. **Article:** Anthropic, [Writing effective tools for agents](https://www.anthropic.com/engineering/writing-tools-for-agents) (25 min) — tool names, descriptions, boundaries, results, and evaluation.
 5. **Specification:** Model Context Protocol, [Specification](https://modelcontextprotocol.io/specification/latest) (30 min for the architecture, transports, and tools sections) — read the primary source before any tutorial.
 6. **Documentation:** GitHub, [Spec Kit](https://github.github.com/spec-kit/) and its [Agentic SDD workflow](https://github.github.com/spec-kit/reference/agentic-sdd.html) (20 min) — a concrete implementation of spec-driven development.
 
@@ -168,15 +120,15 @@ Then read one production system prompt (Codex or Gemini CLI) end to end and anno
 
 - **Course:** Hugging Face, [MCP Course](https://huggingface.co/learn/mcp-course/en/unit0/introduction) (units 0–2, roughly 6–8 h; spread it across Weeks 2 and 3) — free, hands-on foundations, continuing into the [end-to-end MCP application unit](https://huggingface.co/learn/mcp-course/en/unit2/introduction).
 - Manus, [Context Engineering for AI Agents: Lessons from Building Manus](https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus) — KV-cache hit rate, file system as context, and keeping failures in the trace.
-- Drew Breunig, [How Long Contexts Fail](https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html) **(2025 course reading)** and Chroma, [Context Rot](https://research.trychroma.com/context-rot) **(2025 course reading)** — the evidence that more context is not free.
-- HumanLayer, [Advanced Context Engineering](https://www.hlyr.dev/blog/advanced-context-engineering) **(2025 course reading)** and the [12-Factor Agents](https://github.com/humanlayer/12-factor-agents) principles.
-- Ravi Mehta, [Specs Are the New Source Code](https://blog.ravi-mehta.com/p/specs-are-the-new-source-code) **(2025 course reading)** and the [Kiro specs docs](https://kiro.dev/docs/specs/) — the product side of spec-driven development.
+- Drew Breunig, [How Long Contexts Fail](https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html) and Chroma, [Context Rot](https://research.trychroma.com/context-rot) — the evidence that more context is not free.
+- HumanLayer, [Advanced Context Engineering](https://www.hlyr.dev/blog/advanced-context-engineering) and the [12-Factor Agents](https://github.com/humanlayer/12-factor-agents) principles.
+- Ravi Mehta, [Specs Are the New Source Code](https://blog.ravi-mehta.com/p/specs-are-the-new-source-code) and the [Kiro specs docs](https://kiro.dev/docs/specs/) — the product side of spec-driven development.
 - Tooling: [MCP Inspector](https://github.com/modelcontextprotocol/inspector) for testing servers; the [MCP Registry](https://github.com/modelcontextprotocol/registry) for publishing and discovery.
 - Matt Pocock, [How I use Claude Code for real engineering](https://www.youtube.com/watch?v=kZ-zzHVUrO4) (10 min) — planning, clarifying questions, phased execution, and context-window management.
 
 ### Additional video track
 
-- **Advanced prompting:** Anthropic, [AI Prompt Engineering: A Deep Dive](https://www.youtube.com/watch?v=T9aRN5JkmL8) (1 h 16 min) **(2025 course reading)**, and the shorter [Prompting 101](https://www.youtube.com/watch?v=ysPbXH0LpIE) (24 min).
+- **Advanced prompting:** Anthropic, [AI Prompt Engineering: A Deep Dive](https://www.youtube.com/watch?v=T9aRN5JkmL8) (1 h 16 min), and the shorter [Prompting 101](https://www.youtube.com/watch?v=ysPbXH0LpIE) (24 min).
 - **What still works:** Sander Schulhoff on Lenny's Podcast, [AI prompt engineering in 2025: What works and what doesn't](https://www.youtube.com/watch?v=eKuFqQKYRrA) (1 h 37 min) — evidence-based prompting, few-shot, decomposition, and prompt injection.
 - **Research, plan, implement:** Dex Horthy, [No Vibes Allowed: Solving Hard Problems in Complex Codebases](https://ai.engineer/talks/context-engineering-for-complex-codebases) (21 min) — targeted research, deliberate compaction, concrete plans, and human review.
 - **Long-horizon context:** Harrison Chase of LangChain, [Context Engineering Our Way to Long-Horizon Agents](https://www.youtube.com/watch?v=vtugjs2chdA) (39 min).
@@ -191,8 +143,6 @@ Choose one real feature for your repository. Write a one-page spec containing ob
 
 Then build one MCP server with two to four narrow tools. Exercise it in MCP Inspector first, then from your agent. Test happy paths, invalid parameters, huge results, timeouts, and permission failures. Revise each description until a fresh agent consistently selects the right tool and passes valid arguments.
 
-**2025 assignments to reuse:** week1, LLM Prompting Playground; week3, Build a Custom MCP Server.
-
 ### Done when
 
 - The spec exists, and each RePPIT stage produced a saved artifact (research notes, proposal, plan, diff, test results).
@@ -204,16 +154,14 @@ Then build one MCP server with two to four narrow tools. Exercise it in MCP Insp
 
 ## Week 3 — Agent Skills and CLI
 
-**Official focus:** what skills are and how `SKILL.md` plus scripts encode a workflow; web skills and extending agent capability beyond the repository; working effectively from the CLI.
-
-**Official sessions:** Tue 10/6 all about agent skills, including web skills. Thu 10/8 guest: Lee Robinson, VP of Developer Relations at Cursor.
+**Focus:** what skills are and how `SKILL.md` plus scripts encode a workflow; web skills and extending agent capability beyond the repository; working effectively from the CLI.
 
 ### Core material (≈ 3 h 40 min)
 
 1. **Course unit:** Hugging Face, [Agent Skills](https://huggingface.co/learn/context-course/en/unit1/introduction) (≈ 60 min) — the best structured introduction to portable, progressively disclosed skills.
 2. **Article:** Anthropic, [Equipping agents for the real world with Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) (20 min), with the public [skills repository](https://github.com/anthropics/skills) as worked examples.
 3. **Specification + tutorial:** [Agent Skills Quickstart](https://agentskills.io/skill-creation/quickstart) (30 min).
-4. **Guest video:** Lee Robinson, [The Beginner's Guide to Coding with Cursor](https://www.youtube.com/watch?v=Gqpk7-FruqI) (45 min) — typed languages, linting, formatting, tests, branch review, and parallel background work. He is the official Week 3 guest.
+4. **Video:** Lee Robinson of Cursor, [The Beginner's Guide to Coding with Cursor](https://www.youtube.com/watch?v=Gqpk7-FruqI) (45 min) — typed languages, linting, formatting, tests, branch review, and parallel background work.
 5. **CLI foundation:** MIT, [The Missing Semester 2026: Course Overview and Introduction to the Shell](https://missing.csail.mit.edu/2026/course-shell/) (≈ 60 min with exercises) — shell navigation, composition, scripting, streams, permissions, and safe Bash practices.
 6. **Standard:** [AGENTS.md](https://agents.md/) (10 min) — read the examples and conventions now; repository instructions become the main topic in Week 4.
 
@@ -228,7 +176,7 @@ Then build one MCP server with two to four narrow tools. Exercise it in MCP Insp
 - **Hands-on skills workshop:** Pedro Rodrigues of Supabase, [Skill Issue: How We Used AI to Make Agents Actually Good at Supabase](https://ai.engineer/talks/skill-issue-how-we-used-ai-to-make-agents-actually-good-at-supabase) (1 h 19 min) — builds and evaluates `SKILL.md`, supporting scripts, progressive disclosure, and routing behavior.
 - **Web skills:** Paul Klein of Browserbase, [Bringing Agents onto the World Wide Web](https://ai.engineer/talks/bringing-agents-onto-the-world-wide-web) (18 min) — browser-agent harnesses, network interception, WebMCP, Playwright CLI, memory, and reusable website skills.
 - **Concept explainer:** Greg Isenberg, [How AI agents & Claude skills work (Clearly Explained)](https://www.youtube.com/watch?v=S_oN3vlzpMw) (35 min).
-- **Guest-adjacent, long form:** Lex Fridman with the Cursor team, [Future of Programming with AI](https://www.youtube.com/watch?v=oFfVt3S51T4) (2 h 29 min) — editor design, speculative edits, and how the Cursor founders think about agents.
+- **Long form:** Lex Fridman with the Cursor team, [Future of Programming with AI](https://www.youtube.com/watch?v=oFfVt3S51T4) (2 h 29 min) — editor design, speculative edits, and how the Cursor founders think about agents.
 
 ### Build
 
@@ -242,8 +190,6 @@ Find a workflow you have repeated at least three times: release notes, database 
 
 Run it from a fresh agent session on two different inputs. Record where the instructions were ambiguous or overloaded the context. Then add one web skill: a browser-driven check (Playwright MCP or Chrome DevTools MCP) that verifies something in your running app.
 
-**2025 assignment to reuse:** week5, Agentic Development with Warp (the CLI half).
-
 ### Done when
 
 - The skill triggers correctly from a fresh session on two inputs without extra coaching.
@@ -255,24 +201,22 @@ Run it from a fresh agent session on two different inputs. Record where the inst
 
 ## Week 4 — Customizing Your Agent and Repository
 
-**Official focus:** `CLAUDE.md` and `AGENTS.md`, what to put where; hooks for lint gates, test runs, and guardrails; subagent patterns (planner / implementer / reviewer).
-
-**Official sessions:** Tue 10/13 customizing your agentic setup (`CLAUDE.md`, `AGENTS.md`, hooks). Thu 10/15 guest: Boris Cherny, creator of Claude Code at Anthropic.
+**Focus:** `CLAUDE.md` and `AGENTS.md`, what to put where; hooks for lint gates, test runs, and guardrails; subagent patterns (planner / implementer / reviewer).
 
 ### Core material (≈ 3 h 40 min)
 
-1. **Article:** Anthropic, [Claude Code best practices](https://www.anthropic.com/engineering/claude-code-best-practices) (30 min) — the canonical guide to `CLAUDE.md`, tool allowlists, workflows, and multi-Claude patterns. **(2025 course reading)**
+1. **Article:** Anthropic, [Claude Code best practices](https://www.anthropic.com/engineering/claude-code-best-practices) (30 min) — the canonical guide to `CLAUDE.md`, tool allowlists, workflows, and multi-Claude patterns.
 2. **Article:** Anthropic, [Steering Claude Code: skills, hooks, rules, subagents, and more](https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more) (15 min) — when to use each mechanism.
 3. **Course units:** Hugging Face, [Sub-agents](https://huggingface.co/learn/context-course/en/unit4/introduction) and [Hooks](https://huggingface.co/learn/context-course/en/unit5/introduction) (≈ 90 min).
 4. **Video:** Anthropic, [Mastering Claude Code in 30 minutes](https://www.youtube.com/watch?v=6eBSHbLKuN0) (28 min) — Boris Cherny's own walkthrough of the configuration surface.
-5. **Guest video:** Boris Cherny, [Inside Claude Code With Its Creator](https://www.youtube.com/watch?v=PQU9o_5rHC4) (50 min) — terminal design, `CLAUDE.md`, teams, subagents, plan mode, and the future of coding. A strong substitute while his CS146S 2026 guest lecture is unavailable.
+5. **Video:** Boris Cherny, [Inside Claude Code With Its Creator](https://www.youtube.com/watch?v=PQU9o_5rHC4) (50 min) — terminal design, `CLAUDE.md`, teams, subagents, plan mode, and the future of coding.
 
 ### Tools and references
 
 - Claude Code docs: [Hooks reference](https://code.claude.com/docs/en/hooks) and [Create custom subagents](https://code.claude.com/docs/en/sub-agents) — the exact event names, matchers, and frontmatter you need for the build.
 - Repository instruction files: GitHub, [How to write a great agents.md: lessons from over 2,500 repositories](https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-lessons-from-over-2500-repositories/); Real Python, [How to Write an AGENTS.md File](https://realpython.com/agents-md/); Agentic AI Foundation, [Writing an Effective AGENTS.md](https://aaif.io/blog/writing-an-effective-agents-md).
 - The subagent debate: Cognition, [Don't Build Multi-Agents](https://cognition.ai/blog/dont-build-multi-agents) versus Anthropic, [How we built our multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system). Read both before designing your three roles.
-- Anthropic, [How Anthropic teams use Claude Code](https://www.anthropic.com/news/how-anthropic-teams-use-claude-code) — internal adoption patterns by team. **(2025 course reading, PDF form)**
+- Anthropic, [How Anthropic teams use Claude Code](https://www.anthropic.com/news/how-anthropic-teams-use-claude-code) — internal adoption patterns by team.
 - Free courses: Anthropic Academy, [Claude Code in Action](https://anthropic.skilljar.com/claude-code-in-action); DeepLearning.AI, [Claude Code: A Highly Agentic Coding Assistant](https://www.deeplearning.ai/courses/claude-code-a-highly-agentic-coding-assistant).
 
 ### Additional video track
@@ -290,8 +234,6 @@ Add a concise repository instruction file. Treat it as a map, not an encyclopedi
 
 Create three roles (planner, implementer, and independent reviewer) and give each a narrow contract. Run the same feature once with a single agent and once with the three-role workflow. Compare elapsed time, tokens, defects found, and amount of human intervention.
 
-**2025 assignment to reuse:** week4, Coding with Claude Code.
-
 ### Done when
 
 - The instruction file is under 150 lines and a fresh agent can run setup, tests, and lint from it alone.
@@ -303,16 +245,14 @@ Create three roles (planner, implementer, and independent reviewer) and give eac
 
 ## Week 5 — Agent-Ready Codebases
 
-**Official focus:** what makes a repository agent-ready: structure, docs, tests, and checks; scoring and auditing readiness; common gaps that block agents in real repositories.
-
-**Official sessions:** Tue 10/20 agent readiness in your repos: structure, docs, and checks that make repos agent-friendly. Thu 10/22 guest: Eno Reyes, CTO of Factory.
+**Focus:** what makes a repository agent-ready: structure, docs, tests, and checks; scoring and auditing readiness; common gaps that block agents in real repositories.
 
 ### Core material (≈ 3 h 30 min)
 
 1. **Engineering case study:** OpenAI, [Harness engineering: leveraging Codex in an agent-first world](https://openai.com/index/harness-engineering/) (30 min) — arguably the single most important reading for this week: repository legibility, structured documentation, machine-enforced invariants, and progressive disclosure.
 2. **Practical guide:** Adobe, [Repository Harnesses for AI Coding Agents](https://opensource.adobe.com/ai-repo-harness-guide/00-Introduction/) (≈ 60 min) — a free, systematic guide to making a repository navigable and verifiable by agents.
 3. **Essay:** Martin Fowler, [Harness Engineering](https://martinfowler.com/articles/harness-engineering.html) (20 min).
-4. **Guest videos:** Eno Reyes of Factory, [Making Codebases Agent-Ready](https://ai.engineer/talks/making-codebases-agent-ready) (16 min) and [Building Reliable Agentic Systems](https://ai.engineer/talks/building-reliable-agentic-systems) (18 min) — mechanical verification, linters, end-to-end tests, interface documentation, planning, grounding, and human oversight.
+4. **Videos:** Eno Reyes of Factory, [Making Codebases Agent-Ready](https://ai.engineer/talks/making-codebases-agent-ready) (16 min) and [Building Reliable Agentic Systems](https://ai.engineer/talks/building-reliable-agentic-systems) (18 min) — mechanical verification, linters, end-to-end tests, interface documentation, planning, grounding, and human oversight.
 5. **Evals primer:** Hamel Husain, [Your AI Product Needs Evals](https://hamel.dev/blog/posts/evals/) (20 min) — start the evaluation habit here; Week 10 depends on it.
 6. **Measuring readiness:** Beyang Liu of Sourcegraph, [The ROI of AI: Why You Need Eval Frameworks](https://ai.engineer/talks/the-roi-of-ai-why-you-need-eval-frameworks) (25 min) — rigorous evaluations, repository context, engineering KPIs, and avoiding productivity theater.
 
@@ -345,28 +285,26 @@ At minimum, add a one-command setup, a fast deterministic test path, a short arc
 
 ## Week 6 — Agentic Code Review
 
-**Official focus:** what AI review catches well and what it misses; review architectures and custom rules; fitting AI review into a team's pull-request workflow.
-
-**Official sessions:** Tue 10/27 agentic code review: best practices and architectures. Thu 10/29 guest: Silas Alberti, SVP Research at Cognition.
+**Focus:** what AI review catches well and what it misses; review architectures and custom rules; fitting AI review into a team's pull-request workflow.
 
 ### Core material (≈ 3 h 30 min)
 
 1. **Canonical guide:** Google, [Engineering Practices: Code Review](https://google.github.io/eng-practices/review/) and the [Reviewer Guide](https://google.github.io/eng-practices/review/reviewer/) (60 min).
 2. **Free book chapter:** *Software Engineering at Google*, [Chapter 9: Code Review](https://abseil.io/resources/swe-book/html/ch09.html) (45 min).
-3. **Talk:** Tomas Reimers of Graphite, [AI-powered entomology: lessons from millions of AI code reviews](https://ai.engineer/talks/TswQeKftnaw-ai-powered-entomology-lessons-from-millions-ai) (10 min) **(2025 course reading)**, with Graphite's written [AI code review implementation and best practices](https://graphite.dev/guides/ai-code-review-implementation-best-practices) (20 min) **(2025 course reading)**.
+3. **Talk:** Tomas Reimers of Graphite, [AI-powered entomology: lessons from millions of AI code reviews](https://ai.engineer/talks/TswQeKftnaw-ai-powered-entomology-lessons-from-millions-ai) (10 min), with Graphite's written [AI code review implementation and best practices](https://graphite.dev/guides/ai-code-review-implementation-best-practices) (20 min).
 4. **Review architecture:** Ankit Jain, [How to Kill the Code Review](https://ai.engineer/talks/how-to-kill-the-code-review) (16 min) — a five-layer trust model combining specifications, reusable guardrails, deterministic checks, executable test plans, previews, and human alignment.
 5. **What automation cannot replace:** Geoffrey Litt, [Understanding Is the New Bottleneck](https://ai.engineer/talks/understanding-is-the-new-bottleneck) (20 min) — review as architectural understanding, mentorship, and coordination rather than only correctness checking.
 6. **Integrations:** GitHub, [About GitHub Copilot code review](https://docs.github.com/en/copilot/concepts/agents/code-review) (15 min) and Anthropic, [Claude Code GitHub Actions](https://code.claude.com/docs/en/github-actions) (15 min) — the two most common ways to put a reviewer agent on a pull request.
 
-### Guest substitute: Cognition
+### From Cognition
 
 - Cognition, [Don't Build Multi-Agents](https://cognition.ai/blog/dont-build-multi-agents) — context sharing and why reviewer agents need the full trace.
 - Latent Space with Cognition, [DeepWiki: The GitHub Encyclopedia](https://www.youtube.com/watch?v=cX4-e25xQhg) (32 min) — codebase understanding as a product; the same understanding a reviewer needs.
-- Cognition, [SWE-bench technical report](https://cognition.ai/blog/swe-bench-technical-report) and [Devin: Coding Agents 101](https://devin.ai/agents101) **(2025 course reading)**.
+- Cognition, [SWE-bench technical report](https://cognition.ai/blog/swe-bench-technical-report) and [Devin: Coding Agents 101](https://devin.ai/agents101).
 
 ### Deeper material
 
-- Research paper: [AI-Assisted Assessment of Coding Practices in Modern Code Review](https://arxiv.org/abs/2405.13565) **(2025 course reading)** and Google Research, [Resolving code review comments with ML](https://research.google/blog/resolving-code-review-comments-with-ml/).
+- Research paper: [AI-Assisted Assessment of Coding Practices in Modern Code Review](https://arxiv.org/abs/2405.13565) and Google Research, [Resolving code review comments with ML](https://research.google/blog/resolving-code-review-comments-with-ml/).
 - **Rules and feedback loops:** [Your Coding Agent Doesn't Always Follow Your Rules](https://ai.engineer/talks/your-coding-agent-doesn-t-always-follow-your-rules) (10 min) — hooks, deterministic checks, asynchronous verification, reviewer agents, and LLM-as-judge tradeoffs.
 
 ### Build
@@ -374,8 +312,6 @@ At minimum, add a one-command setup, a fast deterministic test path, a short arc
 Create a review rubric ordered by severity: correctness, security, data loss, concurrency, compatibility, tests, maintainability, then style. Require the reviewer agent to cite exact lines, explain the failure scenario, and propose the smallest fix. Use a model/session that did not write the change. Wire it to your pull requests with one of the integrations above.
 
 Evaluate the reviewer on at least five pull requests, including one deliberately seeded with subtle bugs. Label every comment true positive, false positive, duplicate, or low-value. Track acceptance rate and escaped defects. A human still owns merge approval.
-
-**2025 assignment to reuse:** week7, Code Review Reps.
 
 ### Done when
 
@@ -388,17 +324,15 @@ Evaluate the reviewer on at least five pull requests, including one deliberately
 
 ## Week 7 — Security
 
-**Official focus:** SAST/SCA, dependency and secret-leak vulnerabilities; prompt injection and agent-specific attack surfaces; agent-assisted triage and remediation.
-
-**Official sessions:** Tue 11/3 security in AI codebases. Thu 11/5 guest: Isaac Evans, CEO of Semgrep.
+**Focus:** SAST/SCA, dependency and secret-leak vulnerabilities; prompt injection and agent-specific attack surfaces; agent-assisted triage and remediation.
 
 ### Core material (≈ 3 h 50 min)
 
 1. **Threat catalogs:** [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) (30 min) and [OWASP Top 10 for LLM Applications](https://genai.owasp.org/llm-top-10/) (30 min).
 2. **Agent-specific framing:** Simon Willison, [The lethal trifecta for AI agents](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) (10 min) and [Prompt injection explained](https://simonwillison.net/2023/May/2/prompt-injection-explained/) (talk with transcript, 15 min).
-3. **Real exploit:** Embrace The Red, [GitHub Copilot: Remote Code Execution via Prompt Injection (CVE-2025-53773)](https://embracethered.com/blog/posts/2025/github-copilot-remote-code-execution-via-prompt-injection/) (15 min) **(2025 course reading)** — a coding-agent attack chain end to end.
-4. **Guest video:** Isaac Evans, [When AI Writes Code: Rethinking App Security](https://www.youtube.com/watch?v=TKJGul9TRws) (45 min) — AI-generated vulnerabilities, SAST, security assistants, feedback loops, and risks created by coding agents.
-5. **Guest's company, hands on:** Semgrep, [Finding vulnerabilities in modern web apps using Claude Code and OpenAI Codex](https://semgrep.dev/blog/2025/finding-vulnerabilities-in-modern-web-apps-using-claude-code-and-openai-codex/) (20 min) **(2025 course reading)** — agent-assisted triage in practice.
+3. **Real exploit:** Embrace The Red, [GitHub Copilot: Remote Code Execution via Prompt Injection (CVE-2025-53773)](https://embracethered.com/blog/posts/2025/github-copilot-remote-code-execution-via-prompt-injection/) (15 min) — a coding-agent attack chain end to end.
+4. **Video:** Isaac Evans of Semgrep, [When AI Writes Code: Rethinking App Security](https://www.youtube.com/watch?v=TKJGul9TRws) (45 min) — AI-generated vulnerabilities, SAST, security assistants, feedback loops, and risks created by coding agents.
+5. **Hands on:** Semgrep, [Finding vulnerabilities in modern web apps using Claude Code and OpenAI Codex](https://semgrep.dev/blog/2025/finding-vulnerabilities-in-modern-web-apps-using-claude-code-and-openai-codex/) (20 min) — agent-assisted triage in practice.
 6. **Coding-agent threat model:** Fouad Matin of OpenAI, [Safety and Security for Code-Executing Agents](https://ai.engineer/talks/safety-and-security-for-code-executing-agents) (14 min) — remote code execution, prompt injection, exfiltration, containers, network restrictions, approvals, and OS-level sandboxing.
 7. **Hands-on labs:** PortSwigger, [Web Security Academy](https://portswigger.net/web-security) — do the Web LLM attacks labs, including indirect prompt injection (≈ 60 min for two labs).
 
@@ -425,8 +359,6 @@ Threat-model the entire agent workflow: user input, repository content, retrieve
 
 Run SAST (Semgrep or CodeQL), dependency/SCA (OSV-Scanner), and secret scans (gitleaks) in CI. Plant a harmless indirect-prompt-injection string in an untrusted fixture and verify that the agent treats it as data rather than instructions. Write a short incident playbook for credential exposure, malicious tool output, and runaway cost.
 
-**2025 assignment to reuse:** week6, Writing Secure AI Code.
-
 ### Done when
 
 - A threat model document lists every trust boundary in the agent workflow with a mitigation per boundary.
@@ -438,21 +370,19 @@ Run SAST (Semgrep or CodeQL), dependency/SCA (OSV-Scanner), and secret scans (gi
 
 ## Week 8 — Background Agents
 
-**Official focus:** asynchronous, cloud-delegated agents; managing fleets of parallel agents; issue-to-PR pipelines and triggers from Slack, Linear, and GitHub.
-
-**Official sessions:** Tue 11/10 background agents: launching tasks asynchronously. Thu 11/12 guest: Rajesh Bhatia, Senior Director at Cloudflare.
+**Focus:** asynchronous, cloud-delegated agents; managing fleets of parallel agents; issue-to-PR pipelines and triggers from Slack, Linear, and GitHub.
 
 ### Core material (≈ 3 h 30 min)
 
 1. **The products:** OpenAI, [Codex cloud](https://developers.openai.com/codex/cloud); Anthropic, [Claude Code on the web](https://code.claude.com/docs/en/claude-code-on-the-web); Cursor, [Cloud Agents](https://cursor.com/docs/cloud-agent); GitHub, [Managing issues and pull requests with the Copilot coding agent](https://docs.github.com/en/copilot/how-tos/github-copilot-app/managing-issues-and-pull-requests) (≈ 20 min each; compare their trigger, isolation, and approval models).
 2. **Orchestration case study:** OpenAI, [Open-sourcing Symphony](https://openai.com/index/open-source-codex-orchestration-symphony/) and the [Symphony specification](https://github.com/openai/symphony/blob/main/SPEC.md) (≈ 60 min) — issue-to-PR orchestration as a specification.
-3. **Guest video:** Rajesh Bhatia, [Cloudflare's AI Engineering Stack: Assisted to Delegated](https://www.youtube.com/watch?v=MbLdrAZFQRs) (37 min) — how Cloudflare moved from assisted coding to delegated agents on its own platform.
+3. **Video:** Rajesh Bhatia of Cloudflare, [Cloudflare's AI Engineering Stack: Assisted to Delegated](https://www.youtube.com/watch?v=MbLdrAZFQRs) (37 min) — how Cloudflare moved from assisted coding to delegated agents on its own platform.
 4. **Durable execution:** Preeti Somal of Temporal, [Scaling AI Agents Without Breaking Reliability](https://ai.engineer/talks/scaling-ai-agents-without-breaking-reliability) (15 min) — persistent state, orchestration, visibility, automatic recovery, human interaction, and parallel work.
 5. **Fleet operations:** Kyle Jaejun Lee, [I Run a Fleet of AI Agents Across Three Machines: Here's What Broke](https://ai.engineer/talks/i-run-a-fleet-of-ai-agents-across-three-machines-here-s-what-broke) (9 min) — attention limits, durable context, blocking approvals, routing, conflicting work, and multi-machine recovery.
 
 ### Tools and references
 
-- Cloudflare, [Agents SDK](https://developers.cloudflare.com/agents/) and [Sandbox SDK](https://developers.cloudflare.com/sandbox/) — the guest's platform for stateful agents and isolated execution.
+- Cloudflare, [Agents SDK](https://developers.cloudflare.com/agents/) and [Sandbox SDK](https://developers.cloudflare.com/sandbox/) — a platform for stateful agents and isolated execution.
 - Temporal, [Durable AI Agent tutorial](https://github.com/temporal-community/tutorial-temporal-ai-agent) and the [OpenAI Agents integration concepts](https://github.com/temporalio/sdk-python/blob/main/temporalio/contrib/openai_agents/README.md).
 - Cloudflare, [Code Mode: give agents an entire API in 1,000 tokens](https://blog.cloudflare.com/code-mode-mcp/) — a tool-efficiency technique for fleets.
 - Google, [Jules](https://jules.google/) — a third cloud agent to compare.
@@ -481,9 +411,7 @@ Run three jobs in parallel: a small feature, a bug fix, and a documentation task
 
 ## Week 9 — Building an AI-Native Team
 
-**Official focus:** MCP portals and centralized, permissioned tool access; LLM gateways, model routing, and cost optimization; organization-wide adoption patterns.
-
-**Official sessions:** Tue 11/17 guest: Elad Gil, Gil Capital. Thu 11/19 guest: Amjad Masad, CEO of Replit. The gateway, portal, and routing lecture itself is scheduled for Tue 12/1; the material below covers both.
+**Focus:** MCP portals and centralized, permissioned tool access; LLM gateways, model routing, and cost optimization; organization-wide adoption patterns.
 
 ### Core material (≈ 3 h 40 min)
 
@@ -492,13 +420,13 @@ Run three jobs in parallel: a small feature, a bug fix, and a documentation task
 3. **Architecture:** Cloudflare, [Scaling MCP adoption: reference architecture for enterprise deployments](https://blog.cloudflare.com/enterprise-mcp/) (25 min).
 4. **Authorization:** MCP, [Enterprise-Managed Authorization](https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth/) and the [technical specification](https://modelcontextprotocol.io/extensions/auth/enterprise-managed-authorization) (20 min).
 5. **Evidence on adoption:** DORA, [2025 State of AI-assisted Software Development](https://dora.dev/research/2025/dora-report/) (60 min) — AI amplifies the strengths and weaknesses of the surrounding engineering system. Pair it with the counter-evidence: METR, [Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) (20 min).
-6. **Guest video:** Amjad Masad, [The Future of Software Creation](https://www.youtube.com/watch?v=lWmDiDGsLK4) (42 min) — agent infrastructure, secure execution, autonomy levels, and how cheap software creation may reshape teams.
+6. **Video:** Amjad Masad of Replit, [The Future of Software Creation](https://www.youtube.com/watch?v=lWmDiDGsLK4) (42 min) — agent infrastructure, secure execution, autonomy levels, and how cheap software creation may reshape teams.
 
 ### Tools and references
 
 - Gateways for the build: [LiteLLM AI Gateway](https://docs.litellm.ai/docs/simple_proxy) (open source) and [Cloudflare AI Gateway](https://developers.cloudflare.com/ai-gateway/). Routing primer: Vercel, [Six LLM routing strategies](https://vercel.com/i/llm-routing-strategies).
 - Internal registries: the [MCP Registry](https://github.com/modelcontextprotocol/registry).
-- Adoption evidence: DORA, [AI Capabilities Model](https://dora.dev/ai/capabilities-model/report/); Stack Overflow, [2025 Developer Survey: AI](https://survey.stackoverflow.co/2025/ai); OpenAI, [How OpenAI uses Codex](https://cdn.openai.com/pdf/6a2631dc-783e-479b-b1a4-af0cfbd38630/how-openai-uses-codex.pdf) (PDF) **(2025 course reading)**; Anthropic, [How Anthropic teams use Claude Code](https://www.anthropic.com/news/how-anthropic-teams-use-claude-code) **(2025 course reading)**.
+- Adoption evidence: DORA, [AI Capabilities Model](https://dora.dev/ai/capabilities-model/report/); Stack Overflow, [2025 Developer Survey: AI](https://survey.stackoverflow.co/2025/ai); OpenAI, [How OpenAI uses Codex](https://cdn.openai.com/pdf/6a2631dc-783e-479b-b1a4-af0cfbd38630/how-openai-uses-codex.pdf) (PDF); Anthropic, [How Anthropic teams use Claude Code](https://www.anthropic.com/news/how-anthropic-teams-use-claude-code).
 
 ### Additional video track
 
@@ -525,9 +453,7 @@ Write a one-page team adoption policy covering approved data, mandatory human de
 
 ## Week 10 — The Software Factory + The Future
 
-**Official focus:** self-running, self-improving software systems; running and securing agents post-deployment; where AI software engineering goes next.
-
-**Official sessions:** Tue 12/1 coding agents in big teams (MCP portals, LLM gateways, org patterns, cost optimization, and model routing). Thu 12/3 the Software Factory: self-running, self-improving software systems.
+**Focus:** self-running, self-improving software systems; running and securing agents post-deployment; where AI software engineering goes next.
 
 ### Core material (≈ 3 h 30 min)
 
@@ -544,7 +470,7 @@ Write a one-page team adoption policy covering approved data, mandatory human de
 - Observability: [Langfuse](https://langfuse.com/docs) (open source alternative to Phoenix) and the [OpenTelemetry GenAI semantic conventions](https://github.com/open-telemetry/semantic-conventions-genai).
 - Controlled improvement loops: [DSPy](https://dspy.ai/) — optimize prompts against your eval set instead of editing them by hand.
 - Benchmarks to borrow task design from: [SWE-bench](https://www.swebench.com/) and [Terminal-Bench](https://www.tbench.ai/).
-- Google SRE, [Introduction](https://sre.google/sre-book/introduction/) **(2025 course reading)**.
+- Google SRE, [Introduction](https://sre.google/sre-book/introduction/).
 
 ### Additional video track
 
@@ -561,7 +487,7 @@ Connect the pieces into a minimal factory:
 
 Trace every run. Create a fixed evaluation set of 10–20 representative tasks and record success, regressions, cost, latency, retries, and human interventions. Add one controlled improvement loop that may propose changes to prompts, skills, or tools, but cannot deploy those changes without evaluation and human approval. “Self-improving” must not mean “silently rewrites its own controls.”
 
-Write one blameless postmortem for the worst failure the factory produced during the course.
+Write one blameless postmortem for the worst failure the factory produced during the ten weeks.
 
 ### Done when
 
@@ -600,7 +526,7 @@ Build an **agentic maintenance system for a real repository**. It should accept 
 
 ## The short bookshelf
 
-Do not try to read a dozen books cover to cover. These five cover the durable ideas behind the course:
+Do not try to read a dozen books cover to cover. These five cover the durable ideas behind this guide:
 
 1. Chip Huyen, [*AI Engineering*](https://huyenchip.com/) — building and evaluating applications with foundation models.
 2. Jay Alammar and Maarten Grootendorst, [*Hands-On Large Language Models*](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models) — practical LLM foundations with an accompanying code repository.
@@ -622,4 +548,4 @@ Keep the builds and reduce passive material. Use this minimum path:
 8. OpenAI **Symphony** and the Uber **Agentic SDLC** talk.
 9. DeepLearning.AI's **Evaluating AI Agents** course.
 
-The practical work is the course. Watching everything without building the cumulative system will teach vocabulary; implementing it will teach engineering judgment.
+The practical work is the guide. Watching everything without building the cumulative system will teach vocabulary; implementing it will teach engineering judgment.

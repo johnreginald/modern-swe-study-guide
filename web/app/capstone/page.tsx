@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getGuide } from "@/lib/guide";
+import { Blocks, JumpChips } from "@/components/Blocks";
 
 export const metadata: Metadata = { title: "Suggested capstone" };
 
@@ -11,7 +12,8 @@ export default function CapstonePage() {
         <div className="eyebrow">After Week 10</div>
         <h1>{capstone.title}</h1>
       </header>
-      <article className="prose" dangerouslySetInnerHTML={{ __html: capstone.html }} />
+      <JumpChips blocks={capstone.blocks} />
+      <Blocks blocks={capstone.blocks} />
     </>
   );
 }

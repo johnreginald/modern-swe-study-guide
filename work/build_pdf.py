@@ -109,13 +109,13 @@ def cover_page(canvas, doc):
     canvas.roundRect(24 * mm, height - 58 * mm, 50 * mm, 10 * mm, 5 * mm, fill=1, stroke=0)
     canvas.setFont("GuideSans-Bold", 9)
     canvas.setFillColor(TEAL)
-    canvas.drawCentredString(49 * mm, height - 54.4 * mm, "FALL 2026")
+    canvas.drawCentredString(49 * mm, height - 54.4 * mm, "2026 EDITION")
 
     canvas.setFillColor(WHITE)
     canvas.setFont("GuideSans-Bold", 28)
-    canvas.drawString(24 * mm, height - 84 * mm, "CS146S")
+    canvas.drawString(24 * mm, height - 84 * mm, "Agent Engineer")
     canvas.setFont("GuideSans-Bold", 21)
-    canvas.drawString(24 * mm, height - 101 * mm, "The Modern Software Developer")
+    canvas.drawString(24 * mm, height - 101 * mm, "Study Guide 2026")
 
     canvas.setStrokeColor(colors.HexColor("#416078"))
     canvas.setLineWidth(1)
@@ -123,9 +123,9 @@ def cover_page(canvas, doc):
 
     canvas.setFillColor(colors.HexColor("#C8D9E5"))
     canvas.setFont("GuideSans", 13)
-    canvas.drawString(24 * mm, height - 128 * mm, "A curated, project-based self-study guide")
+    canvas.drawString(24 * mm, height - 128 * mm, "A curated, project-based ten-week guide to building with coding agents")
     canvas.setFont("GuideSans", 10)
-    canvas.drawString(24 * mm, height - 139 * mm, "Videos, courses, articles, books, weekly builds, and capstone")
+    canvas.drawString(24 * mm, height - 139 * mm, "Videos, courses, articles, books, weekly builds, and a capstone")
 
     # A compact visual path through the ten-week progression.
     labels = ["Agent", "Context", "Skills", "Repo", "Harness", "Review", "Secure", "Async", "Team", "Factory"]
@@ -159,13 +159,13 @@ def body_page(canvas, doc):
     canvas.rect(0, height - 8 * mm, width, 8 * mm, fill=1, stroke=0)
     canvas.setFont("GuideSans-Bold", 7.5)
     canvas.setFillColor(MUTED)
-    canvas.drawString(19 * mm, height - 15 * mm, "CS146S 2026 SELF-STUDY GUIDE")
+    canvas.drawString(19 * mm, height - 15 * mm, "AGENT ENGINEER STUDY GUIDE 2026")
     canvas.setStrokeColor(LINE)
     canvas.setLineWidth(0.6)
     canvas.line(19 * mm, 15 * mm, width - 19 * mm, 15 * mm)
     canvas.setFont("GuideSans", 8)
     canvas.setFillColor(MUTED)
-    canvas.drawString(19 * mm, 9.5 * mm, "themodernsoftware.dev - independent companion")
+    canvas.drawString(19 * mm, 9.5 * mm, "Independent guide - structure follows the Stanford CS146S Fall 2026 syllabus")
     canvas.drawRightString(width - 19 * mm, 9.5 * mm, str(doc.page))
     canvas.restoreState()
 
@@ -452,9 +452,9 @@ def build(source: Path, destination: Path) -> None:
         rightMargin=19 * mm,
         topMargin=21 * mm,
         bottomMargin=20 * mm,
-        title="CS146S: The Modern Software Developer - 2026 Self-Study Guide",
-        author="Independent self-study companion",
-        subject="Curated curriculum for the Fall 2026 CS146S syllabus",
+        title="Agent Engineer Study Guide 2026",
+        author="Agent Engineer Study Guide",
+        subject="Ten-week project-based guide to building software with coding agents",
     )
 
     cover_frame = Frame(0, 0, page_w, page_h, id="cover-frame", leftPadding=0, rightPadding=0, topPadding=0, bottomPadding=0)

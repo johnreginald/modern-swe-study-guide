@@ -1,8 +1,8 @@
-/* Service worker for the CS146S guide. Generated into public/sw.js by scripts/build-sw.mjs. */
+/* Service worker for the Agent Engineer guide. Generated into public/sw.js by scripts/build-sw.mjs. */
 const VERSION = "__VERSION__";
-const PAGE_CACHE = `cs146s-pages-${VERSION}`;
-const ASSET_CACHE = `cs146s-assets-${VERSION}`;
-const RSC_CACHE = `cs146s-rsc-${VERSION}`;
+const PAGE_CACHE = `aeguide-pages-${VERSION}`;
+const ASSET_CACHE = `aeguide-assets-${VERSION}`;
+const RSC_CACHE = `aeguide-rsc-${VERSION}`;
 const KEEP = new Set([PAGE_CACHE, ASSET_CACHE, RSC_CACHE]);
 
 const PRECACHE_PAGES = [
@@ -49,7 +49,7 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(
     (async () => {
       const names = await caches.keys();
-      await Promise.all(names.filter((n) => n.startsWith("cs146s-") && !KEEP.has(n)).map((n) => caches.delete(n)));
+      await Promise.all(names.filter((n) => n.startsWith("aeguide-") && !KEEP.has(n)).map((n) => caches.delete(n)));
       await self.clients.claim();
     })(),
   );

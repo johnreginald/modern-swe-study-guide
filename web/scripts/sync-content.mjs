@@ -9,8 +9,8 @@ const root = resolve(here, "..");
 const outputs = resolve(root, "..", "outputs");
 
 const pairs = [
-  [resolve(outputs, "cs146s-2026-self-study-guide.md"), resolve(root, "content", "guide.md")],
-  [resolve(outputs, "cs146s-2026-self-study-guide.pdf"), resolve(root, "public", "cs146s-2026-self-study-guide.pdf")],
+  [resolve(outputs, "agent-engineer-study-guide-2026.md"), resolve(root, "content", "guide.md")],
+  [resolve(outputs, "agent-engineer-study-guide-2026.pdf"), resolve(root, "public", "agent-engineer-study-guide-2026.pdf")],
 ];
 
 let copied = 0;

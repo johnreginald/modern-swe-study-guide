@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getGuide } from "@/lib/guide";
+import { Blocks } from "@/components/Blocks";
 
 export const metadata: Metadata = { title: "The short bookshelf" };
 
@@ -10,7 +11,7 @@ export default function BookshelfPage() {
       <header className="page-head">
         <h1>{bookshelf.title}</h1>
       </header>
-      <article className="prose" dangerouslySetInnerHTML={{ __html: bookshelf.html }} />
+      <Blocks blocks={bookshelf.blocks} />
     </>
   );
 }

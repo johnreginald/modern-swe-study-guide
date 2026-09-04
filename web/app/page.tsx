@@ -1,16 +1,19 @@
 import Link from "next/link";
 import { getGuide } from "@/lib/guide";
 import { OverallProgress } from "@/components/Progress";
+import { Blocks } from "@/components/Blocks";
+import InstallHint from "@/components/InstallHint";
 
 export default function HomePage() {
   const guide = getGuide();
   const weeks = guide.weeks.map((w) => ({ n: w.n, total: w.doneWhen.length }));
+  const sections = guide.home.filter((s) => s.id !== "at-a-glance");
   return (
     <>
       <header className="hero">
-        <div className="eyebrow">Fall 2026 · independent companion</div>
-        <h1>CS146S</h1>
-        <p className="hero-sub">The Modern Software Developer — 2026 self-study guide</p>
+        <div className="eyebrow">Ten weeks · project-based</div>
+        <h1>Agent Engineer</h1>
+        <p className="hero-sub">Study Guide 2026</p>
         <p className="muted small">
           Updated {guide.updated} · {guide.linkCount} checked links
         </p>
@@ -24,33 +27,23 @@ export default function HomePage() {
         </div>
       </header>
 
+      <InstallHint />
+
       <OverallProgress weeks={weeks} />
 
-      <nav className="toc" aria-label="On this page">
-        {guide.home.map((s) => (
-          <a key={s.id} href={`#${s.id}`}>
-            {s.title}
-          </a>
-        ))}
-      </nav>
+      <Blocks blocks={guide.intro} />
 
-      <article className="prose" dangerouslySetInnerHTML={{ __html: guide.introHtml }} />
-
-      {guide.home.map((section) => (
-        <section key={section.id} id={section.id} className="home-section">
-          <h2>{section.title}</h2>
-          <div className="prose" dangerouslySetInnerHTML={{ __html: section.html }} />
-        </section>
-      ))}
-
-      <section className="home-section">
-        <h2>Weeks</h2>
+      <section id="at-a-glance" className="home-section">
+        <h2>The ten weeks at a glance</h2>
         <ol className="week-list">
           {guide.weeks.map((w) => (
             <li key={w.n}>
               <Link href={`/week/${w.n}`}>
                 <span className="week-num">{w.n}</span>
-                <span className="week-title">{w.title}</span>
+                <span className="week-text">
+                  <span className="week-title">{w.title}</span>
+                  {w.build ? <span className="muted small">{w.build}</span> : null}
+                </span>
                 <span className="chev" aria-hidden="true">
                   ›
                 </span>
@@ -59,6 +52,13 @@ export default function HomePage() {
           ))}
         </ol>
       </section>
+
+      {sections.map((section) => (
+        <section key={section.id} id={section.id} className="home-section">
+          <h2>{section.title}</h2>
+          <Blocks blocks={section.blocks} level={3} />
+        </section>
+      ))}
     </>
   );
 }

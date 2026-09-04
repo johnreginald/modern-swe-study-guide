@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getGuide, getWeek } from "@/lib/guide";
 import DoneWhen from "@/components/DoneWhen";
+import { Blocks, JumpChips } from "@/components/Blocks";
 
 export function generateStaticParams() {
   return getGuide().weeks.map((w) => ({ n: String(w.n) }));
@@ -31,7 +32,9 @@ export default async function WeekPage({ params }: PageProps<"/week/[n]">) {
   return (
     <>
       <header className="page-head">
-        <div className="eyebrow">Week {week.n} of {weeks.length}</div>
+        <div className="eyebrow">
+          Week {week.n} of {weeks.length}
+        </div>
         <h1>{week.title}</h1>
         <div className="meta-row">
           {week.coreTime ? <span className="tag">Core {week.coreTime}</span> : null}
@@ -39,14 +42,20 @@ export default async function WeekPage({ params }: PageProps<"/week/[n]">) {
           <span className="tag">{week.doneWhen.length} criteria</span>
         </div>
         <p className="focus">
-          <strong>Official focus.</strong> <span dangerouslySetInnerHTML={{ __html: week.focus }} />
+          <span className="focus-label">Focus</span>
+          <span dangerouslySetInnerHTML={{ __html: week.focus }} />
         </p>
-        <p className="muted small">
-          <strong>Sessions.</strong> <span dangerouslySetInnerHTML={{ __html: week.sessions }} />
-        </p>
+        {week.build ? (
+          <p className="focus">
+            <span className="focus-label">You build</span>
+            <span>{week.build}</span>
+          </p>
+        ) : null}
       </header>
 
-      <article className="prose" dangerouslySetInnerHTML={{ __html: week.html }} />
+      <JumpChips blocks={week.blocks} extra={[{ id: `done-when-${week.n}`, title: "Done when" }]} />
+
+      <Blocks blocks={week.blocks} />
 
       <DoneWhen week={week.n} items={week.doneWhen} />
 
@@ -56,7 +65,9 @@ export default async function WeekPage({ params }: PageProps<"/week/[n]">) {
             ‹ Week {prev.n}
           </Link>
         ) : (
-          <span />
+          <Link href="/" className="btn">
+            ‹ Home
+          </Link>
         )}
         {next ? (
           <Link href={`/week/${next.n}`} className="btn btn-primary">

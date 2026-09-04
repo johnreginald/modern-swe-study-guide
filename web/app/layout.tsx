@@ -1,25 +1,25 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import TopBar from "@/components/TopBar";
 import BottomNav from "@/components/BottomNav";
 import SwRegister from "@/components/SwRegister";
-import InstallHint from "@/components/InstallHint";
 
-const SITE_NAME = "CS146S 2026 Self-Study Guide";
+const SITE_NAME = "Agent Engineer Study Guide 2026";
 const DESCRIPTION =
-  "A project-based self-study companion to Stanford CS146S: The Modern Software Developer (Fall 2026). Ten weeks of videos, courses, articles, builds, and a capstone.";
+  "A ten-week, project-based guide to building software with coding agents: internals, context engineering, MCP, skills, readiness, review, security, background agents, teams, and the software factory.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://modern-software-dev-guide.vercel.app"),
   title: {
     default: SITE_NAME,
-    template: "%s · CS146S 2026",
+    template: "%s · Agent Engineer Guide",
   },
   description: DESCRIPTION,
   applicationName: SITE_NAME,
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
-    title: "CS146S",
+    title: "Agent Guide",
     statusBarStyle: "black-translucent",
   },
   formatDetection: { telephone: false },
@@ -47,8 +47,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en">
       <body>
         <div className="app-shell">
+          <TopBar />
           <main className="content">{children}</main>
-          <InstallHint />
           <BottomNav />
         </div>
         <SwRegister />
