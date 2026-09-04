@@ -55,7 +55,7 @@ export default function HomePage({ lang, burmeseAvailable }: { lang: Lang; burme
                 <span className="week-num">{w.n}</span>
                 <span className="week-text">
                   <span className="week-title">{w.title}</span>
-                  {w.build ? <span className="muted small">{w.build}</span> : null}
+                  {w.build ? <span className="muted small" dangerouslySetInnerHTML={{ __html: w.build }} /> : null}
                 </span>
                 <span className="chev" aria-hidden="true">
                   ›

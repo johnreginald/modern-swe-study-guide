@@ -31,7 +31,7 @@ export default function WeekPage({ lang, n }: { lang: Lang; n: number }) {
         {week.build ? (
           <p className="focus">
             <span className="focus-label">{t(lang, "week.youBuild")}</span>
-            <span>{week.build}</span>
+            <span dangerouslySetInnerHTML={{ __html: week.build }} />
           </p>
         ) : null}
       </header>

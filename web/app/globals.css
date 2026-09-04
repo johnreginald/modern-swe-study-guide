@@ -260,3 +260,7 @@ h3.block-title { font-size: 17px; color: var(--teal-strong); }
 .translation-note { margin: -6px 0 14px; }
 .lang-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; color: var(--ink); font-weight: 700; }
 .lang-row::after { content: "›"; color: var(--muted); font-size: 22px; }
+.prose .res-title a { color: var(--link); text-decoration: none; }
+.prose .res-title-plain { color: var(--ink); }
+.prose .res-title.yt a.yt::before { content: none; }
+.prose .res-title a.yt::before { content: none; }

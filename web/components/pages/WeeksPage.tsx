@@ -24,7 +24,7 @@ export default function WeeksPage({ lang }: { lang: Lang }) {
               <h2>{w.title}</h2>
               {w.build ? (
                 <p className="small">
-                  <span className="muted">{t(lang, "week.youBuildInline")}</span> {w.build}
+                  <span className="muted">{t(lang, "week.youBuildInline")}</span> <span dangerouslySetInnerHTML={{ __html: w.build }} />
                 </p>
               ) : null}
               <div className="meta-row">
