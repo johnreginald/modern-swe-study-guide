@@ -43,3 +43,11 @@ Publish a Burmese edition of the guide, translated with Gemini, that is as trust
 - 16 sections, 31 pieces, all validated (198 links identical, 226 list items, 57 sub-headings aligned). Headings normalised by a post-pass; map at `headings.json`.
 - Site: `/my/*` routes, Noto Sans Myanmar, Burmese UI strings (64), language switch, remembered language, shared progress. PDF stays English.
 - Not yet done: native-reader review (Home + Week 1 first), glossary sign-off. Re-run after edits: `node scripts/translate-my.mjs --step translate --force --only <n>` then `--step assemble` and `--step validate`, `npm run sync`, redeploy.
+
+## Revision 2026-09-05: reviewed chat version replaces the machine translation
+
+- Approved source: `.scratch/burmese-translation/chat-version.md` (Gemini chat output, reviewed by the author). Bookshelf + half-time live in `chat-extra-sections.md` (generated in the same style, 5/5 links).
+- `web/scripts/import-chat-translation.mjs` → `outputs/agentic-engineer-study-guide-2026.my.md`: wording verbatim, links restored by English title (182/198), week headings normalised, checkbox items → Done-when, LaTeX arrow → pipeline line, UI-only lines dropped. Report in `import-report.md`.
+- Site parser accepts the approved layout directly (no alignment to the English file): `**Title** *(kind · duration - author):* note` cards, focus/build label lines, `(Done When)` headings, bullet glance list. Burmese numerals kept as written.
+- Not in the Burmese text (author's choice), so unlinked: Dex Horthy transcript, HF MCP unit 2, Kiro specs, anthropics/skills, DeepLearning.AI Claude Code course, Latent Space Claude Code, DHH transcript, Graphite guide, Invariant tool-poisoning post, Cloudflare sandbox talk, Rana Khalil intro, Shostack 2nd ed, Temporal OpenAI-Agents README, "Building the future of agents with Claude".
+- To update: edit `chat-version.md`, run `node scripts/import-chat-translation.mjs && npm run sync && npm run build`, deploy.
