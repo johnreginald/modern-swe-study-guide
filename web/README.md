@@ -7,8 +7,8 @@ Source of truth is `../outputs/agentic-engineer-study-guide-2026.md`. This app k
 ```bash
 npm run sync      # copy the latest markdown + PDF from ../outputs
 npm run dev       # local dev
-npm run build     # prebuild writes public/sw.js with a fresh cache version
-npx vercel --prod # deploy (project: modern-software-dev-guide)
+npm run build     # static export to out/ (prebuild writes public/sw.js with a fresh cache version)
+npm run deploy    # Cloudflare Pages (project modern-swe → modern-swe.burmese.dev)
 ```
 
 How it works:

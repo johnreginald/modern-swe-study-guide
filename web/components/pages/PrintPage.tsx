@@ -13,7 +13,7 @@ export default function PrintPage({ lang }: { lang: Lang }) {
         <h1>{t(lang, "hero.title")}</h1>
         <p className="hero-sub">{t(lang, "hero.subtitle")}</p>
         <p className="muted small">{t(lang, "hero.updated", { date: guide.updated, count: guide.linkCount })}</p>
-        <p className="muted small">https://agentic-engineer-study-guide.vercel.app{lang === "my" ? "/my" : ""}</p>
+        <p className="muted small">https://modern-swe.burmese.dev{lang === "my" ? "/my" : ""}</p>
       </header>
 
       <Blocks blocks={guide.intro} />

@@ -28,7 +28,7 @@ async function up() {
 
 let server = null;
 if (!(await up())) {
-  server = spawn("npx", ["next", "start", "-p", String(port)], { cwd: web, stdio: "ignore", detached: true });
+  server = spawn("npx", ["-y", "serve@14", "out", "-l", String(port)], { cwd: web, stdio: "ignore", detached: true });
   for (let i = 0; i < 60 && !(await up()); i += 1) await new Promise((r) => setTimeout(r, 500));
   if (!(await up())) throw new Error("server did not start");
 }

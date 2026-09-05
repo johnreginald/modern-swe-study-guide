@@ -1,30 +1,11 @@
 import type { NextConfig } from "next";
 
-const securityHeaders = [
-  { key: "X-Content-Type-Options", value: "nosniff" },
-  { key: "X-Frame-Options", value: "DENY" },
-  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-  { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
-];
-
+// Static export: every route is prerendered, so the site deploys as plain files
+// (Cloudflare Pages). Response headers live in public/_headers.
 const nextConfig: NextConfig = {
+  output: "export",
   reactStrictMode: true,
-  async headers() {
-    return [
-      { source: "/(.*)", headers: securityHeaders },
-      {
-        source: "/sw.js",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=0, must-revalidate" },
-          { key: "Service-Worker-Allowed", value: "/" },
-        ],
-      },
-      {
-        source: "/manifest.webmanifest",
-        headers: [{ key: "Cache-Control", value: "public, max-age=3600" }],
-      },
-    ];
-  },
+  images: { unoptimized: true },
 };
 
 export default nextConfig;

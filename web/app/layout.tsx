@@ -18,7 +18,7 @@ const DESCRIPTION =
   "A ten-week, project-based guide to building software with coding agents: internals, context engineering, MCP, skills, readiness, review, security, background agents, teams, and the software factory.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://agentic-engineer-study-guide.vercel.app"),
+  metadataBase: new URL("https://modern-swe.burmese.dev"),
   title: {
     default: SITE_NAME,
     template: "%s · Agentic Engineer Guide",
