@@ -18,7 +18,7 @@
 
 Coding agents တွေကိုသုံးပြီး ဆော့ဖ်ဝဲလ်တည်ဆောက်နည်းကို project-based လက်တွေ့လေ့လာနိုင်မယ့် 10 ပတ်တာ လမ်းညွှန်ဖြစ်ပါတယ် - agents တွေရဲ့ အတွင်းပိုင်း အလုပ်လုပ်ပုံ၊ context engineering နဲ့ MCP၊ reusable skills၊ repository readiness၊ AI code review၊ security၊ background agents၊ အသင်းအဖွဲ့လိုက် အသုံးပြုပုံ (team adoption) နဲ့ software factory အထိ ပါဝင်ပါတယ်။ တစ်ပတ်စီတိုင်းမှာ 4 နာရီဝန်းကျင်ပဲ အချိန်ပေးရမယ့် အဓိက လေ့လာစရာများ (Core)၊ ကိုယ်တိုင် လက်တွေ့ တည်ဆောက်ရန် (Build) တစ်ခုနဲ့ အမှန်တကယ် ပြီးစီးမှု ရှိမရှိ စစ်ဆေးနိုင်တဲ့ “ပြီးစီးကြောင်း စစ်ဆေးရန် (Done When)” စာရင်းတို့ တွဲဖက်ပါဝင်တာကြောင့် စာဖတ်မှတ်တမ်းတစ်ခု သက်သက်အစား အလုပ်လုပ်တဲ့ စနစ်တစ်ခုကို ကိုယ်တိုင် တည်ဆောက်သွားနိုင်မှာ ဖြစ်ပါတယ်။
 
-**Credit.** 10 ပတ်တာ ဖွဲ့စည်းပုံနဲ့ အပတ်စဉ် ခေါင်းစဉ်တွေကို Stanford ရဲ့ CS146S: *The Modern Software Developer* (themodernsoftware.dev) Fall 2026 သင်ရိုးညွှန်းတမ်းအတိုင်း ယူထားပါတယ်။ ဒီလမ်းညွှန်ဟာ အဆိုပါသင်တန်းနဲ့ တိုက်ရိုက် မသက်ဆိုင်ပါဘူး။ ဖတ်စရာ၊ ဗီဒီယို၊ လက်တွေ့ build တွေနဲ့ စစ်ဆေးရန်စာရင်း တစ်ခုချင်းစီကို ကိုယ်ပိုင် ရွေးချယ်စုစည်းထားတာ ဖြစ်ပါတယ်။ လင့်ခ်အားလုံးကို စက်တင်ဘာ 4၊ 2026 မှာ စစ်ဆေးထားပြီး ဗီဒီယိုတစ်ခုချင်းစီရဲ့ ကြာချိန်ကိုပါ ထည့်ပေးထားတာကြောင့် ကိုယ့်လေ့လာချိန် ဘတ်ဂျက်ကို သေချာ စီစဉ်နိုင်ပါတယ်။
+**Credit.** 10 ပတ်တာ ဖွဲ့စည်းပုံနဲ့ အပတ်စဉ် ခေါင်းစဉ်တွေကို Stanford ရဲ့ CS146S: *The Modern Software Developer* (themodernsoftware.dev) Fall 2026 သင်ရိုးညွှန်းတမ်းအတိုင်း ယူထားပါတယ်။ ဒီလမ်းညွှန်ဟာ အဆိုပါသင်တန်းနဲ့ တိုက်ရိုက် မသက်ဆိုင်ပါဘူး။ ဖတ်စရာ၊ Video၊ လက်တွေ့ build တွေနဲ့ စစ်ဆေးရန်စာရင်း တစ်ခုချင်းစီကို ကိုယ်ပိုင် ရွေးချယ်စုစည်းထားတာ ဖြစ်ပါတယ်။ လင့်ခ်အားလုံးကို စက်တင်ဘာ 4၊ 2026 မှာ စစ်ဆေးထားပြီး Videoတစ်ခုချင်းစီရဲ့ ကြာချိန်ကိုပါ ထည့်ပေးထားတာကြောင့် ကိုယ့်လေ့လာချိန် ဘတ်ဂျက်ကို သေချာ စီစဉ်နိုင်ပါတယ်။
 
 ---
 
@@ -55,7 +55,7 @@ Eval suite တစ်ခုနဲ့ စနစ်တကျ ထိန်းချ�
 * **5–6 နာရီ:** အပတ်စဉ် **လက်တွေ့ တည်ဆောက်ရန် (Build)** ကို ကိုယ်တိုင် လုပ်ပါ။
 * **1–2 နာရီ:** ရလဒ်တွေ၊ မအောင်မြင်ခဲ့တာတွေ၊ ကုန်ကျစရိတ်နဲ့ ရခဲ့တဲ့ သင်ခန်းစာတွေကို မှတ်တမ်းတင်ပြီး **“ပြီးစီးကြောင်း စစ်ဆေးရန် (Done When)”** စာရင်းအတိုင်း စစ်ဆေးပါ။
 
-**ပိုလေ့လာချင်သူများအတွက် (Deeper material)**၊ **အပိုဆောင်း ဗီဒီယိုများ** နဲ့ **Tools and references** တွေအောက်က အရာအားလုံးဟာ optional ဖြစ်ပါတယ်။ ကိုယ်စိတ်ဝင်စားတာကိုပဲ ရွေးဖတ်ပါ၊ အကုန်လုံးပြီးအောင် မကြိုးစားပါနဲ့။
+**ပိုလေ့လာချင်သူများအတွက် (Deeper material)**၊ **အပိုဆောင်း Videos** နဲ့ **Tools and references** တွေအောက်က အရာအားလုံးဟာ optional ဖြစ်ပါတယ်။ ကိုယ်စိတ်ဝင်စားတာကိုပဲ ရွေးဖတ်ပါ၊ အကုန်လုံးပြီးအောင် မကြိုးစားပါနဲ့။
 
 ဆယ်ပတ်လုံးလုံးမှာ **အလတ်စား repository တစ်ခုတည်းကိုပဲ စွဲသုံးပါ**။ UI၊ tests နဲ့ CI အပြည့်ပါတဲ့ SaaS app အသေးစား၊ developer tool ဒါမှမဟုတ် API project တစ်ခုဟာ ဟိုစပ်စပ်ဒီစပ်စပ် ကစားစရာ project 10 ခုထက် အများကြီး ပိုထိရောက်ပါတယ်။ အပတ်စဉ်တိုင်းမှာ အဲဒီ project တစ်ခုတည်းကိုပဲ ပိုကောင်းအောင် ဆက်တိုက် အဆင့်မြှင့်တင်သွားရပါမယ်။
 
@@ -93,7 +93,7 @@ Hugging Face courses တွေ၊ အထက်ပါ free tier ပါတဲ့ o
 
 *(ရက်သတ္တပတ် 10 ပတ်အနက် ပထမအပတ်)*
 
-**အဓိက လေ့လာစရာများ (Core) ≈ 3 h 20 min · ဗီဒီယို 6 ခု · စံသတ်မှတ်ချက် 4 ခု**
+**အဓိက လေ့လာစရာများ (Core) ≈ 3 h 20 min · Video 6 ခု · စံသတ်မှတ်ချက် 4 ခု**
 
 **အဓိက ဦးတည်ချက်:**
 
@@ -107,12 +107,12 @@ Tools 4 ခုနဲ့ logging အပြည့်အစုံပါတဲ့ li
 
 ### အဓိက လေ့လာစရာများ (Core) ≈ 3 h 20 min
 
-* **Intro to Large Language Models** *(ဗီဒီယို · 59 min - Andrej Karpathy):*
+* **Intro to Large Language Models** *(Video · 59 min - Andrej Karpathy):*
 LLM အယူအဆ အခြေခံအတွက် အကောင်းဆုံးနဲ့ အကျစ်လျစ်ဆုံး ရှင်းလင်းချက်။ အချိန်ရရင်တော့ ပိုပြည့်စုံတဲ့ *Deep Dive into LLMs like ChatGPT* (3 h 31 min) ကို ကြည့်ပါ။
 * **How to Build an Agent** *(ဆောင်းပါး + ကုဒ် · ကုဒ်ဖတ်ချိန်အပါ ≈ 60 min - Thorsten Ball):*
 မရှိမဖြစ် tool loop ပါဝင်တဲ့ coding agent အသေးစားလေးတစ်ခု။ ဒီအပတ်ရဲ့ build အတွက် နမူနာယူပြီး ရေးသားနိုင်ပါတယ်။
 * **Building Effective AI Agents** *(ဆောင်းပါး · 25 min - Anthropic):*
-Workflows နဲ့ agents ကွာခြားပုံ၊ augmented-LLM loop အကြောင်းကို အတိအကျဆုံး ရေးသားထားတဲ့ စာတမ်း။ အောက်က Barry Zhang ရဲ့ talk ဟာ ဒီစာတမ်းကို ဗီဒီယိုနဲ့ ရှင်းပြထားတာ ဖြစ်ပါတယ်။
+Workflows နဲ့ agents ကွာခြားပုံ၊ augmented-LLM loop အကြောင်းကို အတိအကျဆုံး ရေးသားထားတဲ့ စာတမ်း။ အောက်က Barry Zhang ရဲ့ talk ဟာ ဒီစာတမ်းကို Videoနဲ့ ရှင်းပြထားတာ ဖြစ်ပါတယ်။
 * **Unrolling the Codex agent loop** *(အင်ဂျင်နီယာ ဆောင်းပါး · 20 min - OpenAI):*
 Codex ရဲ့ agent loop ဖွဲ့စည်းပုံနဲ့ design tradeoffs တွေကို production အမြင်နဲ့ ရှင်းပြထားချက်။
 * **How We Build Effective Agents** *(Talk · 15 min - Barry Zhang of Anthropic):*
@@ -127,16 +127,16 @@ Agent ရဲ့ ကန့်သတ်ထားတဲ့ context အတွင်�
 * **codex-rs/core:** OpenAI Codex CLI ဟာ open source ဖြစ်ပါတယ်။ `gpt_5_2_prompt.md`၊ `gpt_5_codex_prompt.md` စတဲ့ model prompts တွေနဲ့ `codex-rs/prompts/templates/compact/` အောက်က compaction prompt တွေကို ဖတ်ကြည့်ပါ။
 * **Gemini CLI:** Google ရဲ့ system prompt ကို `packages/core/src/core/prompts.ts` မှာ ဖတ်နိုင်ပြီး၊ MCP prompts တွေကို `packages/core/src/prompts/` မှာ ကြည့်နိုင်ပါတယ်။
 * **opencode:** အထက်က agent နှစ်ခုနဲ့ prompts တွေ၊ tool schemas တွေကို ယှဉ်ကြည့်လို့ရတဲ့ တတိယမြောက် open-source coding agent ဖြစ်ပါတယ်။
-* **How Claude Code Works** *(ဗီဒီယို · 1 h 06 min):*
+* **How Claude Code Works** *(Video · 1 h 06 min):*
 Prompt-driven architecture, tool calls, subagents, permissions နဲ့ evaluations တွေအကြောင်း လေ့လာနိုင်တဲ့ အကောင်းဆုံး workshop ဖြစ်ပါတယ်။
 
 ---
 
 ### Optional Foundation (အခြေခံ ထပ်ဖြည့်ရန်)
 
-* **Transformers, the tech behind LLMs** *(ဗီဒီယို · 27 min - 3Blue1Brown):* Attention mechanism ကို အရုပ်တွေနဲ့ အရှင်းဆုံး ပြထားတဲ့ ဗီဒီယို။
-* **The Illustrated Transformer** *(Jay Alammar):* အထက်ပါ ဗီဒီယိုနဲ့ တွဲဖတ်ရမယ့် နာမည်ကျော် ဆောင်းပါး။
-* **How I use LLMs** *(ဗီဒီယို · 2 h 11 min - Andrej Karpathy):* Model အသုံးပြုပုံ လက်တွေ့၊ tools တွေနဲ့ အားနည်းချက်များ။
+* **Transformers, the tech behind LLMs** *(Video · 27 min - 3Blue1Brown):* Attention mechanism ကို အရုပ်တွေနဲ့ အရှင်းဆုံး ပြထားတဲ့ Video။
+* **The Illustrated Transformer** *(Jay Alammar):* အထက်ပါ Videoနဲ့ တွဲဖတ်ရမယ့် နာမည်ကျော် ဆောင်းပါး။
+* **How I use LLMs** *(Video · 2 h 11 min - Andrej Karpathy):* Model အသုံးပြုပုံ လက်တွေ့၊ tools တွေနဲ့ အားနည်းချက်များ။
 * **AI Engineering (Chip Huyen):** Foundation models, evaluation နဲ့ application architecture အခန်းတွေကို ဖတ်ပါ။
 
 ---
@@ -146,14 +146,14 @@ Prompt-driven architecture, tool calls, subagents, permissions နဲ့ evaluat
 * **How to build a coding agent: free workshop** *(Geoffrey Huntley):* သီးခြား design တစ်မျိုးနဲ့ အစကနေ တည်ဆောက်ပြထားတဲ့ workshop။
 * **mini-swe-agent:** SWE-bench Verified မှာ 74% ကျော် ရထားတဲ့ lines 100 သာရှိတဲ့ agent။ ကိုယ်တိုင် ရေးပြီးရင် ကိုယ့်ကုဒ်ထဲ ဘာတွေ ပိုလျှံပြီး over-engineer ဖြစ်သွားလဲဆိုတာ ဒီကုဒ်နဲ့ ယှဉ်ကြည့်ပါ။
 * **A practical guide to building agents** *(PDF · 30 min - OpenAI)*
-* **Building Effective Agents with LangGraph** *(ဗီဒီယို · 31 min - LangChain):* Routing, parallelization, orchestrator-worker နဲ့ evaluator-optimizer patterns များ။
+* **Building Effective Agents with LangGraph** *(Video · 31 min - LangChain):* Routing, parallelization, orchestrator-worker နဲ့ evaluator-optimizer patterns များ။
 
 ---
 
-### အပိုဆောင်း ဗီဒီယိုများ
+### အပိုဆောင်း Videos
 
-* **What's next for AI agentic workflows** *(ဗီဒီယို · 13 min - Andrew Ng):* Reflection, tool use, planning နဲ့ multi-agent collaboration ဆိုတဲ့ အဓိက agentic patterns 4 ခု။
-* **Software Development Agents: What Works and What Doesn't** *(ဗီဒီယို · 17 min - Robert Brennan of OpenHands):* Editor, terminal, browser, sandbox နဲ့ action loop အကြောင်း။
+* **What's next for AI agentic workflows** *(Video · 13 min - Andrew Ng):* Reflection, tool use, planning နဲ့ multi-agent collaboration ဆိုတဲ့ အဓိက agentic patterns 4 ခု။
+* **Software Development Agents: What Works and What Doesn't** *(Video · 17 min - Robert Brennan of OpenHands):* Editor, terminal, browser, sandbox နဲ့ action loop အကြောင်း။
 
 ---
 
@@ -185,7 +185,7 @@ Lines 300 ကနေ 500 ကြားရှိမယ့် terminal coding agent 
 
 *(ရက်သတ္တပတ် 10 ပတ်အနက် ဒုတိယအပတ်)*
 
-**အဓိက လေ့လာစရာများ (Core) ≈ 3 h 50 min · ဗီဒီယို 9 ခု · စံသတ်မှတ်ချက် 4 ခု**
+**အဓိက လေ့လာစရာများ (Core) ≈ 3 h 50 min · Video 9 ခု · စံသတ်မှတ်ချက် 4 ခု**
 
 **အဓိက ဦးတည်ချက်:**
 
@@ -201,7 +201,7 @@ Lines 300 ကနေ 500 ကြားရှိမယ့် terminal coding agent 
 
 * **Context Engineering** *(Podcast/Video · 1 h 33 min - The Pragmatic Engineer with Dex Horthy):* Context, harnesses, loops, research/plan/implement workflows, compaction နဲ့ software factories အကြောင်း။ မှတ်စုများအတွက် article and transcript က အသုံးဝင်ပါတယ်။
 * **Effective context engineering for AI agents** *(ဆောင်းပါး · 25 min - Anthropic):* Context ကို အကန့်အသတ်ရှိတဲ့ အရင်းအမြစ်တစ်ခုအဖြစ် စနစ်တကျ သုံးစွဲပုံ - system prompts, tools, examples, retrieval နဲ့ compaction များ။
-* **Prompting for Agents** *(ဗီဒီယို · 29 min - Anthropic):* Model တစ်ခုဟာ tools တွေနဲ့ loop ပတ်ပြီး အလုပ်လုပ်တဲ့အခါ prompt ရေးသားပုံ ဘယ်လို ပြောင်းလဲသွားသလဲ ဆိုတာ။
+* **Prompting for Agents** *(Video · 29 min - Anthropic):* Model တစ်ခုဟာ tools တွေနဲ့ loop ပတ်ပြီး အလုပ်လုပ်တဲ့အခါ prompt ရေးသားပုံ ဘယ်လို ပြောင်းလဲသွားသလဲ ဆိုတာ။
 * **Writing effective tools for agents** *(ဆောင်းပါး · 25 min - Anthropic):* Tool နာမည်များ၊ descriptions၊ သတ်မှတ်ချက် ဘောင်များ၊ ရလဒ် ထုတ်ပေးပုံနဲ့ evaluation လုပ်နည်းများ။
 * **Model Context Protocol (MCP) Specification** *(Spec စာတမ်း · Architecture, transports နဲ့ tools အပိုင်းများအတွက် 30 min):* Tutorial တွေ မဖတ်ခင် မူရင်း အခြေခံ သတ်မှတ်ချက်ကို အရင် ဖတ်ပါ။
 * **Spec Kit & Agentic SDD workflow** *(Documentation · GitHub - 20 min):* Spec-driven development ကို လက်တွေ့ အကောင်အထည်ဖော်ထားတဲ့ လုပ်ငန်းစဉ် လမ်းညွှန်။
@@ -216,11 +216,11 @@ Lines 300 ကနေ 500 ကြားရှိမယ့် terminal coding agent 
 * **Advanced Context Engineering (HumanLayer):** 12-Factor Agents မူဝါဒများ။
 * **Specs Are the New Source Code (Ravi Mehta):** Spec-driven development ရဲ့ product အမြင်။ Al Harris ရဲ့ talk နဲ့ တွဲဖက်လေ့လာနိုင်တဲ့ Kiro specs docs ကိုလည်း ကြည့်ပါ။
 * **MCP Inspector:** MCP servers တွေကို စမ်းသပ်စစ်ဆေးဖို့ tooling စနစ်။ MCP Registry ကတော့ MCP servers တွေကို ထုတ်ဝေမျှဝေဖို့နဲ့ ရှာဖွေဖို့အတွက် ဖြစ်ပါတယ်။
-* **How I use Claude Code for real engineering** *(ဗီဒီယို · 10 min - Matt Pocock):* Planning, မရှင်းတာတွေ မေးမြန်းခြင်း၊ အဆင့်လိုက် အကောင်အထည်ဖော်ခြင်းနဲ့ context window စီမံခန့်ခွဲပုံ။
+* **How I use Claude Code for real engineering** *(Video · 10 min - Matt Pocock):* Planning, မရှင်းတာတွေ မေးမြန်းခြင်း၊ အဆင့်လိုက် အကောင်အထည်ဖော်ခြင်းနဲ့ context window စီမံခန့်ခွဲပုံ။
 
 ---
 
-### အပိုဆောင်း ဗီဒီယိုများ
+### အပိုဆောင်း Videos
 
 * **AI Prompt Engineering: A Deep Dive** *(1 h 16 min - Anthropic)* နှင့် **Prompting 101** *(24 min)*
 * **AI prompt engineering in 2025: What works and what doesn't** *(1 h 37 min - Sander Schulhoff on Lenny's Podcast)*
@@ -228,7 +228,7 @@ Lines 300 ကနေ 500 ကြားရှိမယ့် terminal coding agent 
 * **Context Engineering Our Way to Long-Horizon Agents** *(39 min - Harrison Chase of LangChain)*
 * **Spec-Driven Development: Agentic Coding at FAANG Scale and Quality** *(1 h 04 min - Al Harris of Amazon Kiro)*
 * **Building Agents with Model Context Protocol** *(1 h 44 min - Mahesh Murag of Anthropic)*
-* **MCP: Build Rich-Context AI Apps** *(ဗီဒီယိုသင်တန်း ≈ 1 h 30 min - DeepLearning.AI & Anthropic)*
+* **MCP: Build Rich-Context AI Apps** *(Video course ≈ 1 h 30 min - DeepLearning.AI & Anthropic)*
 * **Model Context Protocol: A Deep Dive** *(9 min - Gaurav Sen)*
 
 ---
@@ -262,7 +262,7 @@ Lines 300 ကနေ 500 ကြားရှိမယ့် terminal coding agent 
 
 *(ရက်သတ္တပတ် 10 ပတ်အနက် တတိယအပတ်)*
 
-**အဓိက လေ့လာစရာများ (Core) ≈ 3 h 40 min · ဗီဒီယို 3 ခု · စံသတ်မှတ်ချက် 4 ခု**
+**အဓိက လေ့လာစရာများ (Core) ≈ 3 h 40 min · Video 3 ခု · စံသတ်မှတ်ချက် 4 ခု**
 
 **အဓိက ဦးတည်ချက်:**
 
@@ -279,7 +279,7 @@ Helper script ပါဝင်တဲ့ packaged skill တစ်ခုနဲ့ b
 * **Agent Skills** *(Course unit · Hugging Face - 60 minခန့်):* လွှဲပြောင်းရလွယ်ပြီး အဆင့်အလိုက် ဖွင့်ပြပေးတဲ့ progressive disclosure skills တွေအကြောင်း အကောင်းဆုံး သင်ခန်းစာ။
 * **Equipping agents for the real world with Agent Skills** *(ဆောင်းပါး · Anthropic - 20 min):* Public skills repository နမူနာများနှင့်တကွ ရှင်းပြချက်။
 * **Agent Skills Quickstart** *(Spec & Tutorial · 30 min)*
-* **The Beginner's Guide to Coding with Cursor** *(ဗီဒီယို · 45 min - Lee Robinson of Cursor):* Typed languages, linting, formatting, tests, branch review နဲ့ parallel background work များ။
+* **The Beginner's Guide to Coding with Cursor** *(Video · 45 min - Lee Robinson of Cursor):* Typed languages, linting, formatting, tests, branch review နဲ့ parallel background work များ။
 * **The Missing Semester 2026: Shell Overview & Intro** *(MIT CLI Foundation · လေ့ကျင့်ခန်းများအပါ ≈ 60 min):* Shell navigation, scripting, streams, permissions နဲ့ safe bash practices များ။
 * **AGENTS.md Standard** *(10 min):* နမူနာတွေနဲ့ စည်းမျဉ်းတွေကို အခု ဖတ်ထားပါ (Repo instructions အကြောင်းကို Week 4 မှာ အဓိက လေ့လာပါမယ်)။
 
@@ -293,12 +293,12 @@ Helper script ပါဝင်တဲ့ packaged skill တစ်ခုနဲ့ b
 
 ---
 
-### အပိုဆောင်း ဗီဒီယိုများ
+### အပိုဆောင်း Videos
 
-* **Skill Issue: How We Used AI to Make Agents Actually Good at Supabase** *(ဗီဒီယို · 1 h 19 min - Pedro Rodrigues of Supabase):* `SKILL.md` တည်ဆောက်ပုံ၊ supporting scripts များ၊ progressive disclosure နဲ့ routing အလုပ်လုပ်ပုံ။
-* **Bringing Agents onto the World Wide Web** *(ဗီဒီယို · 18 min - Paul Klein of Browserbase):* Browser-agent harnesses, network interception, WebMCP, Playwright CLI နဲ့ reusable website skills များ။
-* **How AI agents & Claude skills work (Clearly Explained)** *(ဗီဒီယို · 35 min - Greg Isenberg)*
-* **Future of Programming with AI** *(ဗီဒီယို · 2 h 29 min - Lex Fridman with the Cursor team):* Editor design, speculative edits နဲ့ Cursor တည်ထောင်သူတွေရဲ့ agent ဆိုင်ရာ အတွေးအခေါ်များ။
+* **Skill Issue: How We Used AI to Make Agents Actually Good at Supabase** *(Video · 1 h 19 min - Pedro Rodrigues of Supabase):* `SKILL.md` တည်ဆောက်ပုံ၊ supporting scripts များ၊ progressive disclosure နဲ့ routing အလုပ်လုပ်ပုံ။
+* **Bringing Agents onto the World Wide Web** *(Video · 18 min - Paul Klein of Browserbase):* Browser-agent harnesses, network interception, WebMCP, Playwright CLI နဲ့ reusable website skills များ။
+* **How AI agents & Claude skills work (Clearly Explained)** *(Video · 35 min - Greg Isenberg)*
+* **Future of Programming with AI** *(Video · 2 h 29 min - Lex Fridman with the Cursor team):* Editor design, speculative edits နဲ့ Cursor တည်ထောင်သူတွေရဲ့ agent ဆိုင်ရာ အတွေးအခေါ်များ။
 
 ---
 
@@ -337,7 +337,7 @@ Helper script ပါဝင်တဲ့ packaged skill တစ်ခုနဲ့ b
 
 *(ရက်သတ္တပတ် 10 ပတ်အနက် စတုတ္ထပတ်)*
 
-**အဓိက လေ့လာစရာများ (Core) ≈ 3 h 40 min · ဗီဒီယို 6 ခု · စံသတ်မှတ်ချက် 4 ခု**
+**အဓိက လေ့လာစရာများ (Core) ≈ 3 h 40 min · Video 6 ခု · စံသတ်မှတ်ချက် 4 ခု**
 
 **အဓိက ဦးတည်ချက်:**
 
@@ -354,8 +354,8 @@ Repo instructions ဖိုင်တစ်ခု၊ hooks 2 ခုနဲ့ plan
 * **Claude Code best practices** *(ဆောင်းပါး · Anthropic - 30 min):* `CLAUDE.md`၊ tool allowlists၊ workflows နဲ့ multi-Claude patterns တွေအတွက် အဓိက လမ်းညွှန်ချက်။
 * **Steering Claude Code: skills, hooks, rules, subagents, and more** *(ဆောင်းပါး · Anthropic - 15 min):* ယန္တရားတစ်ခုချင်းစီကို ဘယ်အချိန်မှာ သုံးရမလဲဆိုတဲ့ အချက်များ။
 * **Sub-agents & Hooks** *(Course units · Hugging Face ≈ 90 min):* Sub-agents များနှင့် hooks များ အခန်း။
-* **Mastering Claude Code in 30 minutes** *(ဗီဒီယို · Anthropic - 28 min):* Boris Cherny ကိုယ်တိုင် configuration ပြင်ဆင်ပုံတစ်ခုလုံးကို ရှင်းပြထားချက်။
-* **Inside Claude Code With Its Creator** *(ဗီဒီယို · Boris Cherny - 50 min):* Terminal design၊ `CLAUDE.md`၊ teams၊ subagents၊ plan mode နဲ့ coding လောကရဲ့ အနာဂတ်။
+* **Mastering Claude Code in 30 minutes** *(Video · Anthropic - 28 min):* Boris Cherny ကိုယ်တိုင် configuration ပြင်ဆင်ပုံတစ်ခုလုံးကို ရှင်းပြထားချက်။
+* **Inside Claude Code With Its Creator** *(Video · Boris Cherny - 50 min):* Terminal design၊ `CLAUDE.md`၊ teams၊ subagents၊ plan mode နဲ့ coding လောကရဲ့ အနာဂတ်။
 
 ---
 
@@ -369,7 +369,7 @@ Repo instructions ဖိုင်တစ်ခု၊ hooks 2 ခုနဲ့ plan
 
 ---
 
-### အပိုဆောင်း ဗီဒီယိုများ
+### အပိုဆောင်း Videos
 
 * **AI Coding Workflow: From Product Idea to Tested Implementation** *(1 h 37 min - Matt Pocock):* PRDs၊ vertical slices၊ unattended agents၊ QA၊ review နဲ့ parallelization များ။
 * **Claude Code & the evolution of agentic coding** *(18 min - Boris Cherny)*
@@ -408,7 +408,7 @@ Repo instructions ဖိုင်တစ်ခု၊ hooks 2 ခုနဲ့ plan
 
 *(ရက်သတ္တပတ် 10 ပတ်အနက် ပဉ္စမအပတ်)*
 
-**အဓိက လေ့လာစရာများ (Core) ≈ 3 h 30 min · ဗီဒီယို 3 ခု · စံသတ်မှတ်ချက် 4 ခု**
+**အဓိက လေ့လာစရာများ (Core) ≈ 3 h 30 min · Video 3 ခု · စံသတ်မှတ်ချက် 4 ခု**
 
 **အဓိက ဦးတည်ချက်:**
 
@@ -425,7 +425,7 @@ Score သတ်မှတ်ထားတဲ့ readiness audit ပြုလုပ
 * **Harness engineering: leveraging Codex in an agent-first world** *(Case study · OpenAI - 30 min):* ဒီအပတ်ရဲ့ အရေးကြီးဆုံး ဖတ်စရာ - repo ရှင်းလင်းမှု၊ စနစ်တကျ ရေးထားတဲ့ docs၊ စက်က အလိုအလျောက် ထိန်းကွပ်ထားတဲ့ invariants တွေနဲ့ progressive disclosure အကြောင်း။
 * **Repository Harnesses for AI Coding Agents** *(လက်တွေ့လမ်းညွှန် · Adobe ≈ 60 min):* Agent တွေ အလွယ်တကူ နားလည်နိုင်ပြီး verify လုပ်နိုင်မယ့် repo ပြင်ဆင်နည်း အခမဲ့ လမ်းညွှန်။
 * **Harness Engineering** *(ဆောင်းပါး · Martin Fowler - 20 min)*
-* **Making Codebases Agent-Ready & Building Reliable Agentic Systems** *(ဗီဒီယိုများ · Factory - 34 min):* Mechanical verification၊ linters၊ end-to-end tests၊ interface docs၊ planning၊ grounding နဲ့ လူကိုယ်တိုင် ကြီးကြပ်မှုများ။
+* **Making Codebases Agent-Ready & Building Reliable Agentic Systems** *(Videos · Factory - 34 min):* Mechanical verification၊ linters၊ end-to-end tests၊ interface docs၊ planning၊ grounding နဲ့ လူကိုယ်တိုင် ကြီးကြပ်မှုများ။
 * **Your AI Product Needs Evals** *(ဆောင်းပါး · Hamel Husain - 20 min):* Evaluation လုပ်တဲ့ အလေ့အကျင့်ကို ဒီကတည်းက စတင်ပါ (Week 10 ဟာ ဒီအပေါ်မှာ အခြေခံပါလိမ့်မယ်)။
 * **The ROI of AI: Why You Need Eval Frameworks** *(ဆောင်းပါး · Beyang Liu of Sourcegraph - 25 min):* တိကျသေချာတဲ့ evals၊ repo context၊ engineering KPIs နဲ့ အပေါ်ယံ အလုပ်ဖြစ်ပြရုံ ကုန်ထုတ်စွမ်းအားတု (productivity theater) ကို ရှောင်ရှားပုံ။
 
@@ -440,7 +440,7 @@ Score သတ်မှတ်ထားတဲ့ readiness audit ပြုလုပ
 
 ---
 
-### အပိုဆောင်း ဗီဒီယိုများ
+### အပိုဆောင်း Videos
 
 * **TDD, AI agents and coding** *(1 h 15 min - Kent Beck with The Pragmatic Engineer):* Agent တွေ ကုဒ်ရေးတဲ့အခါ test-driven development ဟာ ဘာကြောင့် စွမ်းအားတစ်ခု ဖြစ်လာသလဲ ဆိုတာ။
 * **When to Build Your Own Agent Harness** *(23 min - Harrison Chase of LangChain)*
@@ -482,7 +482,7 @@ Score သတ်မှတ်ထားတဲ့ readiness audit ပြုလုပ
 
 *(ရက်သတ္တပတ် 10 ပတ်အနက် ဆဋ္ဌမအပတ်)*
 
-**အဓိက လေ့လာစရာများ (Core) ≈ 3 h 30 min · ဗီဒီယို 1 ခု · စံသတ်မှတ်ချက် 4 ခု**
+**အဓိက လေ့လာစရာများ (Core) ≈ 3 h 30 min · Video 1 ခု · စံသတ်မှတ်ချက် 4 ခု**
 
 **အဓိက ဦးတည်ချက်:**
 
@@ -499,7 +499,7 @@ Pull requests တွေနဲ့ ချိတ်ဆက်ထားပြီး P
 * **Engineering Practices: Code Review & Reviewer Guide** *(Google - 60 min):* Google ရဲ့ စံပြ code review လမ်းညွှန်ချက်များ။
 * **Software Engineering at Google (Chapter 9: Code Review)** *(အခမဲ့ စာအုပ်အခန်း · 45 min)*
 * **AI-powered entomology: lessons from millions of AI code reviews** *(Talk · Tomas Reimers of Graphite - 30 min):* Graphite ရဲ့ ရေးသားထားတဲ့ လမ်းညွှန်ဖြစ်တဲ့ AI code review implementation and best practices နဲ့ တွဲဖက်ဖတ်ရှုပါ။
-* **How to Kill the Code Review** *(ဗီဒီယို · Ankit Jain - 16 min):* Specs၊ reusable guardrails၊ deterministic checks၊ test plans၊ previews နဲ့ human alignment တွေ ပေါင်းစပ်ထားတဲ့ အလွှာ 5 လွှာပါ trust model။
+* **How to Kill the Code Review** *(Video · Ankit Jain - 16 min):* Specs၊ reusable guardrails၊ deterministic checks၊ test plans၊ previews နဲ့ human alignment တွေ ပေါင်းစပ်ထားတဲ့ အလွှာ 5 လွှာပါ trust model။
 * **Understanding Is the New Bottleneck** *(ဆောင်းပါး · Geoffrey Litt - 20 min):* Review ဆိုတာ အမှားစစ်ရုံသက်သက် မဟုတ်ဘဲ architecture ကို နားလည်စေခြင်း၊ အချင်းချင်း လမ်းပြပေးခြင်းနဲ့ ညှိနှိုင်းဆောင်ရွက်ခြင်းဖြစ်ကြောင်း၊ automation ဖြင့် အစားမထိုးနိုင်တဲ့ အချက်များ။
 * **GitHub Copilot code review & Claude Code GitHub Actions** *(Integrations · 30 min):* PR ပေါ်မှာ reviewer agent ထားရှိနိုင်တဲ့ အသုံးအများဆုံး နည်းလမ်း 2 ခု။
 
@@ -508,7 +508,7 @@ Pull requests တွေနဲ့ ချိတ်ဆက်ထားပြီး P
 ### From Cognition & ပိုလေ့လာချင်သူများအတွက်
 
 * **Don't Build Multi-Agents (Cognition):** Context မျှဝေသုံးစွဲပုံနဲ့ reviewer agent တစ်ခုအနေနဲ့ trace အပြည့်အစုံ ဘာကြောင့် လိုအပ်သလဲဆိုတဲ့ အချက်။
-* **DeepWiki: The GitHub Encyclopedia** *(ဗီဒီယို · Latent Space with Cognition - 32 min)*
+* **DeepWiki: The GitHub Encyclopedia** *(Video · Latent Space with Cognition - 32 min)*
 * **SWE-bench technical report & Devin: Coding Agents 101 (Cognition)**
 * **AI-Assisted Assessment of Coding Practices in Modern Code Review** *(သုတေသနစာတမ်း) နှင့် Google Research: Resolving code review comments with ML*
 * **Your Coding Agent Doesn't Always Follow Your Rules** *(10 min):* Hooks၊ deterministic checks၊ asynchronous verification၊ reviewer agents နဲ့ LLM-as-judge tradeoffs များ။
@@ -551,7 +551,7 @@ Reviewer agent ကို line အတိအကျ ထောက်ပြခို�
 
 *(ရက်သတ္တပတ် 10 ပတ်အနက် သတ္တမအပတ်)*
 
-**အဓိက လေ့လာစရာများ (Core) ≈ 3 h 50 min · ဗီဒီယို 2 ခု · စံသတ်မှတ်ချက် 4 ခု**
+**အဓိက လေ့လာစရာများ (Core) ≈ 3 h 50 min · Video 2 ခု · စံသတ်မှတ်ချက် 4 ခု**
 
 **အဓိက ဦးတည်ချက်:**
 
@@ -568,7 +568,7 @@ Threat model တစ်ခု၊ CI အတွင်း SAST / SCA / secret scans 
 * **OWASP MCP Top 10 & OWASP Top 10 for LLM Applications** *(ခြိမ်းခြောက်မှု စာရင်းများ · 60 min)*
 * **The lethal trifecta for AI agents & Prompt injection explained** *(Simon Willison - 25 min)*
 * **GitHub Copilot: Remote Code Execution via Prompt Injection (CVE-2025-53773)** *(Embrace The Red - 15 min):* Coding agent တစ်ခုကို အစအဆုံး တိုက်ခိုက်ပြထားတဲ့ attack chain လက်တွေ့ ဖြစ်ရပ်။
-* **When AI Writes Code: Rethinking App Security** *(ဗီဒီယို · Isaac Evans of Semgrep - 45 min):* AI ရေးတဲ့ ကုဒ်တွေမှာ ပါလာတတ်တဲ့ အားနည်းချက်များ၊ SAST၊ security assistants၊ feedback loops နဲ့ coding agents တွေကြောင့် ဖြစ်လာတဲ့ အန္တရာယ်များ။
+* **When AI Writes Code: Rethinking App Security** *(Video · Isaac Evans of Semgrep - 45 min):* AI ရေးတဲ့ ကုဒ်တွေမှာ ပါလာတတ်တဲ့ အားနည်းချက်များ၊ SAST၊ security assistants၊ feedback loops နဲ့ coding agents တွေကြောင့် ဖြစ်လာတဲ့ အန္တရာယ်များ။
 * **Finding vulnerabilities in modern web apps using Claude Code and OpenAI Codex** *(Semgrep - 20 min):* Agent အကူအညီနဲ့ triage ပြုလုပ်ပုံ လက်တွေ့။
 * **Safety and Security for Code-Executing Agents** *(Fouad Matin of OpenAI - 14 min):* Remote code execution၊ prompt injection၊ ဒေတာ ခိုးထုတ်မှု (exfiltration)၊ containers၊ network ကန့်သတ်ချက်များ၊ approvals နဲ့ OS-level sandboxing။
 * **Web LLM attacks labs** *(PortSwigger Web Security Academy ≈ 60 min):* Indirect prompt injection ပါဝင်တဲ့ လက်တွေ့ lab 2 ခုကို စမ်းသပ်ပါ။
@@ -585,10 +585,10 @@ Threat model တစ်ခု၊ CI အတွင်း SAST / SCA / secret scans 
 
 ---
 
-### အပိုဆောင်း ဗီဒီယိုများ
+### အပိုဆောင်း Videos
 
-* **Why and How You Need to Sandbox AI-Generated Code** *(ဗီဒီယို · 38 min - Harshil Agrawal of Cloudflare):* capabilities, secrets, networking, cleanup, isolation surfaces နဲ့ indirect prompt injection အကြောင်း။
-* **Web Security Academy series introduction** *(ဗီဒီယို · 12 min - Rana Khalil):* PortSwigger labs အတွက် အထောက်အကူပြု ဗီဒီယို။
+* **Why and How You Need to Sandbox AI-Generated Code** *(Video · 38 min - Harshil Agrawal of Cloudflare):* capabilities, secrets, networking, cleanup, isolation surfaces နဲ့ indirect prompt injection အကြောင်း။
+* **Web Security Academy series introduction** *(Video · 12 min - Rana Khalil):* PortSwigger labs အတွက် အထောက်အကူပြု Video။
 
 ---
 
@@ -621,7 +621,7 @@ Least privilege (အနည်းဆုံး လုပ်ပိုင်ခွ�
 
 *(ရက်သတ္တပတ် 10 ပတ်အနက် အဋ္ဌမအပတ်)*
 
-**အဓိက လေ့လာစရာများ (Core) ≈ 3 h 30 min · ဗီဒီယို 4 ခု · စံသတ်မှတ်ချက် 4 ခု**
+**အဓိက လေ့လာစရာများ (Core) ≈ 3 h 30 min · Video 4 ခု · စံသတ်မှတ်ချက် 4 ခု**
 
 **အဓိက ဦးတည်ချက်:**
 
@@ -637,22 +637,22 @@ Isolation၊ budgets၊ checkpoints တွေနဲ့ retries တွေ ပါ�
 
 * **Cloud Agent Products အကြောင်း** *(တစ်ခုလျှင် ≈ 20 min):* OpenAI ရဲ့ Codex cloud၊ Anthropic ရဲ့ Claude Code on the web၊ Cursor Cloud Agents၊ GitHub Copilot coding agent။ (၎င်းတို့ရဲ့ trigger၊ isolation နဲ့ approval ပုံစံတွေကို နှိုင်းယှဉ်လေ့လာပါ)။
 * **Open-sourcing Symphony & Specification** *(Case study · OpenAI ≈ 60 min):* Issue-to-PR orchestration ကို specification အဆင့်အထိ စနစ်တကျ ရေးဆွဲထားချက်။
-* **Cloudflare's AI Engineering Stack: Assisted to Delegated** *(ဗီဒီယို · Rajesh Bhatia - 37 min):* Cloudflare အနေနဲ့ လူကူတဲ့ အဆင့်ကနေ agent ဆီ အပြည့်အဝ လွှဲအပ်တဲ့အဆင့်ကို သူတို့ platform ပေါ်မှာ ဘယ်လို ပြောင်းလဲခဲ့သလဲ ဆိုတာ။
-* **Scaling AI Agents Without Breaking Reliability** *(ဗီဒီယို · Preeti Somal of Temporal - 15 min):* Persistent state၊ orchestration၊ စောင့်ကြည့်နိုင်စွမ်း၊ အလိုအလျောက် ပြန်လည်ကောင်းမွန်မှု (automatic recovery)၊ လူနှင့် ချိတ်ဆက်မှုနဲ့ parallel work များ။
-* **I Run a Fleet of AI Agents Across Three Machines: Here's What Broke** *(ဗီဒီယို · Kyle Jaejun Lee - 9 min):* စက် 3 လုံးပေါ် agent အုပ်စုကြီး ပြိုင်တူလွှတ်တဲ့အခါ ကြုံရတဲ့ attention limits၊ ပျက်စီးမှုများနှင့် ပြန်လည်ပြင်ဆင်ပုံ လက်တွေ့။
+* **Cloudflare's AI Engineering Stack: Assisted to Delegated** *(Video · Rajesh Bhatia - 37 min):* Cloudflare အနေနဲ့ လူကူတဲ့ အဆင့်ကနေ agent ဆီ အပြည့်အဝ လွှဲအပ်တဲ့အဆင့်ကို သူတို့ platform ပေါ်မှာ ဘယ်လို ပြောင်းလဲခဲ့သလဲ ဆိုတာ။
+* **Scaling AI Agents Without Breaking Reliability** *(Video · Preeti Somal of Temporal - 15 min):* Persistent state၊ orchestration၊ စောင့်ကြည့်နိုင်စွမ်း၊ အလိုအလျောက် ပြန်လည်ကောင်းမွန်မှု (automatic recovery)၊ လူနှင့် ချိတ်ဆက်မှုနဲ့ parallel work များ။
+* **I Run a Fleet of AI Agents Across Three Machines: Here's What Broke** *(Video · Kyle Jaejun Lee - 9 min):* စက် 3 လုံးပေါ် agent အုပ်စုကြီး ပြိုင်တူလွှတ်တဲ့အခါ ကြုံရတဲ့ attention limits၊ ပျက်စီးမှုများနှင့် ပြန်လည်ပြင်ဆင်ပုံ လက်တွေ့။
 
 ---
 
-### Tools, References & အပိုဆောင်း ဗီဒီယိုများ
+### Tools, References & အပိုဆောင်း Videos
 
 * **Cloudflare Agents SDK & Sandbox SDK:** Stateful agents တွေနဲ့ သီးခြားခွဲထုတ်ထားတဲ့ environment အတွက် platform။
 * **Temporal Durable AI Agent Tutorial:** OpenAI Agents integration သဘောတရားများ။
 * **Code Mode (Cloudflare):** Fleets တွေအတွက် tokens 1000 တည်းနဲ့ API တစ်ခုလုံးကို ပေးစွမ်းနိုင်တဲ့ tool-efficiency နည်းစနစ်။
 * **Jules (Google):** နှိုင်းယှဉ်လေ့လာနိုင်တဲ့ တတိယမြောက် cloud agent။
 * **Common Workflows (Claude Code):** local agent အများအပြားကို ပြိုင်တူ run ရန်အတွက် git worktrees အသုံးပြုပုံ။
-* **Claude Agent SDK: Full Workshop** *(ဗီဒီယို · 1 h 52 min - Thariq Shihipar of Anthropic):* Claude Code ကိုယ်တိုင် အခြေခံထားတဲ့ SDK အသုံးပြုပုံ။
-* **Building the future of agents with Claude** *(ဗီဒီယို · 22 min - Anthropic):* agent တွေ ရှေ့ဆက်သွားမယ့် ဦးတည်ချက်။
-* **Why AI Is About to Get 1000x Cheaper** *(ဗီဒီယို · Neil Movva):* Long-running agents (`05:32`), inference stack (`15:12`), throughput vs latency (`20:03`) နဲ့ transformer hardware (`33:19`) ခေါင်းစဉ်များ။ “1000x” ဆိုတာကို လက်တွေ့ပြသထားတဲ့ ခန့်မှန်းချက်တစ်ခု မဟုတ်ဘဲ ရည်မှန်းချက်တစ်ခုအဖြစ်သာ မှတ်ယူပါ။
+* **Claude Agent SDK: Full Workshop** *(Video · 1 h 52 min - Thariq Shihipar of Anthropic):* Claude Code ကိုယ်တိုင် အခြေခံထားတဲ့ SDK အသုံးပြုပုံ။
+* **Building the future of agents with Claude** *(Video · 22 min - Anthropic):* agent တွေ ရှေ့ဆက်သွားမယ့် ဦးတည်ချက်။
+* **Why AI Is About to Get 1000x Cheaper** *(Video · Neil Movva):* Long-running agents (`05:32`), inference stack (`15:12`), throughput vs latency (`20:03`) နဲ့ transformer hardware (`33:19`) ခေါင်းစဉ်များ။ “1000x” ဆိုတာကို လက်တွေ့ပြသထားတဲ့ ခန့်မှန်းချက်တစ်ခု မဟုတ်ဘဲ ရည်မှန်းချက်တစ်ခုအဖြစ်သာ မှတ်ယူပါ။
 
 ---
 
@@ -685,7 +685,7 @@ Issue တစ်ခုကနေ pull request အထိ နောက်ကွယ�
 
 *(ရက်သတ္တပတ် 10 ပတ်အနက် နဝမအပတ်)*
 
-**အဓိက လေ့လာစရာများ (Core) ≈ 3 h 40 min · ဗီဒီယို 1 ခု · စံသတ်မှတ်ချက် 4 ခု**
+**အဓိက လေ့လာစရာများ (Core) ≈ 3 h 40 min · Video 1 ခု · စံသတ်မှတ်ချက် 4 ခု**
 
 **အဓိက ဦးတည်ချက်:**
 
@@ -704,7 +704,7 @@ Model gateway တစ်ခု၊ MCP portal တစ်ခုနဲ့ စာမ�
 * **Scaling MCP adoption: reference architecture for enterprise deployments** *(Cloudflare - 25 min)*
 * **Enterprise-Managed Authorization** *(MCP Spec & Technical specification - 20 min)*
 * **2025 State of AI-assisted Software Development** *(DORA - 60 min):* AI ဟာ ရှိရင်းစွဲ စနစ်ရဲ့ အားသာချက်ရော အားနည်းချက်ကိုပါ ပိုကြီးသွားစေကြောင်း သုတေသန။ (METR ရဲ့ *Measuring the Impact of Early-2025 AI on Experienced Developer Productivity* ဆောင်းပါးနဲ့ တွဲဖတ်ပါ)။
-* **The Future of Software Creation** *(ဗီဒီယို · Amjad Masad of Replit - 42 min):* Software ဖန်တီးရတာ ပိုမိုလွယ်ကူ သက်သာလာတဲ့အခါ အဖွဲ့အစည်းတွေ ဘယ်လို ပြောင်းလဲသွားမလဲ ဆိုတာ။
+* **The Future of Software Creation** *(Video · Amjad Masad of Replit - 42 min):* Software ဖန်တီးရတာ ပိုမိုလွယ်ကူ သက်သာလာတဲ့အခါ အဖွဲ့အစည်းတွေ ဘယ်လို ပြောင်းလဲသွားမလဲ ဆိုတာ။
 
 ---
 
@@ -713,7 +713,7 @@ Model gateway တစ်ခု၊ MCP portal တစ်ခုနဲ့ စာမ�
 * **Gateways:** LiteLLM AI Gateway (open source) သို့မဟုတ် Cloudflare AI Gateway။ (Routing အတွက် Vercel ရဲ့ *Six LLM routing strategies* ကို ဖတ်ပါ)။
 * **Internal Registries:** MCP Registry။
 * **Adoption အထောက်အထားများ:** DORA AI Capabilities Model၊ Stack Overflow 2025 Survey၊ How OpenAI uses Codex (PDF)၊ How Anthropic teams use Claude Code။
-* **Building an Autonomous Engineering Org** *(ဗီဒီယို · 18 min):* Champions၊ repo readiness၊ delegation နဲ့ organizational impact ဆိုင်ရာ maturity model။
+* **Building an Autonomous Engineering Org** *(Video · 18 min):* Champions၊ repo readiness၊ delegation နဲ့ organizational impact ဆိုင်ရာ maturity model။
 * **Accelerate (စာအုပ်):** Nicole Forsgren, Jez Humble, and Gene Kim။ (AI ကြောင့် output အရေအတွက် သက်သက်များလာတာလား၊ ဒါမှမဟုတ် delivery တကယ်တိုးတက်လာတာလားဆိုတာ တိုင်းတာဖို့ အသုံးဝင်ပါတယ်)။
 
 ---
@@ -745,7 +745,7 @@ Model gateway တစ်ခု၊ MCP portal တစ်ခုနဲ့ စာမ�
 
 *(ရက်သတ္တပတ် 10 ပတ်အနက် နောက်ဆုံးအပတ်)*
 
-**အဓိက လေ့လာစရာများ (Core) ≈ 3 h 30 min · ဗီဒီယို 5 ခု · စံသတ်မှတ်ချက် 4 ခု**
+**အဓိက လေ့လာစရာများ (Core) ≈ 3 h 30 min · Video 5 ခု · စံသတ်မှတ်ချက် 4 ခု**
 
 **အဓိက ဦးတည်ချက်:**
 
@@ -768,7 +768,7 @@ Eval suite တစ်ခုနဲ့ စနစ်တကျ ထိန်းချ�
 
 ---
 
-### Tools, References & အပိုဆောင်း ဗီဒီယိုများ
+### Tools, References & အပိုဆောင်း Videos
 
 * **Evaluating AI Agents** *(DeepLearning.AI ≈ 2 h):* Tracing၊ trajectory evaluation၊ LLM judges နဲ့ production monitoring။
 * **Langfuse & OpenTelemetry GenAI Conventions:** Phoenix အစား သုံးနိုင်တဲ့ open-source စောင့်ကြည့်ရေး စနစ်။
@@ -827,7 +827,7 @@ $$\text{Issue} \rightarrow \text{Aligned Spec} \rightarrow \text{Isolated Agent 
 * ရပ်တန့်သွားရင် ပြန်စနိုင်တဲ့ durable issue-to-PR background workflow (retries စနစ်ပါဝင်ရမယ်)။
 * ကုန်ကျစရိတ်၊ latency၊ routing နဲ့ errors တွေကို စောင့်ကြည့်နိုင်မယ့် model gateway telemetry။
 * ပုံသေ evaluation suite တစ်ခုနဲ့ အကျဉ်းချုပ် results dashboard သို့မဟုတ် report တစ်ခု။
-* 5 minမှ 10 minစာ demo ဗီဒီယိုတစ်ခုနဲ့ ကြုံတွေ့ခဲ့ရတဲ့ အမှားများ၊ တိုးတက်မှုများကို ရှင်းပြထားတဲ့ retrospective သုံးသပ်ချက်တစ်ခု။
+* 5 minမှ 10 minစာ demo Videoတစ်ခုနဲ့ ကြုံတွေ့ခဲ့ရတဲ့ အမှားများ၊ တိုးတက်မှုများကို ရှင်းပြထားတဲ့ retrospective သုံးသပ်ချက်တစ်ခု။
 
 ### ပြီးစီးကြောင်း စစ်ဆေးရန် (Done When / Completion Gates)
 
