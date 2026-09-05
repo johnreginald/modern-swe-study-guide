@@ -51,3 +51,9 @@ Publish a Burmese edition of the guide, translated with Gemini, that is as trust
 - Site parser accepts the approved layout directly (no alignment to the English file): `**Title** *(kind · duration - author):* note` cards, focus/build label lines, `(Done When)` headings, bullet glance list. Burmese numerals kept as written.
 - Not in the Burmese text (author's choice), so unlinked: Dex Horthy transcript, HF MCP unit 2, Kiro specs, anthropics/skills, DeepLearning.AI Claude Code course, Latent Space Claude Code, DHH transcript, Graphite guide, Invariant tool-poisoning post, Cloudflare sandbox talk, Rana Khalil intro, Shostack 2nd ed, Temporal OpenAI-Agents README, "Building the future of agents with Claude".
 - To update: edit `chat-version.md`, run `node scripts/import-chat-translation.mjs && npm run sync && npm run build`, deploy.
+
+## Revision 2026-09-05 (later): fidelity pass
+
+- Restored everything the chat version had dropped (Week 7 video track, Week 8 worktrees + agents video + "1000x" caveat, Week 10 SRE intro, Week 2 registry/Kiro/unit 2, Week 4 courses + Latent Space + DHH transcript, Week 6 Graphite guide, Week 7 Invariant + 2nd-edition note, Week 9 real titles). Links: 196/198 placed (the two "missing" are the same URLs already placed under another title).
+- Register harmonised to the weeks' colloquial style (capstone gates, deliverables, About, install hint, translation note, bookshelf); "agent…ကောင်" → "agent…ခု".
+- Additions were generated with Gemini 3.6 Flash (Low) from the approved style sample and hand-checked; `additions.json` keeps the raw output.
