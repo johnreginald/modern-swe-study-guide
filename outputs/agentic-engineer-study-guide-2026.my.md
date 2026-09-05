@@ -25,7 +25,7 @@ Coding agents တွေကိုသုံးပြီး ဆော့ဖ်ဝ�
 
 - **၃–၄ နာရီ:** သက်ဆိုင်ရာ Week အတွက် **အဓိက လေ့လာစရာများ (Core)** ကို ဖတ်ပါ။ (Core စာရင်းကို အများဆုံး ၄ နာရီဝန်းကျင်ပဲ ကုန်အောင် ကန့်သတ်ထားပြီး ကြာချိန်တွေကိုလည်း ဘေးမှာ ရေးပေးထားပါတယ်)။
 - **၅–၆ နာရီ:** အပတ်စဉ် **လက်တွေ့ တည်ဆောက်ရန် (Build)** ကို ကိုယ်တိုင် လုပ်ပါ။
-- **၁–၂ နာရီ:** ရလဒ်တွေ၊ ကြုံရတဲ့ error တွေ၊ API ကုန်ကျစရိတ်နဲ့ ရခဲ့တဲ့ အတွေ့အကြုံတွေကို မှတ်တမ်းတင်ပြီး **“ပြီးစီးကြောင်း စစ်ဆေးရန် (Done When)”** စာရင်းအတိုင်း စစ်ဆေးပါ။
+- **၁–၂ နာရီ:** ရလဒ်တွေ၊ မအောင်မြင်ခဲ့တာတွေ၊ ကုန်ကျစရိတ်နဲ့ ရခဲ့တဲ့ သင်ခန်းစာတွေကို မှတ်တမ်းတင်ပြီး **“ပြီးစီးကြောင်း စစ်ဆေးရန် (Done When)”** စာရင်းအတိုင်း စစ်ဆေးပါ။
 
 **ပိုလေ့လာချင်သူများအတွက် (Deeper material)**၊ **အပိုဆောင်း ဗီဒီယိုများ** နဲ့ **Tools and references** တွေအောက်က အရာအားလုံးဟာ optional ဖြစ်ပါတယ်။ ကိုယ်စိတ်ဝင်စားတာကိုပဲ ရွေးဖတ်ပါ၊ အကုန်လုံးပြီးအောင် မကြိုးစားပါနဲ့။
 
@@ -124,7 +124,7 @@ Lines ၃၀၀ ကနေ ၅၀၀ ကြားရှိမယ့် terminal c
 
 ### အဓိက လေ့လာစရာများ (Core) ≈ ၃ နာရီ ၅၀ မိနစ်
 
-- **[Context Engineering](https://youtu.be/Usufn8IQJgw)** *(Podcast/Video · ၁ နာရီ ၃၃ မိနစ် - The Pragmatic Engineer with Dex Horthy):* Context, harnesses, loops, research/plan/implement workflows, compaction နဲ့ software factories အကြောင်း။
+- **[Context Engineering](https://youtu.be/Usufn8IQJgw)** *(Podcast/Video · ၁ နာရီ ၃၃ မိနစ် - The Pragmatic Engineer with Dex Horthy):* Context, harnesses, loops, research/plan/implement workflows, compaction နဲ့ software factories အကြောင်း။ မှတ်စုများအတွက် [article and transcript](https://newsletter.pragmaticengineer.com/p/context-engineering-with-dex-horthy) က အသုံးဝင်ပါတယ်။
 - **[Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)** *(ဆောင်းပါး · ၂၅ မိနစ် - Anthropic):* Context ကို အကန့်အသတ်ရှိတဲ့ အရင်းအမြစ်တစ်ခုအဖြစ် စနစ်တကျ သုံးစွဲပုံ - system prompts, tools, examples, retrieval နဲ့ compaction များ။
 - **[Prompting for Agents](https://www.youtube.com/watch?v=XSZP9GhhuAc)** *(ဗီဒီယို · ၂၉ မိနစ် - Anthropic):* Model တစ်ခုဟာ tools တွေနဲ့ loop ပတ်ပြီး အလုပ်လုပ်တဲ့အခါ prompt ရေးသားပုံ ဘယ်လို ပြောင်းလဲသွားသလဲ ဆိုတာ။
 - **[Writing effective tools for agents](https://www.anthropic.com/engineering/writing-tools-for-agents)** *(ဆောင်းပါး · ၂၅ မိနစ် - Anthropic):* Tool နာမည်များ၊ descriptions၊ သတ်မှတ်ချက် ဘောင်များ၊ ရလဒ် ထုတ်ပေးပုံနဲ့ evaluation လုပ်နည်းများ။
@@ -133,12 +133,12 @@ Lines ၃၀၀ ကနေ ၅၀၀ ကြားရှိမယ့် terminal c
 
 ### ပိုလေ့လာချင်သူများအတွက် (Deeper Material)
 
-- **[MCP Course (Hugging Face)](https://huggingface.co/learn/mcp-course/en/unit0/introduction):** Units 0–2 (၆–၈ နာရီခန့်၊ Week 2 နဲ့ 3 မှာ ခွဲပြီး လေ့လာပါ) - အစအဆုံး လက်တွေ့ပါဝင်တဲ့ အခမဲ့ MCP သင်တန်း။
+- **[MCP Course (Hugging Face)](https://huggingface.co/learn/mcp-course/en/unit0/introduction):** Units 0–2 (၆–၈ နာရီခန့်၊ Week 2 နဲ့ 3 မှာ ခွဲပြီး လေ့လာပါ) - အစအဆုံး လက်တွေ့ပါဝင်တဲ့ အခမဲ့ MCP သင်တန်း။ [end-to-end MCP application unit](https://huggingface.co/learn/mcp-course/en/unit2/introduction) အထိ ဆက်လက် လေ့လာသွားပါ။
 - **[Context Engineering for AI Agents: Lessons from Building Manus](https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus):** KV-cache hit rate, file system ကို context အဖြစ် သုံးပုံနဲ့ error တွေကို trace ထဲမှာ သိမ်းဆည်းပုံ။
 - **[How Long Contexts Fail (Drew Breunig)](https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html) & [Context Rot (Chroma)](https://research.trychroma.com/context-rot):** Context ပိုရှည်တိုင်း အလကားမရဘူးဆိုတဲ့ အထောက်အထားများ။
 - **[Advanced Context Engineering (HumanLayer)](https://www.hlyr.dev/blog/advanced-context-engineering):** [12-Factor Agents](https://github.com/humanlayer/12-factor-agents) မူဝါဒများ။
-- **[Specs Are the New Source Code (Ravi Mehta)](https://blog.ravi-mehta.com/p/specs-are-the-new-source-code):** Spec-driven development ရဲ့ product အမြင်။
-- **[MCP Inspector](https://github.com/modelcontextprotocol/inspector):** MCP servers တွေကို စမ်းသပ်စစ်ဆေးဖို့ tooling စနစ်။
+- **[Specs Are the New Source Code (Ravi Mehta)](https://blog.ravi-mehta.com/p/specs-are-the-new-source-code):** Spec-driven development ရဲ့ product အမြင်။ Al Harris ရဲ့ talk နဲ့ တွဲဖက်လေ့လာနိုင်တဲ့ [Kiro specs docs](https://kiro.dev/docs/specs/) ကိုလည်း ကြည့်ပါ။
+- **[MCP Inspector](https://github.com/modelcontextprotocol/inspector):** MCP servers တွေကို စမ်းသပ်စစ်ဆေးဖို့ tooling စနစ်။ [MCP Registry](https://github.com/modelcontextprotocol/registry) ကတော့ MCP servers တွေကို ထုတ်ဝေမျှဝေဖို့နဲ့ ရှာဖွေဖို့အတွက် ဖြစ်ပါတယ်။
 - **[How I use Claude Code for real engineering](https://www.youtube.com/watch?v=kZ-zzHVUrO4)** *(ဗီဒီယို · ၁၀ မိနစ် - Matt Pocock):* Planning, မရှင်းတာတွေ မေးမြန်းခြင်း၊ အဆင့်လိုက် အကောင်အထည်ဖော်ခြင်းနဲ့ context window စီမံခန့်ခွဲပုံ။
 
 ### အပိုဆောင်း ဗီဒီယိုများ
@@ -182,7 +182,7 @@ Helper script ပါဝင်တဲ့ packaged skill တစ်ခုနဲ့ b
 ### အဓိက လေ့လာစရာများ (Core) ≈ ၃ နာရီ ၄၀ မိနစ်
 
 - **[Agent Skills](https://huggingface.co/learn/context-course/en/unit1/introduction)** *(Course unit · Hugging Face - ၆၀ မိနစ်ခန့်):* လွှဲပြောင်းရလွယ်ပြီး အဆင့်အလိုက် ဖွင့်ပြပေးတဲ့ progressive disclosure skills တွေအကြောင်း အကောင်းဆုံး သင်ခန်းစာ။
-- **[Equipping agents for the real world with Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)** *(ဆောင်းပါး · Anthropic - ၂၀ မိနစ်):* Public skills repository နမူနာများနှင့်တကွ ရှင်းပြချက်။
+- **[Equipping agents for the real world with Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)** *(ဆောင်းပါး · Anthropic - ၂၀ မိနစ်):* [Public skills repository](https://github.com/anthropics/skills) နမူနာများနှင့်တကွ ရှင်းပြချက်။
 - **[Agent Skills Quickstart](https://agentskills.io/skill-creation/quickstart)** *(Spec & Tutorial · ၃၀ မိနစ်)*
 - **[The Beginner's Guide to Coding with Cursor](https://www.youtube.com/watch?v=Gqpk7-FruqI)** *(ဗီဒီယို · ၄၅ မိနစ် - Lee Robinson of [Cursor](https://cursor.com/docs/cloud-agent)):* Typed languages, linting, formatting, tests, branch review နဲ့ parallel background work များ။
 - **[The Missing Semester 2026: Shell Overview & Intro](https://missing.csail.mit.edu/2026/course-shell/)** *(MIT CLI Foundation · လေ့ကျင့်ခန်းများအပါ ≈ ၆၀ မိနစ်):* Shell navigation, scripting, streams, permissions နဲ့ safe bash practices များ။
@@ -248,16 +248,16 @@ Repo instructions ဖိုင်တစ်ခု၊ hooks ၂ ခုနဲ့ pl
 - **Repo Instructions အကြောင်း လေ့လာရန်:** GitHub ရဲ့ *[How to write a great agents.md: lessons from over 2,500 repositories](https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-lessons-from-over-2500-repositories/)*၊ Real Python ရဲ့ *[How to Write an AGENTS.md File](https://realpython.com/agents-md/)*၊ Agentic AI Foundation ရဲ့ *[Writing an Effective AGENTS.md](https://aaif.io/blog/writing-an-effective-agents-md)*။
 - **Subagent အခြေအတင် ဆွေးနွေးချက်များ:** Cognition ရဲ့ *[Don't Build Multi-Agents](https://cognition.ai/blog/dont-build-multi-agents)* နဲ့ Anthropic ရဲ့ *[How we built our multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system)*။ Role ၃ ခု မခွဲခင် ဒီဆောင်းပါး ၂ ခုလုံးကို အရင် ဖတ်ထားပါ။
 - **[How Anthropic teams use Claude Code](https://www.anthropic.com/news/how-anthropic-teams-use-claude-code):** Anthropic အဖွဲ့တွင်း လက်တွေ့အသုံးချနေတဲ့ ပုံစံများ။
-- **[Claude Code in Action (Anthropic Academy & DeepLearning.AI)](https://anthropic.skilljar.com/claude-code-in-action):** အခမဲ့ သင်တန်းများ။
+- **[Claude Code in Action](https://anthropic.skilljar.com/claude-code-in-action)** *(Anthropic Academy)* နှင့် **[Claude Code: A Highly Agentic Coding Assistant](https://www.deeplearning.ai/courses/claude-code-a-highly-agentic-coding-assistant)** *(DeepLearning.AI):* အခမဲ့ သင်တန်းများ။
 
 ### အပိုဆောင်း ဗီဒီယိုများ
 
 - **[AI Coding Workflow: From Product Idea to Tested Implementation](https://ai.engineer/talks/-QFHIoCo-Ko-ai-coding-workflow)** *(၁ နာရီ ၃၇ မိနစ် - Matt Pocock):* PRDs၊ vertical slices၊ unattended agents၊ QA၊ review နဲ့ parallelization များ။
 - **[Claude Code & the evolution of agentic coding](https://www.youtube.com/watch?v=Lue8K2jqfKk)** *(၁၈ မိနစ် - Boris Cherny)*
-- **[The Secrets of Claude Code From the Engineers Who Built It](https://www.youtube.com/watch?v=IDSAMqip6ms)** *(၁ နာရီ ၁၀ မိနစ် - Every & Latent Space)*
+- **[The Secrets of Claude Code From the Engineers Who Built It](https://www.youtube.com/watch?v=IDSAMqip6ms)** *(၁ နာရီ ၁၀ မိနစ် - Every):* Boris Cherny နဲ့ Cat Wu တို့ ပါဝင်ထားတဲ့ Latent Space အင်တာဗျူးဖြစ်တဲ့ [Claude Code: Anthropic's Agent in Your Terminal](https://www.latent.space/p/claude-code) ကိုလည်း ကြည့်ရှုနိုင်ပါတယ်။
 - **[I'm HOOKED on Claude Code Hooks: Advanced Agentic Coding](https://www.youtube.com/watch?v=J5B9UGTuNoM)** *(၃၀ မိနစ် - IndyDevDan):* Pre/post tool hooks၊ logging နဲ့ အန္တရာယ်ရှိတဲ့ command တွေကို ရပ်တန့်ပုံ။
 - **[Claude Code Advanced Patterns: Subagents, MCP, and Scaling to Real Codebases](https://www.anthropic.com/webinars/claude-code-advanced-patterns)** *(Anthropic)*
-- **[Future of Programming, AI, Agentic Engineering, Vibe Coding and Linux](https://www.youtube.com/watch?v=NYFGCESmikA)** *(DHH with Lex Fridman):* Programming-with-agents၊ vibe-coding-versus-engineering၊ agent setup၊ model နဲ့ harness အခန်းတွေကိုပဲ ရွေးကြည့်ပါ။
+- **[Future of Programming, AI, Agentic Engineering, Vibe Coding and Linux](https://www.youtube.com/watch?v=NYFGCESmikA)** *(DHH with Lex Fridman):* Programming-with-agents၊ vibe-coding-versus-engineering၊ agent setup၊ model နဲ့ harness အခန်းတွေကိုပဲ ရွေးကြည့်ပါ။ [timestamped transcript](https://lexfridman.com/dhh-2-transcript/) ကြောင့် စိတ်ကြိုက် ရွေးချယ်ကြည့်ရှုရ လွယ်ကူစေပါတယ်။
 
 ### လက်တွေ့ တည်ဆောက်ရန် (Build)
 
@@ -266,7 +266,7 @@ Repo instructions ဖိုင်တစ်ခု၊ hooks ၂ ခုနဲ့ pl
 - အမြန်စစ်ဆေးပေးမယ့် lint သို့မဟုတ် test gate အတွက် deterministic hook တစ်ခု ရေးပါ။
 - အန္တရာယ်ရှိတဲ့ command တွေကို တားဆီးပေးမယ့် safety hook တစ်ခု ထည့်ပါ။
 - အခန်းကဏ္ဍ ၃ ခု ခွဲပါ - **planner**၊ **implementer** နဲ့ သီးခြားစစ်ဆေးမယ့် **reviewer**။ တစ်ခုချင်းစီအတွက် ရှင်းလင်းတိကျတဲ့ တာဝန်သတ်မှတ်ချက် (contract) ပေးပါ။
-- Feature တစ်ခုတည်းကို agent တစ်ကောင်တည်းနဲ့ တစ်ကြိမ်၊ role ၃ ခု ခွဲထားတဲ့ workflow နဲ့ တစ်ကြိမ် စမ်းသပ် run ကြည့်ပါ။ ကုန်သွားတဲ့ အချိန်၊ tokens ပမာဏ၊ တွေ့ရှိတဲ့ ချို့ယွင်းချက် (defects) နဲ့ လူကိုယ်တိုင် ဝင်ပါဖြေရှင်းပေးရတဲ့ အကြိမ်ရေတို့ကို နှိုင်းယှဉ်ပါ။
+- Feature တစ်ခုတည်းကို agent တစ်ခုတည်းနဲ့ တစ်ကြိမ်၊ role ၃ ခု ခွဲထားတဲ့ workflow နဲ့ တစ်ကြိမ် စမ်းသပ် run ကြည့်ပါ။ ကုန်သွားတဲ့ အချိန်၊ tokens ပမာဏ၊ တွေ့ရှိတဲ့ ချို့ယွင်းချက် (defects) နဲ့ လူကိုယ်တိုင် ဝင်ပါဖြေရှင်းပေးရတဲ့ အကြိမ်ရေတို့ကို နှိုင်းယှဉ်ပါ။
 
 ### ပြီးစီးကြောင်း စစ်ဆေးရန် (Done When)
 
@@ -343,7 +343,7 @@ Pull requests တွေနဲ့ ချိတ်ဆက်ထားပြီး P
 
 - **[Engineering Practices: Code Review](https://google.github.io/eng-practices/review/) & [Reviewer Guide](https://google.github.io/eng-practices/review/reviewer/)** *(Google - ၆၀ မိနစ်):* Google ရဲ့ စံပြ code review လမ်းညွှန်ချက်များ။
 - **[Software Engineering at Google (Chapter 9: Code Review)](https://abseil.io/resources/swe-book/html/ch09.html)** *(အခမဲ့ စာအုပ်အခန်း · ၄၅ မိနစ်)*
-- **[AI-powered entomology: lessons from millions of AI code reviews](https://ai.engineer/talks/TswQeKftnaw-ai-powered-entomology-lessons-from-millions-ai)** *(Talk & Best Practices · Tomas Reimers of Graphite - ၃၀ မိနစ်)*
+- **[AI-powered entomology: lessons from millions of AI code reviews](https://ai.engineer/talks/TswQeKftnaw-ai-powered-entomology-lessons-from-millions-ai)** *(Talk · Tomas Reimers of Graphite - ၃၀ မိနစ်):* Graphite ရဲ့ ရေးသားထားတဲ့ လမ်းညွှန်ဖြစ်တဲ့ [AI code review implementation and best practices](https://graphite.dev/guides/ai-code-review-implementation-best-practices) နဲ့ တွဲဖက်ဖတ်ရှုပါ။
 - **[How to Kill the Code Review](https://ai.engineer/talks/how-to-kill-the-code-review)** *(ဗီဒီယို · Ankit Jain - ၁၆ မိနစ်):* Specs၊ reusable guardrails၊ deterministic checks၊ test plans၊ previews နဲ့ human alignment တွေ ပေါင်းစပ်ထားတဲ့ အလွှာ ၅ လွှာပါ trust model။
 - **[Understanding Is the New Bottleneck](https://ai.engineer/talks/understanding-is-the-new-bottleneck)** *(ဆောင်းပါး · Geoffrey Litt - ၂၀ မိနစ်):* Review ဆိုတာ အမှားစစ်ရုံသက်သက် မဟုတ်ဘဲ architecture ကို နားလည်စေခြင်း၊ အချင်းချင်း လမ်းပြပေးခြင်းနဲ့ ညှိနှိုင်းဆောင်ရွက်ခြင်းဖြစ်ကြောင်း၊ automation ဖြင့် အစားမထိုးနိုင်တဲ့ အချက်များ။
 - **[GitHub Copilot code review](https://docs.github.com/en/copilot/concepts/agents/code-review) & [Claude Code GitHub Actions](https://code.claude.com/docs/en/github-actions)** *(Integrations · ၃၀ မိနစ်):* PR ပေါ်မှာ reviewer agent ထားရှိနိုင်တဲ့ အသုံးအများဆုံး နည်းလမ်း ၂ ခု။
@@ -404,9 +404,14 @@ Threat model တစ်ခု၊ CI အတွင်း SAST / SCA / secret scans 
 
 - **Scanners:** SAST အတွက် Semgrep သို့မဟုတ် [CodeQL](https://codeql.github.com/)၊ secrets အတွက် [`gitleaks`](https://github.com/gitleaks/gitleaks)၊ dependencies/SCA အတွက် [`OSV-Scanner`](https://google.github.io/osv-scanner/)။ (Build မှာ ဒီ ၃ မျိုးစလုံး ထည့်သွင်းရပါမယ်)။
 - **Sandboxing & Rules:** [Anthropic ရဲ့ sandboxing](https://www.anthropic.com/engineering/claude-code-sandboxing) လမ်းညွှန်နဲ့ [`claude-code-security-review`](https://github.com/anthropics/claude-code-security-review) GitHub Action။
-- **OWASP စာတမ်းများ:** [MCP Tool Poisoning](https://owasp.org/www-community/attacks/MCP_Tool_Poisoning)၊ [Agentic AI Threats and Mitigations](https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/) နဲ့ [OWASP GenAI Security Project](https://genai.owasp.org/)။
+- **OWASP စာတမ်းများ:** [MCP Tool Poisoning](https://owasp.org/www-community/attacks/MCP_Tool_Poisoning)၊ [Agentic AI Threats and Mitigations](https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/) နဲ့ [OWASP GenAI Security Project](https://genai.owasp.org/)။ Invariant Labs ရဲ့ မူရင်း ထုတ်ပြန်ချက်မှာ [MCP Security Notification: Tool Poisoning Attacks](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks) ဖြစ်ပါတယ်။
 - **သုတေသနများ:** [Design Patterns for Securing LLM Agents against Prompt Injections](https://arxiv.org/abs/2506.08837)၊ NIST ရဲ့ [Strengthening AI Agent Hijacking Evaluations](https://www.nist.gov/news-events/news/2025/01/technical-blog-strengthening-ai-agent-hijacking-evaluations)။
-- **စာအုပ်:** Adam Shostack ရဲ့ *[Threat Modeling: Designing for Security](https://shostack.org/archive/2014/02/threat-modeling-designing-for-security/)* (First Edition)။
+- **စာအုပ်:** Adam Shostack ရဲ့ [Threat Modeling: Designing for Security](https://shostack.org/archive/2014/02/threat-modeling-designing-for-security/) — ပထမအကြိမ် ထုတ်ဝေမှုကို သုံးပါ၊ AI ကမ္ဘာအတွက် အမည်ပြောင်းထားတဲ့ [second edition](https://shostack.org/books/threat-modeling-book) ကိုတော့ ၂၀၂၇ ဖေဖော်ဝါရီမှာ ထွက်ရှိမယ်လို့ ကြေညာထားပါတယ်။
+
+### အပိုဆောင်း ဗီဒီယိုများ
+
+- **[Why and How You Need to Sandbox AI-Generated Code](https://ai.engineer/talks/AHtGAgQ0Q_Q-why-you-need-sandbox-ai-generated-code)** *(ဗီဒီယို · ၃၈ မိနစ် - Harshil Agrawal of Cloudflare):* capabilities, secrets, networking, cleanup, isolation surfaces နဲ့ indirect prompt injection အကြောင်း။
+- **[Web Security Academy series introduction](https://www.youtube.com/watch?v=GdMTzcn5F0c)** *(ဗီဒီယို · ၁၂ မိနစ် - Rana Khalil):* PortSwigger labs အတွက် အထောက်အကူပြု ဗီဒီယို။
 
 ### လက်တွေ့ တည်ဆောက်ရန် (Build)
 
@@ -446,18 +451,20 @@ Isolation၊ budgets၊ checkpoints တွေနဲ့ retries တွေ ပါ�
 ### Tools, References & အပိုဆောင်း ဗီဒီယိုများ
 
 - **[Cloudflare Agents SDK](https://developers.cloudflare.com/agents/) & [Sandbox SDK](https://developers.cloudflare.com/sandbox/):** Stateful agents တွေနဲ့ သီးခြားခွဲထုတ်ထားတဲ့ environment အတွက် platform။
-- **[Temporal Durable AI Agent Tutorial](https://github.com/temporal-community/tutorial-temporal-ai-agent):** OpenAI Agents integration သဘောတရားများ။
+- **[Temporal Durable AI Agent Tutorial](https://github.com/temporal-community/tutorial-temporal-ai-agent):** [OpenAI Agents integration](https://github.com/temporalio/sdk-python/blob/main/temporalio/contrib/openai_agents/README.md) သဘောတရားများ။
 - **[Code Mode (Cloudflare)](https://blog.cloudflare.com/code-mode-mcp/):** Fleets တွေအတွက် tokens ၁၀၀၀ တည်းနဲ့ API တစ်ခုလုံးကို ပေးစွမ်းနိုင်တဲ့ tool-efficiency နည်းစနစ်။
 - **[Jules (Google)](https://jules.google/):** နှိုင်းယှဉ်လေ့လာနိုင်တဲ့ တတိယမြောက် cloud agent။
+- **[Common Workflows (Claude Code)](https://code.claude.com/docs/en/common-workflows):** local agent အများအပြားကို ပြိုင်တူ run ရန်အတွက် git worktrees အသုံးပြုပုံ။
 - **[Claude Agent SDK: Full Workshop](https://www.youtube.com/watch?v=TqC1qOfiVcQ)** *(ဗီဒီယို · ၁ နာရီ ၅၂ မိနစ် - Thariq Shihipar of Anthropic):* Claude Code ကိုယ်တိုင် အခြေခံထားတဲ့ SDK အသုံးပြုပုံ။
-- **[Why AI Is About to Get 1000x Cheaper](https://www.youtube.com/watch?v=uyzqxIoiobU)** *(ဗီဒီယို · Neil Movva):* Long-running agents (`05:32`)၊ inference stack (`15:12`)၊ throughput vs latency (`20:03`) အခန်းများ။
+- **[Building the future of agents with Claude](https://www.youtube.com/watch?v=XuvKFsktX0Q)** *(ဗီဒီယို · ၂၂ မိနစ် - Anthropic):* agent တွေ ရှေ့ဆက်သွားမယ့် ဦးတည်ချက်။
+- **[Why AI Is About to Get 1000x Cheaper](https://www.youtube.com/watch?v=uyzqxIoiobU)** *(ဗီဒီယို · Neil Movva):* Long-running agents (`05:32`), inference stack (`15:12`), throughput vs latency (`20:03`) နဲ့ transformer hardware (`33:19`) ခေါင်းစဉ်များ။ “1000x” ဆိုတာကို လက်တွေ့ပြသထားတဲ့ ခန့်မှန်းချက်တစ်ခု မဟုတ်ဘဲ ရည်မှန်းချက်တစ်ခုအဖြစ်သာ မှတ်ယူပါ။
 
 ### လက်တွေ့ တည်ဆောက်ရန် (Build)
 
 Issue တစ်ခုကနေ pull request အထိ နောက်ကွယ်ကနေ အလိုအလျောက် အလုပ်လုပ်ပေးမယ့် background flow တစ်ခုကို တည်ဆောက်ပါ။
 
 - Job တစ်ခုချင်းစီအတွက် သီးခြားခွဲထုတ်ထားတဲ့ git worktree (သို့မဟုတ် container)၊ တင်းကျပ်တဲ့ budget သတ်မှတ်ချက်၊ ရပ်နားသိမ်းဆည်းနိုင်တဲ့ checkpoint၊ စနစ်တကျ စစ်ဆေးမှု (deterministic validation) နဲ့ ပြန်လည်စတင်နိုင်တဲ့ resumable state တွေ ထည့်သွင်းပါ။
-- Bounded backoff ပါတဲ့ retries စနစ် ထည့်ပါ၊ agent နှစ်ကောင်က file တစ်ခုတည်းကို တစ်ပြိုင်နက် ဝင်ပြင်တာမျိုး မဖြစ်အောင် တားဆီးပါ။
+- Bounded backoff ပါတဲ့ retries စနစ် ထည့်ပါ၊ agent နှစ်ခုက file တစ်ခုတည်းကို တစ်ပြိုင်နက် ဝင်ပြင်တာမျိုး မဖြစ်အောင် တားဆီးပါ။
 - **Jobs ၃ ခုကို တစ်ပြိုင်နက် (parallel) run ပြပါ** - feature အသေးတစ်ခု၊ bug fix တစ်ခုနဲ့ documentation task တစ်ခု။
 - တစ်ခုကို လမ်းတစ်ဝက်မှာ တမင်တကာ ဖြတ်တောက် (interrupt) ကြည့်ပြီး checkpoint ကနေ ပြန်စနိုင်သလား ဒါမှမဟုတ် clean ဖြစ်စွာ fail ပြနိုင်သလားဆိုတာ စမ်းသပ်ပါ။
 - Agent တွေက PR ကို အလိုအလျောက် ဖွင့်ခွင့်ရှိပေမဲ့ merge လုပ်တာကိုတော့ လူကပဲ ခွင့်ပြုရပါမယ်။
@@ -492,7 +499,7 @@ Model gateway တစ်ခု၊ MCP portal တစ်ခုနဲ့ စာမ�
 
 - **Gateways:** [LiteLLM AI Gateway](https://docs.litellm.ai/docs/simple_proxy) (open source) သို့မဟုတ် [Cloudflare AI Gateway](https://developers.cloudflare.com/ai-gateway/)။ (Routing အတွက် Vercel ရဲ့ *[Six LLM routing strategies](https://vercel.com/i/llm-routing-strategies)* ကို ဖတ်ပါ)။
 - **Internal Registries:** [MCP Registry](https://github.com/modelcontextprotocol/registry)။
-- **Adoption အထောက်အထားများ:** [DORA AI Capabilities Model](https://dora.dev/ai/capabilities-model/report/)၊ [Stack Overflow 2025 Survey](https://survey.stackoverflow.co/2025/ai)၊ [OpenAI Codex PDF](https://cdn.openai.com/pdf/6a2631dc-783e-479b-b1a4-af0cfbd38630/how-openai-uses-codex.pdf)၊ [Anthropic Team Cases](https://www.anthropic.com/news/how-anthropic-teams-use-claude-code)။
+- **Adoption အထောက်အထားများ:** [DORA AI Capabilities Model](https://dora.dev/ai/capabilities-model/report/)၊ [Stack Overflow 2025 Survey](https://survey.stackoverflow.co/2025/ai)၊ [How OpenAI uses Codex](https://cdn.openai.com/pdf/6a2631dc-783e-479b-b1a4-af0cfbd38630/how-openai-uses-codex.pdf) (PDF)၊ [How Anthropic teams use Claude Code](https://www.anthropic.com/news/how-anthropic-teams-use-claude-code)။
 - **[Building an Autonomous Engineering Org](https://ai.engineer/talks/building-an-autonomous-engineering-org)** *(ဗီဒီယို · ၁၈ မိနစ်):* Champions၊ repo readiness၊ delegation နဲ့ organizational impact ဆိုင်ရာ maturity model။
 - **[Accelerate (စာအုပ်)](https://www.simonandschuster.com/books/Accelerate/Nicole-Forsgren-PhD/9781942788331):** Nicole Forsgren, Jez Humble, and Gene Kim။ (AI ကြောင့် output အရေအတွက် သက်သက်များလာတာလား၊ ဒါမှမဟုတ် delivery တကယ်တိုးတက်လာတာလားဆိုတာ တိုင်းတာဖို့ အသုံးဝင်ပါတယ်)။
 
@@ -536,6 +543,7 @@ Eval suite တစ်ခုနဲ့ စနစ်တကျ ထိန်းချ�
 - **[Langfuse](https://langfuse.com/docs) & [OpenTelemetry GenAI Conventions](https://github.com/open-telemetry/semantic-conventions-genai):** Phoenix အစား သုံးနိုင်တဲ့ open-source စောင့်ကြည့်ရေး စနစ်။
 - **[DSPy](https://dspy.ai/):** Prompts တွေကို လက်နဲ့ လိုက်မပြင်ဘဲ eval set အပေါ် မူတည်ပြီး အလိုအလျောက် optimize လုပ်ပေးတဲ့ စနစ်။
 - **Benchmarks:** [SWE-bench](https://www.swebench.com/) နဲ့ [Terminal-Bench](https://www.tbench.ai/)။
+- **[Google SRE: Introduction](https://sre.google/sre-book/introduction/):** agent တွေနဲ့ လည်ပတ်တဲ့ system တွေမှာ မရှိမဖြစ် လိုအပ်နေဆဲဖြစ်တဲ့ လုပ်ငန်းလည်ပတ်မှုဆိုင်ရာ စည်းကမ်းများ။
 - **[Why AI evals are the hottest new skill for product builders](https://www.youtube.com/watch?v=BsWxPI9UM4c)** *(၁ နာရီ ၄၆ မိနစ် - Hamel Husain & Shreya Shankar)*
 - **[The Software Factory](https://ai-in-the-am.com/episodes/ai-am-2026-06-18/)** *(Eno Reyes):* Deterministic systems၊ harnesses၊ feedback loops အကြောင်း။
 - **[“We're summoning ghosts, not building animals”](https://www.youtube.com/watch?v=lXUZvyajciY)** *(၂ နာရီ ၂၆ မိနစ် - Andrej Karpathy with Dwarkesh Patel):* Agent တွေမှာ လက်ရှိအချိန်အထိ ဘာကြောင့် အစီအစဉ်ချနိုင်စွမ်းနဲ့ မှတ်ဉာဏ် မရှိသေးတာလဲ၊ နောက် ၁၀ နှစ်မှာ ဘာတွေ ဖြစ်လာမလဲ ဆိုတာ။
@@ -572,18 +580,18 @@ Eval suite တစ်ခုနဲ့ စနစ်တကျ ထိန်းချ�
 - ပြန်လည်အသုံးပြုနိုင်တဲ့ reusable agent skill တစ်ခုနဲ့ MCP integration တစ်ခု။
 - Deterministic hooks၊ tests တွေနဲ့ CI gates များ။
 - Threat model တစ်ခုနဲ့ least-privilege permission ဒီဇိုင်း။
-- ရပ်တန့်သွားရင် ပြန်စနိုင်တဲ့ durable issue-to-PR background workflow (retries စနစ်ပါဝင်ရမည်)။
+- ရပ်တန့်သွားရင် ပြန်စနိုင်တဲ့ durable issue-to-PR background workflow (retries စနစ်ပါဝင်ရမယ်)။
 - ကုန်ကျစရိတ်၊ latency၊ routing နဲ့ errors တွေကို စောင့်ကြည့်နိုင်မယ့် model gateway telemetry။
 - ပုံသေ evaluation suite တစ်ခုနဲ့ အကျဉ်းချုပ် results dashboard သို့မဟုတ် report တစ်ခု။
 - ၅ မိနစ်မှ ၁၀ မိနစ်စာ demo ဗီဒီယိုတစ်ခုနဲ့ ကြုံတွေ့ခဲ့ရတဲ့ အမှားများ၊ တိုးတက်မှုများကို ရှင်းပြထားတဲ့ retrospective သုံးသပ်ချက်တစ်ခု။
 
 ### ပြီးစီးကြောင်း စစ်ဆေးရန် (Done When / Completion Gates)
 
-- Clone အသစ်တစ်ခုကို လမ်းညွှန်ချက်ပါ command တစ်ခုတည်းဖြင့် setup လုပ်နိုင်ပြီး အမှန်တကယ် အလုပ်ဖြစ်ကြောင်း အတည်ပြုနိုင်ရမည်။
-- ပုံသေ evaluation tasks အနည်းဆုံး ၁၀ ခုအတွက် baseline ရော final results ပါ အပြည့်အစုံ ရှိရမည်။
-- လမ်းတစ်ဝက်တွင် ဖြတ်တောက်ခံရသည့် background job တစ်ခုသည် ပြန်လည်စတင်နိုင်ခြင်း သို့မဟုတ် သန့်ရှင်းစွာ ရပ်တန့်နိုင်ခြင်းကို သက်သေပြနိုင်ရမည်။
-- စနစ်မှ ထုတ်ပေးလိုက်သော အပြောင်းအလဲများသည် tests များ၊ security checks များနှင့် လူကိုယ်တိုင် merge အတည်ပြုချက်တို့ကို ကျော်လွှားခွင့် မရှိစေရပါ။
-- Run တိုင်းကို သက်ဆိုင်ရာ issue၊ spec၊ prompts/context၊ tool calls၊ outputs၊ costs နှင့် နောက်ဆုံး review ဆုံးဖြတ်ချက်အထိ အစအဆုံး ပြန်လည် trace လိုက်နိုင်ရမည်။
+- Clone အသစ်တစ်ခုကို လမ်းညွှန်ချက်ပါ command တစ်ခုတည်းနဲ့ setup လုပ်နိုင်ရမယ်၊ အမှန်တကယ် အလုပ်ဖြစ်ကြောင်း အတည်ပြုနိုင်ရမယ်။
+- ပုံသေ evaluation tasks အနည်းဆုံး ၁၀ ခုအတွက် baseline ရော final results ပါ အပြည့်အစုံ ရှိရမယ်။
+- လမ်းတစ်ဝက်မှာ ဖြတ်တောက်ခံရတဲ့ background job တစ်ခုဟာ ပြန်လည်စတင်နိုင်ခြင်း သို့မဟုတ် သန့်ရှင်းစွာ ရပ်တန့်နိုင်ခြင်းကို သက်သေပြနိုင်ရမယ်။
+- စနစ်က ထုတ်ပေးလိုက်တဲ့ အပြောင်းအလဲတွေဟာ tests တွေ၊ security checks တွေနဲ့ လူကိုယ်တိုင် merge အတည်ပြုချက်တွေကို ကျော်လွှားခွင့် မရှိစေရဘူး။
+- Run တိုင်းကို သက်ဆိုင်ရာ issue၊ spec၊ prompts/context၊ tool calls၊ outputs၊ costs နဲ့ နောက်ဆုံး review ဆုံးဖြတ်ချက်အထိ အစအဆုံး ပြန်လည် trace လိုက်နိုင်ရမယ်။
 
 ## အကြံပြု စာအုပ်စင် (The Short Bookshelf)
 
@@ -591,7 +599,7 @@ Eval suite တစ်ခုနဲ့ စနစ်တကျ ထိန်းချ�
 
 1. Chip Huyen, **[*AI Engineering*](https://huyenchip.com/)** — foundation model တွေနဲ့ application တွေ တည်ဆောက်ပုံနဲ့ ဆန်းစစ်ပုံ။
 2. Jay Alammar နှင့် Maarten Grootendorst, **[*Hands-On Large Language Models*](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models)** — ကုဒ် repository နဲ့အတူ လေ့လာနိုင်တဲ့ လက်တွေ့ကျ LLM အခြေခံများ။
-3. Titus Winters, Tom Manshreck, နှင့် Hyrum Wright, **[*Software Engineering at Google*](https://abseil.io/resources/swe-book/html/toc.html)** — အခမဲ့ အွန်လိုင်းမှ ဖတ်ရှုနိုင်ပါသည်။ အထူးသဖြင့် code review၊ testing၊ dependency management နဲ့ large-scale change အခန်းများ။
+3. Titus Winters, Tom Manshreck, နှင့် Hyrum Wright, **[*Software Engineering at Google*](https://abseil.io/resources/swe-book/html/toc.html)** — အွန်လိုင်းမှာ အခမဲ့ ဖတ်ရှုနိုင်ပါတယ်၊ အထူးသဖြင့် code review၊ testing၊ dependency management နဲ့ large-scale change အခန်းတွေကို လေ့လာပါ။
 4. Adam Shostack, **[*Threat Modeling: Designing for Security*](https://shostack.org/archive/2014/02/threat-modeling-designing-for-security/)** — attack surface မှာ agents နဲ့ tools တွေ ပါဝင်လာချိန်မှာပါ အသုံးဝင်ဆဲဖြစ်တဲ့ security တွေးခေါ်ပုံများ။
 5. Nicole Forsgren, Jez Humble, နှင့် Gene Kim, **[*Accelerate*](https://www.simonandschuster.com/books/Accelerate/Nicole-Forsgren-PhD/9781942788331)** — တည်ဆောက်ရေး စနစ်တစ်ခုက တကယ်ပဲ တိုးတက်မှုရှိမရှိ တိုင်းတာခြင်း။
 

@@ -4,7 +4,7 @@
 
 1. Chip Huyen, **[*AI Engineering*](https://huyenchip.com/)** — foundation model တွေနဲ့ application တွေ တည်ဆောက်ပုံနဲ့ ဆန်းစစ်ပုံ။
 2. Jay Alammar နှင့် Maarten Grootendorst, **[*Hands-On Large Language Models*](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models)** — ကုဒ် repository နဲ့အတူ လေ့လာနိုင်တဲ့ လက်တွေ့ကျ LLM အခြေခံများ။
-3. Titus Winters, Tom Manshreck, နှင့် Hyrum Wright, **[*Software Engineering at Google*](https://abseil.io/resources/swe-book/html/toc.html)** — အခမဲ့ အွန်လိုင်းမှ ဖတ်ရှုနိုင်ပါသည်။ အထူးသဖြင့် code review၊ testing၊ dependency management နဲ့ large-scale change အခန်းများ။
+3. Titus Winters, Tom Manshreck, နှင့် Hyrum Wright, **[*Software Engineering at Google*](https://abseil.io/resources/swe-book/html/toc.html)** — အွန်လိုင်းမှာ အခမဲ့ ဖတ်ရှုနိုင်ပါတယ်၊ အထူးသဖြင့် code review၊ testing၊ dependency management နဲ့ large-scale change အခန်းတွေကို လေ့လာပါ။
 4. Adam Shostack, **[*Threat Modeling: Designing for Security*](https://shostack.org/archive/2014/02/threat-modeling-designing-for-security/)** — attack surface မှာ agents နဲ့ tools တွေ ပါဝင်လာချိန်မှာပါ အသုံးဝင်ဆဲဖြစ်တဲ့ security တွေးခေါ်ပုံများ။
 5. Nicole Forsgren, Jez Humble, နှင့် Gene Kim, **[*Accelerate*](https://www.simonandschuster.com/books/Accelerate/Nicole-Forsgren-PhD/9781942788331)** — တည်ဆောက်ရေး စနစ်တစ်ခုက တကယ်ပဲ တိုးတက်မှုရှိမရှိ တိုင်းတာခြင်း။
 

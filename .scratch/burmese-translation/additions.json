@@ -1,0 +1,21 @@
+{
+ "r1_w2_core1_append": "မှတ်စုများအတွက် article and transcript က အသုံးဝင်ပါတယ်။",
+ "r2_w2_mcpcourse_append": "end-to-end MCP application unit အထိ ဆက်လက် လေ့လာသွားပါ။",
+ "r3_w2_specs_append": "Al Harris ရဲ့ talk နဲ့ တွဲဖက်လေ့လာနိုင်တဲ့ Kiro specs docs ကိုလည်း ကြည့်ပါ။",
+ "r4_w2_inspector_append": "MCP Registry က မူပိုင်ခွင့်တင်ခြင်းနဲ့ ရှာဖွေတွေ့ရှိနိုင်ခြင်းတို့ကို ကိုင်တွယ်ပေးပါတယ်။",
+ "r5_w4_courses_bullet": "* **Claude Code in Action (Anthropic Academy)** နှင့် **Claude Code: A Highly Agentic Coding Assistant (DeepLearning.AI)** *(အခမဲ့ သင်တန်းများ):*",
+ "r6_w4_latentspace_append": "Boris Cherny နဲ့ Cat Wu တို့ ပါဝင်ထားတဲ့ Latent Space အင်တာဗျူးဖြစ်တဲ့ Claude Code: Anthropic's Agent in Your Terminal ကိုလည်း ကြည့်ရှုနိုင်ပါတယ်။",
+ "r7_w4_dhh_append": "timestamped transcript ကြောင့် စိတ်ကြိုက် ရွေးချယ်ကြည့်ရှုရ လွယ်ကူစေပါတယ်။",
+ "r8_w6_graphite_append": "Graphite ရဲ့ ရေးသားထားတဲ့ လမ်းညွှန်ဖြစ်တဲ့ AI code review implementation and best practices နဲ့ တွဲဖက်ဖတ်ရှုပါ။",
+ "r9_w7_invariant_append": "Invariant Labs ရဲ့ မူရင်း ထုတ်ပြန်ချက်မှာ MCP Security Notification: Tool Poisoning Attacks ဖြစ်ပါတယ်။",
+ "r10_w7_book_bullet": "* **စာအုပ်:** Adam Shostack ရဲ့ Threat Modeling: Designing for Security — ပထမအကြိမ် ထုတ်ဝေမှုကို သုံးပါ၊ AI ကမ္ဘာအတွက် အမည်ပြောင်းထားတဲ့ second edition ကိုတော့ ၂၀၂၇ ဖေဖော်ဝါရီမှာ ထွက်ရှိမယ်လို့ ကြေညာထားပါတယ်။",
+ "r11_w7_video_block": "### အပိုဆောင်း ဗီဒီယိုများ\n\n* **Why and How You Need to Sandbox AI-Generated Code** *(ဗီဒီယို · ၃၈ မိနစ် - Harshil Agrawal of Cloudflare):* capabilities, secrets, networking, cleanup, isolation surfaces နဲ့ indirect prompt injection အကြောင်း။\n* **Web Security Academy series introduction** *(ဗီဒီယို · ၁၂ မိနစ် - Rana Khalil):* PortSwigger labs အတွက် အထောက်အကူပြု ဗီဒီယို။",
+ "r12_w8_worktrees_bullet": "* **Common Workflows (Claude Code):** local agent အများအပြားကို ပြိုင်တူ run ရန်အတွက် git worktrees အသုံးပြုပုံ။",
+ "r13_w8_future_bullet": "* **Building the future of agents with Claude** *(ဗီဒီယို · ၂၂ မိနစ် - Anthropic):* agent တွေ ရှေ့ဆက်သွားမယ့် ဦးတည်ချက်။",
+ "r14_w8_movva_desc": "Long-running agents (`05:32`), inference stack (`15:12`), throughput vs latency (`20:03`) နဲ့ transformer hardware (`33:19`) ခေါင်းစဉ်များ။ “1000x” ဆိုတာကို လက်တွေ့ပြသထားတဲ့ ခန့်မှန်းချက်တစ်ခု မဟုတ်ဘဲ ရည်မှန်းချက်တစ်ခုအဖြစ်သာ မှတ်ယူပါ။",
+ "r15_w10_sre_bullet": "* **Google SRE: Introduction:** agent တွေနဲ့ လည်ပတ်တဲ့ system တွေမှာ မရှိမဖြစ် လိုအပ်နေဆဲဖြစ်တဲ့ လုပ်ငန်းလည်ပတ်မှုဆိုင်ရာ စည်းကမ်းများ။",
+ "r16_howto_bullet3": "ရလဒ်များ၊ ပျက်ကွက်မှုများ၊ ကုန်ကျစရိတ်များနှင့် သင်ခန်းစာများကို မှတ်တမ်းတင်ပါ၊ ထို့နောက် ဒီအပတ်ရဲ့ “ပြီးစီးကြောင်း စစ်ဆေးရန် (Done When)” စာရင်းကို အမှန်ခြစ်ပါ။",
+ "r17_capstone_gates": "* [ ] Clone အသစ်တစ်ခုကို လမ်းညွှန်ချက်ပါ command တစ်ခုတည်းနဲ့ setup လုပ်နိုင်ရမယ်၊ အမှန်တကယ် အလုပ်ဖြစ်ကြောင်း အတည်ပြုနိုင်ရမယ်။\n* [ ] ပုံသေ evaluation tasks အနည်းဆုံး ၁၀ ခုအတွက် baseline ရော final results ပါ အပြည့်အစုံ ရှိရမယ်။\n* [ ] လမ်းတစ်ဝက်မှာ ဖြတ်တောက်ခံရတဲ့ background job တစ်ခုဟာ ပြန်လည်စတင်နိုင်ခြင်း သို့မဟုတ် သန့်ရှင်းစွာ ရပ်တန့်နိုင်ခြင်းကို သက်သေပြနိုင်ရမယ်။\n* [ ] စနစ်က ထုတ်ပေးလိုက်တဲ့ အပြောင်းအလဲတွေဟာ tests တွေ၊ security checks တွေနဲ့ လူကိုယ်တိုင် merge အတည်ပြုချက်တွေကို ကျော်လွှားခွင့် မရှိစေရဘူး။\n* [ ] Run တိုင်းကို သက်ဆိုင်ရာ issue၊ spec၊ prompts/context၊ tool calls၊ outputs၊ costs နဲ့ နောက်ဆုံး review ဆုံးဖြတ်ချက်အထိ အစအဆုံး ပြန်လည် trace လိုက်နိုင်ရမယ်။",
+ "r18_about": "Agentic Engineer Study Guide 2026 ဟာ သီးခြားလွတ်လပ်တဲ့ လမ်းညွှန်တစ်ခု ဖြစ်ပါတယ်။ ဆယ်ပတ်စာ ဖွဲ့စည်းပုံဟာ Stanford ရဲ့ CS146S, The Modern Software Developer (themodernsoftware.dev) ရဲ့ Fall 2026 သင်ရိုးညွှန်းတမ်းကို အခြေခံထားတာ ဖြစ်ပြီး၊ သင်တန်းနဲ့ သက်ဆိုင်ခြင်း မရှိပါဘူး။ နောက်ဆုံးပြင်ဆင်သည့်ရက် {date}။ App အဖြစ် ထည့်သွင်းနိုင်ပြီး ပထမဆုံးဝင်ရောက်ပြီးနောက် အော့ဖ်လိုင်း အသုံးပြုနိုင်ပါတယ်၊",
+ "r19_bookshelf3_desc": "အွန်လိုင်းမှာ အခမဲ့ ဖတ်ရှုနိုင်ပါတယ်၊ အထူးသဖြင့် code review၊ testing၊ dependency management နဲ့ large-scale change အခန်းတွေကို လေ့လာပါ။"
+}
