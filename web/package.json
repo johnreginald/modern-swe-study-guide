@@ -7,7 +7,11 @@
     "prebuild": "node scripts/build-sw.mjs",
     "build": "next build",
     "start": "next start",
-    "sync": "node scripts/sync-content.mjs"
+    "sync": "node scripts/sync-content.mjs",
+    "import:my": "node scripts/import-chat-translation.mjs && node scripts/sync-content.mjs",
+    "pdf": "node scripts/print-pdf.mjs",
+    "deploy": "npx -y vercel@59.11.2 --prod --yes",
+    "release": "npm run sync && npm run build && npm run deploy"
   },
   "dependencies": {
     "markdown-it": "^15.0.1",

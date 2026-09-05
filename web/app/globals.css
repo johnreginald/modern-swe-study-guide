@@ -264,3 +264,27 @@ h3.block-title { font-size: 17px; color: var(--teal-strong); }
 .prose .res-title-plain { color: var(--ink); }
 .prose .res-title.yt a.yt::before { content: none; }
 .prose .res-title a.yt::before { content: none; }
+
+/* ---------- print edition (/print, /my/print) ---------- */
+.app-shell:has(.print-page) .bottom-nav { display: none; }
+.print-page { max-width: 100%; }
+.print-cover { padding: 24px 0 18px; border-bottom: 4px solid var(--amber); margin-bottom: 18px; }
+.print-cover h1 { margin: 6px 0 0; font-size: 40px; line-height: 1.1; }
+.print-cover .hero-sub { color: var(--muted); font-size: 20px; font-weight: 600; margin: 4px 0 10px; }
+.print-week { break-before: page; page-break-before: always; padding-top: 6px; }
+.print-checklist li { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-top: 1px solid var(--line); }
+.print-checklist .box { flex: 0 0 auto; width: 18px; height: 18px; margin-top: 3px; border: 2px solid var(--muted); border-radius: 4px; }
+@media print {
+  :root { color-scheme: light; --bg: #fff; --surface: #fff; --surface-2: #f1f5f4; --ink: #1f2a3a; --muted: #5b6675; --line: #d9e1e8; --code-bg: #f1f4f7; --shadow: none; }
+  @page { size: A4; margin: 16mm 14mm; }
+  html, body { background: #fff !important; }
+  .content { padding: 0; max-width: 100%; }
+  .res, .week-card, .done-when, .progress-card, .install-card { box-shadow: none; break-inside: avoid; page-break-inside: avoid; }
+  .block { break-inside: auto; }
+  .block-title, .page-head { break-after: avoid; page-break-after: avoid; }
+  a { color: var(--link); }
+  .prose .res-title a::after, .prose a[href^="http"]::after { content: none; }
+  .toc, .bottom-nav, .install-card, .progress-card, .pager { display: none !important; }
+}
+.print-page .week-list li { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; }
+.print-page .week-list .week-num { flex: 0 0 34px; }

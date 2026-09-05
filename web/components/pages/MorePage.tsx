@@ -42,7 +42,7 @@ export default function MorePage({ lang, burmeseAvailable }: { lang: Lang; burme
           </Link>
         </li>
         <li>
-          <a href="/agentic-engineer-study-guide-2026.pdf" target="_blank" rel="noopener noreferrer">
+          <a href={lang === "my" ? "/agentic-engineer-study-guide-2026.my.pdf" : "/agentic-engineer-study-guide-2026.pdf"} target="_blank" rel="noopener noreferrer">
             <strong>{t(lang, "more.pdf")}</strong>
             <span className="muted small">{t(lang, "more.pdfSub")}</span>
           </a>
