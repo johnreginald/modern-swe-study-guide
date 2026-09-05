@@ -1,4 +1,4 @@
-# Burmese (Myanmar) translation of the Agentic Engineer Study Guide 2026
+# Burmese (Myanmar) translation of the Modern Software Engineer Study Guide 2026
 
 Status: **Done, pending native review** (2026-09-05). Live at https://agentic-engineer-study-guide.vercel.app/my. Decisions: Antigravity CLI (`agy --print`, model "Gemini 3.1 Pro (High)", covered by the Google AI Pro plan, $0 extra) — the Gemini CLI personal free tier was retired ("migrate to Antigravity"); keep English tool/product/protocol names and acronyms, translate concepts; Unicode only with a Zawgyi check; translate the whole guide in one pass (no pilot); glossary generated first and editable at `.scratch/burmese-translation/glossary.md`.
 
@@ -8,7 +8,7 @@ Publish a Burmese edition of the guide, translated with Gemini, that is as trust
 
 ## Approach
 
-1. **Translate the markdown source, not the site.** Input `outputs/agentic-engineer-study-guide-2026.md`, output `outputs/agentic-engineer-study-guide-2026.my.md`. PDF and site both build from it.
+1. **Translate the markdown source, not the site.** Input `outputs/modern-swe-study-guide-2026.md`, output `outputs/modern-swe-study-guide-2026.my.md`. PDF and site both build from it.
 2. **Chunk by `##` section** (14 chunks, ~1–6k tokens each). One Gemini call per chunk with the full glossary in the system prompt. Small chunks keep structure intact and make retries cheap.
 3. **Glossary first.** Ask Gemini to propose Burmese renderings for ~60 core terms (agent, context window, tool call, hook, skill, subagent, spec, MCP server, prompt injection, sandbox, gateway, eval, trace, pull request, code review, …). A native reader approves the glossary once; every chunk then uses it verbatim. Keep product names, repo paths, code, URLs, and acronyms in English; on first use write "Burmese (English)".
 4. **Hard structural rules in the prompt:** keep every heading level, list marker, table pipe, bold marker, backtick span, and link `[text](url)` — translate link text, never the URL; keep durations "(59 min)" and the "Done when" heading text as a fixed Burmese string.
@@ -47,7 +47,7 @@ Publish a Burmese edition of the guide, translated with Gemini, that is as trust
 ## Revision 2026-09-05: reviewed chat version replaces the machine translation
 
 - Approved source: `.scratch/burmese-translation/chat-version.md` (Gemini chat output, reviewed by the author). Bookshelf + half-time live in `chat-extra-sections.md` (generated in the same style, 5/5 links).
-- `web/scripts/import-chat-translation.mjs` → `outputs/agentic-engineer-study-guide-2026.my.md`: wording verbatim, links restored by English title (182/198), week headings normalised, checkbox items → Done-when, LaTeX arrow → pipeline line, UI-only lines dropped. Report in `import-report.md`.
+- `web/scripts/import-chat-translation.mjs` → `outputs/modern-swe-study-guide-2026.my.md`: wording verbatim, links restored by English title (182/198), week headings normalised, checkbox items → Done-when, LaTeX arrow → pipeline line, UI-only lines dropped. Report in `import-report.md`.
 - Site parser accepts the approved layout directly (no alignment to the English file): `**Title** *(kind · duration - author):* note` cards, focus/build label lines, `(Done When)` headings, bullet glance list. Burmese numerals kept as written.
 - Not in the Burmese text (author's choice), so unlinked: Dex Horthy transcript, HF MCP unit 2, Kiro specs, anthropics/skills, DeepLearning.AI Claude Code course, Latent Space Claude Code, DHH transcript, Graphite guide, Invariant tool-poisoning post, Cloudflare sandbox talk, Rana Khalil intro, Shostack 2nd ed, Temporal OpenAI-Agents README, "Building the future of agents with Claude".
 - To update: edit `chat-version.md`, run `node scripts/import-chat-translation.mjs && npm run sync && npm run build`, deploy.
@@ -60,6 +60,6 @@ Publish a Burmese edition of the guide, translated with Gemini, that is as trust
 
 ## Revision 2026-09-05 (evening)
 
-- Source of truth for Burmese is now `outputs/agentic-engineer-study-guide-2026.my.md`, edited directly by the author (kind labels "Video", "Code" etc.). `chat-version.md` is an archive; `import:my` refuses to overwrite a newer `.my.md` unless `--force`.
+- Source of truth for Burmese is now `outputs/modern-swe-study-guide-2026.my.md`, edited directly by the author (kind labels "Video", "Code" etc.). `chat-version.md` is an archive; `import:my` refuses to overwrite a newer `.my.md` unless `--force`.
 - Numbers: ASCII digits everywhere; durations "N min", "N h N min", "≈ N h". Prose hours keep the Burmese word (e.g. "10–12 နာရီ").
-- Burmese PDF: `npm run pdf --lang my` (headless Chrome from `/my/print`), served at `/agentic-engineer-study-guide-2026.my.pdf`.
+- Burmese PDF: `npm run pdf --lang my` (headless Chrome from `/my/print`), served at `/modern-swe-study-guide-2026.my.pdf`.

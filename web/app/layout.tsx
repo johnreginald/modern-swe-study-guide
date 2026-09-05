@@ -13,7 +13,7 @@ const myanmar = Noto_Sans_Myanmar({
   display: "swap",
 });
 
-const SITE_NAME = "Agentic Engineer Study Guide 2026";
+const SITE_NAME = "Modern Software Engineer Study Guide 2026";
 const DESCRIPTION =
   "A ten-week, project-based guide to building software with coding agents: internals, context engineering, MCP, skills, readiness, review, security, background agents, teams, and the software factory.";
 
@@ -21,14 +21,14 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://modern-swe.burmese.dev"),
   title: {
     default: SITE_NAME,
-    template: "%s · Agentic Engineer Guide",
+    template: "%s · Modern SWE Guide",
   },
   description: DESCRIPTION,
   applicationName: SITE_NAME,
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
-    title: "Agentic Guide",
+    title: "Modern SWE",
     statusBarStyle: "black-translucent",
   },
   formatDetection: { telephone: false },

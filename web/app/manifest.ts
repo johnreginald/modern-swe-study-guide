@@ -4,8 +4,8 @@ export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Agentic Engineer Study Guide 2026",
-    short_name: "Agentic Guide",
+    name: "Modern Software Engineer Study Guide 2026",
+    short_name: "Modern SWE",
     description:
       "A ten-week, project-based guide to building software with coding agents: internals, context engineering, MCP, skills, readiness, review, security, background agents, teams, and the software factory.",
     id: "/",

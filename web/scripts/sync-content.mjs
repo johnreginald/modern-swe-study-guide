@@ -9,10 +9,10 @@ const root = resolve(here, "..");
 const outputs = resolve(root, "..", "outputs");
 
 const pairs = [
-  [resolve(outputs, "agentic-engineer-study-guide-2026.md"), resolve(root, "content", "guide.md")],
-  [resolve(outputs, "agentic-engineer-study-guide-2026.pdf"), resolve(root, "public", "agentic-engineer-study-guide-2026.pdf")],
-  [resolve(outputs, "agentic-engineer-study-guide-2026.my.md"), resolve(root, "content", "guide.my.md")],
-  [resolve(outputs, "agentic-engineer-study-guide-2026.my.pdf"), resolve(root, "public", "agentic-engineer-study-guide-2026.my.pdf")],
+  [resolve(outputs, "modern-swe-study-guide-2026.md"), resolve(root, "content", "guide.md")],
+  [resolve(outputs, "modern-swe-study-guide-2026.pdf"), resolve(root, "public", "modern-swe-study-guide-2026.pdf")],
+  [resolve(outputs, "modern-swe-study-guide-2026.my.md"), resolve(root, "content", "guide.my.md")],
+  [resolve(outputs, "modern-swe-study-guide-2026.my.pdf"), resolve(root, "public", "modern-swe-study-guide-2026.my.pdf")],
 ];
 
 let copied = 0;

@@ -7,7 +7,7 @@ import { resolve } from "node:path";
 
 const [variant = "noglossary", model = "Gemini 3.1 Pro (Low)", secs = "240"] = process.argv.slice(2);
 const root = resolve(import.meta.dirname, "..", "..");
-const src = readFileSync(resolve(root, "outputs", "agentic-engineer-study-guide-2026.md"), "utf8");
+const src = readFileSync(resolve(root, "outputs", "modern-swe-study-guide-2026.md"), "utf8");
 const sections = src.split(/\n(?=## )/);
 let section = sections[1]; // "## How to use this guide"
 

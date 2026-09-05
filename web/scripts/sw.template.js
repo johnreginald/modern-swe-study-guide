@@ -1,4 +1,4 @@
-/* Service worker for the Agentic Engineer guide. Generated into public/sw.js by scripts/build-sw.mjs. */
+/* Service worker for the Modern Software Engineer guide. Generated into public/sw.js by scripts/build-sw.mjs. */
 const VERSION = "__VERSION__";
 const PAGE_CACHE = `aeguide-pages-${VERSION}`;
 const ASSET_CACHE = `aeguide-assets-${VERSION}`;

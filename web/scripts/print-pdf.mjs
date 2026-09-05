@@ -36,7 +36,7 @@ if (!(await up())) {
 mkdirSync(outputs, { recursive: true });
 for (const lang of langs) {
   const url = `http://localhost:${port}${lang === "my" ? "/my" : ""}/print`;
-  const out = resolve(outputs, `agentic-engineer-study-guide-2026${lang === "my" ? ".my" : ".web"}.pdf`);
+  const out = resolve(outputs, `modern-swe-study-guide-2026${lang === "my" ? ".my" : ".web"}.pdf`);
   const res = spawnSync(
     CHROME,
     ["--headless=new", "--disable-gpu", "--no-pdf-header-footer", "--virtual-time-budget=8000", `--print-to-pdf=${out}`, url],

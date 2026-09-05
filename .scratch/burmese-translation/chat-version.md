@@ -2,7 +2,7 @@
 
 **10 ပတ်တာ · Project-based လက်တွေ့သင်ရိုး**
 
-# Agentic Engineer
+# Modern Software Engineer
 
 ### လေ့လာရေးလမ်းညွှန် 2026
 
@@ -376,7 +376,7 @@ Repo instructions ဖိုင်တစ်ခု၊ hooks 2 ခုနဲ့ plan
 * **The Secrets of Claude Code From the Engineers Who Built It** *(1 h 10 min - Every):* Boris Cherny နဲ့ Cat Wu တို့ ပါဝင်ထားတဲ့ Latent Space အင်တာဗျူးဖြစ်တဲ့ Claude Code: Anthropic's Agent in Your Terminal ကိုလည်း ကြည့်ရှုနိုင်ပါတယ်။
 * **I'm HOOKED on Claude Code Hooks: Advanced Agentic Coding** *(30 min - IndyDevDan):* Pre/post tool hooks၊ logging နဲ့ အန္တရာယ်ရှိတဲ့ command တွေကို ရပ်တန့်ပုံ။
 * **Claude Code Advanced Patterns: Subagents, MCP, and Scaling to Real Codebases** *(Anthropic)*
-* **Future of Programming, AI, Agentic Engineering, Vibe Coding and Linux** *(DHH with Lex Fridman):* Programming-with-agents၊ vibe-coding-versus-engineering၊ agent setup၊ model နဲ့ harness အခန်းတွေကိုပဲ ရွေးကြည့်ပါ။ timestamped transcript ကြောင့် စိတ်ကြိုက် ရွေးချယ်ကြည့်ရှုရ လွယ်ကူစေပါတယ်။
+* **Future of Programming, AI, Modern Software Engineering, Vibe Coding and Linux** *(DHH with Lex Fridman):* Programming-with-agents၊ vibe-coding-versus-engineering၊ agent setup၊ model နဲ့ harness အခန်းတွေကိုပဲ ရွေးကြည့်ပါ။ timestamped transcript ကြောင့် စိတ်ကြိုက် ရွေးချယ်ကြည့်ရှုရ လွယ်ကူစေပါတယ်။
 
 ---
 
@@ -852,4 +852,4 @@ $$\text{Issue} \rightarrow \text{Aligned Spec} \rightarrow \text{Isolated Agent 
 
 **လမ်းညွှန်အကြောင်း (About):**
 
-Agentic Engineer Study Guide 2026 သည် သီးခြားလွတ်လပ်သော လေ့လာရေး လမ်းညွှန်တစ်ခု ဖြစ်ပါသည်။ 10 ပတ်တာ ဖွဲ့စည်းပုံကို Stanford ၏ CS146S: *The Modern Software Developer* (themodernsoftware.dev) Fall 2026 သင်ရိုးညွှန်းတမ်းအတိုင်း ရေးဆွဲထားခြင်းဖြစ်ပြီး၊ အဆိုပါ သင်တန်းနှင့် တိုက်ရိုက် မသက်ဆိုင်ပါ။ 2026 ခုနှစ် စက်တင်ဘာ 4 ရက်တွင် နောက်ဆုံး ပြင်ဆင်ထားပါသည်။ ဤဝဘ်ဆိုက်ကို App အဖြစ် install လုပ်၍ အသုံးပြုနိုင်ပြီး ပထမတစ်ကြိမ် ဝင်ရောက်ပြီးပါက offline အနေအထားဖြင့်လည်း အသုံးပြုနိုင်ပါသည်။
+Modern Software Engineer Study Guide 2026 သည် သီးခြားလွတ်လပ်သော လေ့လာရေး လမ်းညွှန်တစ်ခု ဖြစ်ပါသည်။ 10 ပတ်တာ ဖွဲ့စည်းပုံကို Stanford ၏ CS146S: *The Modern Software Developer* (themodernsoftware.dev) Fall 2026 သင်ရိုးညွှန်းတမ်းအတိုင်း ရေးဆွဲထားခြင်းဖြစ်ပြီး၊ အဆိုပါ သင်တန်းနှင့် တိုက်ရိုက် မသက်ဆိုင်ပါ။ 2026 ခုနှစ် စက်တင်ဘာ 4 ရက်တွင် နောက်ဆုံး ပြင်ဆင်ထားပါသည်။ ဤဝဘ်ဆိုက်ကို App အဖြစ် install လုပ်၍ အသုံးပြုနိုင်ပြီး ပထမတစ်ကြိမ် ဝင်ရောက်ပြီးပါက offline အနေအထားဖြင့်လည်း အသုံးပြုနိုင်ပါသည်။

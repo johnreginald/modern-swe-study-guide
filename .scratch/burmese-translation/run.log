@@ -1,6 +1,6 @@
 glossary: using existing /Users/htetwaiyansoe/Documents/Codex/2026-09-04/cs146s-the-modern-software-developer-2026/.scratch/burmese-translation/glossary.md
 ui: using existing /Users/htetwaiyansoe/Documents/Codex/2026-09-04/cs146s-the-modern-software-developer-2026/web/content/ui.my.json
-chunk 0 (# Agentic Engineer Study Guide 2026): cached ✓
+chunk 0 (# Modern Software Engineer Study Guide 2026): cached ✓
 chunk 1 (## How to use this guide): cached ✓
 chunk 2 (## The ten weeks at a glance): cached ✓
 chunk 3 (## Week 1 — The Internals of Coding Agents): cached ✓
@@ -44,5 +44,5 @@ chunk 14 (## The short bookshelf): ✓ (1 piece)
 chunk-15-0: ✓ attempt 1 (Gemini 3.6 Flash (Low)), 1142 chars
 chunk 15 (## If you only have half the time): ✓ (1 piece)
 translate: 16/16 chunks ready
-assemble: wrote /Users/htetwaiyansoe/Documents/Codex/2026-09-04/cs146s-the-modern-software-developer-2026/outputs/agentic-engineer-study-guide-2026.my.md (77540 chars)
+assemble: wrote /Users/htetwaiyansoe/Documents/Codex/2026-09-04/cs146s-the-modern-software-developer-2026/outputs/modern-swe-study-guide-2026.my.md (77540 chars)
 validate: ✓ structure matches (198 links, 226 list items, 15 sections)

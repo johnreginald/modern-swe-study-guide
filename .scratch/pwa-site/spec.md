@@ -1,4 +1,4 @@
-# PWA site for the Agentic Engineer Study Guide 2026
+# PWA site for the Modern Software Engineer Study Guide 2026
 
 Status: Aligning → Ready once the two open choices below are confirmed.
 
@@ -48,7 +48,7 @@ Status: **Done** (2026-09-04). Live at https://agentic-engineer-study-guide.verc
 
 ## Revision 2026-09-04 (evening)
 
-- Renamed to **Agentic Engineer Study Guide 2026** everywhere (markdown, PDF cover/header/footer, site metadata, manifest, icons). Source file is now `outputs/agentic-engineer-study-guide-2026.md`.
+- Renamed to **Modern Software Engineer Study Guide 2026** everywhere (markdown, PDF cover/header/footer, site metadata, manifest, icons). Source file is now `outputs/modern-swe-study-guide-2026.md`.
 - Removed every CS146S 2025 reference (coverage audit, schedule/guest tables, 2025 assignment map, "(2025 course reading)" markers, "Official sessions" lines, guest wording). Kept one credit paragraph to the CS146S Fall 2026 syllabus. Added "The ten weeks at a glance" table.
 - Nav bug (Capstone/More not tappable, no way home on device): removed the fixed install banner and the blurred bottom bar; added a sticky top bar with Home / Weeks / Capstone / More; bottom nav is solid with z-index 50; install hint is now an inline card on Home.
 - Formatting: markdown list items render as resource cards (type badge, duration chip, title link, author, one-line note), sections get jump chips, "Focus" and "You build" callouts on week pages.

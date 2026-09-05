@@ -1,4 +1,4 @@
-# Agentic Engineer Study Guide 2026
+# Modern Software Engineer Study Guide 2026
 
 Updated September 4, 2026
 
@@ -226,7 +226,7 @@ Run it from a fresh agent session on two different inputs. Record where the inst
 - **Engineers' perspective:** Every, [The Secrets of Claude Code From the Engineers Who Built It](https://www.youtube.com/watch?v=IDSAMqip6ms) (1 h 10 min), and the Latent Space interview [Claude Code: Anthropic's Agent in Your Terminal](https://www.latent.space/p/claude-code) with Boris Cherny and Cat Wu.
 - **Hooks in practice:** IndyDevDan, [I'm HOOKED on Claude Code Hooks: Advanced Agentic Coding](https://www.youtube.com/watch?v=J5B9UGTuNoM) (30 min) — pre/post tool hooks, logging, and stopping a destructive command.
 - **Advanced configuration:** Anthropic, [Claude Code Advanced Patterns: Subagents, MCP, and Scaling to Real Codebases](https://www.anthropic.com/webinars/claude-code-advanced-patterns) — hooks, orchestration, guardrails, internal tools, and context strategies.
-- **Practitioner perspective:** DHH with Lex Fridman, [Future of Programming, AI, Agentic Engineering, Vibe Coding and Linux](https://www.youtube.com/watch?v=NYFGCESmikA) (5 h 15 min; watch the programming-with-agents, vibe-coding-versus-engineering, agent setup, model, and harness chapters only). The [timestamped transcript](https://lexfridman.com/dhh-2-transcript/) makes selective viewing easy.
+- **Practitioner perspective:** DHH with Lex Fridman, [Future of Programming, AI, Modern Software Engineering, Vibe Coding and Linux](https://www.youtube.com/watch?v=NYFGCESmikA) (5 h 15 min; watch the programming-with-agents, vibe-coding-versus-engineering, agent setup, model, and harness chapters only). The [timestamped transcript](https://lexfridman.com/dhh-2-transcript/) makes selective viewing easy.
 
 ### Build
 
@@ -477,7 +477,7 @@ Write a one-page team adoption policy covering approved data, mandatory human de
 - **Evals, in depth:** Hamel Husain and Shreya Shankar on Lenny's Podcast, [Why AI evals are the hottest new skill for product builders](https://www.youtube.com/watch?v=BsWxPI9UM4c) (1 h 46 min) — error analysis, LLM-as-judge validation, and the eval workflow.
 - **Software-factory thesis:** Eno Reyes, [The Software Factory](https://ai-in-the-am.com/episodes/ai-am-2026-06-18/) — a timestamped segment on agent readiness, deterministic systems, harnesses, feedback loops, and organizations as capital allocators for agent work.
 - **The decade of agents:** Andrej Karpathy with Dwarkesh Patel, [“We're summoning ghosts, not building animals”](https://www.youtube.com/watch?v=lXUZvyajciY) (2 h 26 min) — why agents still cannot plan, remember, or compound knowledge, and what that means for the next decade.
-- **Broad practitioner synthesis:** Revisit DHH's [Future of Programming and Agentic Engineering](https://www.youtube.com/watch?v=NYFGCESmikA), especially `3:59:24` on the future of programming. Use it for perspective, not as a technical authority.
+- **Broad practitioner synthesis:** Revisit DHH's [Future of Programming and Modern Software Engineering](https://www.youtube.com/watch?v=NYFGCESmikA), especially `3:59:24` on the future of programming. Use it for perspective, not as a technical authority.
 
 ### Build
 

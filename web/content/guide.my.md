@@ -1,4 +1,4 @@
-# Agentic Engineer Study Guide 2026
+# Modern Software Engineer Study Guide 2026
 
 စက်တင်ဘာ 4၊ 2026
 
@@ -257,7 +257,7 @@ Repo instructions ဖိုင်တစ်ခု၊ hooks 2 ခုနဲ့ plan
 - **[The Secrets of Claude Code From the Engineers Who Built It](https://www.youtube.com/watch?v=IDSAMqip6ms)** *(1 h 10 min - Every):* Boris Cherny နဲ့ Cat Wu တို့ ပါဝင်ထားတဲ့ Latent Space အင်တာဗျူးဖြစ်တဲ့ [Claude Code: Anthropic's Agent in Your Terminal](https://www.latent.space/p/claude-code) ကိုလည်း ကြည့်ရှုနိုင်ပါတယ်။
 - **[I'm HOOKED on Claude Code Hooks: Advanced Agentic Coding](https://www.youtube.com/watch?v=J5B9UGTuNoM)** *(30 min - IndyDevDan):* Pre/post tool hooks၊ logging နဲ့ အန္တရာယ်ရှိတဲ့ command တွေကို ရပ်တန့်ပုံ။
 - **[Claude Code Advanced Patterns: Subagents, MCP, and Scaling to Real Codebases](https://www.anthropic.com/webinars/claude-code-advanced-patterns)** *(Anthropic)*
-- **[Future of Programming, AI, Agentic Engineering, Vibe Coding and Linux](https://www.youtube.com/watch?v=NYFGCESmikA)** *(DHH with Lex Fridman):* Programming-with-agents၊ vibe-coding-versus-engineering၊ agent setup၊ model နဲ့ harness အခန်းတွေကိုပဲ ရွေးကြည့်ပါ။ [timestamped transcript](https://lexfridman.com/dhh-2-transcript/) ကြောင့် စိတ်ကြိုက် ရွေးချယ်ကြည့်ရှုရ လွယ်ကူစေပါတယ်။
+- **[Future of Programming, AI, Modern Software Engineering, Vibe Coding and Linux](https://www.youtube.com/watch?v=NYFGCESmikA)** *(DHH with Lex Fridman):* Programming-with-agents၊ vibe-coding-versus-engineering၊ agent setup၊ model နဲ့ harness အခန်းတွေကိုပဲ ရွေးကြည့်ပါ။ [timestamped transcript](https://lexfridman.com/dhh-2-transcript/) ကြောင့် စိတ်ကြိုက် ရွေးချယ်ကြည့်ရှုရ လွယ်ကူစေပါတယ်။
 
 ### လက်တွေ့ တည်ဆောက်ရန် (Build)
 

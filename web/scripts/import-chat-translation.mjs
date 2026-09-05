@@ -20,8 +20,8 @@ const argv = process.argv.slice(2);
 const opt = (n, d) => (argv.indexOf(`--${n}`) === -1 ? d : argv[argv.indexOf(`--${n}`) + 1]);
 const IN = resolve(root, opt("in", ".scratch/burmese-translation/chat-version.md"));
 const EXTRA = resolve(root, ".scratch/burmese-translation/chat-extra-sections.md");
-const EN = resolve(root, "outputs", "agentic-engineer-study-guide-2026.md");
-const OUT = resolve(root, "outputs", "agentic-engineer-study-guide-2026.my.md");
+const EN = resolve(root, "outputs", "modern-swe-study-guide-2026.md");
+const OUT = resolve(root, "outputs", "modern-swe-study-guide-2026.my.md");
 const REPORT = resolve(root, ".scratch/burmese-translation/import-report.md");
 
 // Safety: outputs/…my.md is edited directly now. Refuse to clobber it with an older chat export.
@@ -355,7 +355,7 @@ const linked = preLinked.map((line) => {
 
 /* ---------- 4. preamble + extra sections ---------- */
 let body = linked.join("\n").replace(/\n{3,}/g, "\n\n").trim();
-const head = `# Agentic Engineer Study Guide 2026\n\nစက်တင်ဘာ ၄၊ ၂၀၂၆\n\n`;
+const head = `# Modern Software Engineer Study Guide 2026\n\nစက်တင်ဘာ ၄၊ ၂၀၂၆\n\n`;
 let extra = "";
 if (existsSync(EXTRA)) extra = "\n\n" + readFileSync(EXTRA, "utf8").trim() + "\n";
 const final = head + body + extra + "\n";

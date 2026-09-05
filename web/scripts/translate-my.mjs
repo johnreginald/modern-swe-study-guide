@@ -9,7 +9,7 @@
  *   glossary  – ask the model for Burmese renderings of the core terms → .scratch/burmese-translation/glossary.md
  *   ui        – translate web/lib/ui-strings.en.json → web/content/ui.my.json
  *   translate – translate the guide section by section (one `##` block per call), cached per chunk
- *   assemble  – join chunks, restore URL/code placeholders → outputs/agentic-engineer-study-guide-2026.my.md
+ *   assemble  – join chunks, restore URL/code placeholders → outputs/modern-swe-study-guide-2026.my.md
  *   validate  – re-run the structural checks on the assembled file
  *
  * Every chunk is validated (headings, list items, table rows, placeholders, Unicode-not-Zawgyi) and retried
@@ -24,8 +24,8 @@ import { fileURLToPath } from "node:url";
 const here = dirname(fileURLToPath(import.meta.url));
 const web = resolve(here, "..");
 const root = resolve(web, "..");
-const SRC = resolve(root, "outputs", "agentic-engineer-study-guide-2026.md");
-const OUT = resolve(root, "outputs", "agentic-engineer-study-guide-2026.my.md");
+const SRC = resolve(root, "outputs", "modern-swe-study-guide-2026.md");
+const OUT = resolve(root, "outputs", "modern-swe-study-guide-2026.my.md");
 const WORK = resolve(root, ".scratch", "burmese-translation");
 const CHUNKS = resolve(WORK, "chunks");
 const GLOSSARY = resolve(WORK, "glossary.md");
