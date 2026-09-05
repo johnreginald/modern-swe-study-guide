@@ -1,6 +1,6 @@
 ## အကြံပြု စာအုပ်စင် (The Short Bookshelf)
 
-စာအုပ် ဧကရီ အများကြီးကို အစအဆုံး ကုန်အောင် ဖတ်ဖို့ မကြိုးစားပါနဲ့။ ဒီစာအုပ် ၅ အုပ်ဟာ ဒီလမ်းညွှန်ရဲ့ နောက်ကွယ်က ခိုင်မာတဲ့ အယူအဆတွေကို လွှမ်းခြုံထားပါတယ် -
+စာအုပ် ဧကရီ အများကြီးကို အစအဆုံး ကုန်အောင် ဖတ်ဖို့ မကြိုးစားပါနဲ့။ ဒီစာအုပ် 5 အုပ်ဟာ ဒီလမ်းညွှန်ရဲ့ နောက်ကွယ်က ခိုင်မာတဲ့ အယူအဆတွေကို လွှမ်းခြုံထားပါတယ် -
 
 1. Chip Huyen, **[*AI Engineering*](https://huyenchip.com/)** — foundation model တွေနဲ့ application တွေ တည်ဆောက်ပုံနဲ့ ဆန်းစစ်ပုံ။
 2. Jay Alammar နှင့် Maarten Grootendorst, **[*Hands-On Large Language Models*](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models)** — ကုဒ် repository နဲ့အတူ လေ့လာနိုင်တဲ့ လက်တွေ့ကျ LLM အခြေခံများ။
