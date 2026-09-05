@@ -24,6 +24,17 @@ const EN = resolve(root, "outputs", "agentic-engineer-study-guide-2026.md");
 const OUT = resolve(root, "outputs", "agentic-engineer-study-guide-2026.my.md");
 const REPORT = resolve(root, ".scratch/burmese-translation/import-report.md");
 
+// Safety: outputs/…my.md is edited directly now. Refuse to clobber it with an older chat export.
+import { statSync } from "node:fs";
+if (existsSync(OUT) && !argv.includes("--force")) {
+  const outTime = statSync(OUT).mtimeMs;
+  const inTime = statSync(IN).mtimeMs;
+  if (outTime > inTime) {
+    console.error(`refusing to overwrite ${OUT}: it is newer than ${IN}. Pass --force to re-import anyway.`);
+    process.exit(2);
+  }
+}
+
 const en = readFileSync(EN, "utf8");
 let src = readFileSync(IN, "utf8").replace(/\r\n/g, "\n");
 
