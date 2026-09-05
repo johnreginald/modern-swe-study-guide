@@ -52,3 +52,9 @@ Status: **Done** (2026-09-04). Live at https://agentic-engineer-study-guide.verc
 - Removed every CS146S 2025 reference (coverage audit, schedule/guest tables, 2025 assignment map, "(2025 course reading)" markers, "Official sessions" lines, guest wording). Kept one credit paragraph to the CS146S Fall 2026 syllabus. Added "The ten weeks at a glance" table.
 - Nav bug (Capstone/More not tappable, no way home on device): removed the fixed install banner and the blurred bottom bar; added a sticky top bar with Home / Weeks / Capstone / More; bottom nav is solid with z-index 50; install hint is now an inline card on Home.
 - Formatting: markdown list items render as resource cards (type badge, duration chip, title link, author, one-line note), sections get jump chips, "Focus" and "You build" callouts on week pages.
+
+## Revision 2026-09-05 (night): Modern Software Engineer + Cloudflare Pages
+
+- Product renamed **Modern Software Engineer Study Guide 2026**; files `outputs/modern-swe-study-guide-2026.{md,pdf,my.md,my.pdf,web.pdf}`; repo `johnreginald/modern-swe-study-guide`; folder `~/Project/modern-swe-study-guide`.
+- Hosting: Cloudflare Pages project `modern-swe` (static export in `web/out`, headers in `web/public/_headers`), account htetwaiyansoe89@gmail.com. Custom domain `modern-swe.burmese.dev` attached; needs a proxied CNAME `modern-swe → modern-swe.pages.dev` in the burmese.dev zone (dashboard). Vercel project kept for a redirect once the domain is live.
+- Loop: edit `outputs/*.md` → `npm run pdf --lang my` (and reportlab for English) → `npm run release` (sync, build, `wrangler pages deploy`).
