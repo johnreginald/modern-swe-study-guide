@@ -56,5 +56,5 @@ Status: **Done** (2026-09-04). Live at https://agentic-engineer-study-guide.verc
 ## Revision 2026-09-05 (night): Modern Software Engineer + Cloudflare Pages
 
 - Product renamed **Modern Software Engineer Study Guide 2026**; files `outputs/modern-swe-study-guide-2026.{md,pdf,my.md,my.pdf,web.pdf}`; repo `johnreginald/modern-swe-study-guide`; folder `~/Project/modern-swe-study-guide`.
-- Hosting: Cloudflare Pages project `modern-swe` (static export in `web/out`, headers in `web/public/_headers`), account htetwaiyansoe89@gmail.com. Custom domain `modern-swe.burmese.dev` attached; needs a proxied CNAME `modern-swe → modern-swe.pages.dev` in the burmese.dev zone (dashboard). Vercel project kept for a redirect once the domain is live.
+- Hosting: Cloudflare Pages project `modern-swe` (static export in `web/out`, headers in `web/public/_headers`), account the Cloudflare account. Custom domain `modern-swe.burmese.dev` attached; needs a proxied CNAME `modern-swe → modern-swe.pages.dev` in the burmese.dev zone (dashboard). Vercel project kept for a redirect once the domain is live.
 - Loop: edit `outputs/*.md` → `npm run pdf --lang my` (and reportlab for English) → `npm run release` (sync, build, `wrangler pages deploy`).
